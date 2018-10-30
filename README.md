@@ -16,7 +16,7 @@
 
 * Auto Testing
 * Ability to check for overflow for the Adder module: if an error is detected, it will be displayed
-* Ability to do `C1*INPUT_1 OPR C2*INPUT_2`, where `C1` and `C2` are constants, and `OPR` is the operation on the two operands `INPUT_1` and `INPUT_2`.
+* Ability to do `C1*INPUT_1 OP C2*INPUT_2`, where `C1` and `C2` are constants, and `OP` is the operation on the two operands `INPUT_1` and `INPUT_2`.
 
 ## Using the ALU on Mojo v3 with IO Shield
 
@@ -61,6 +61,12 @@ case_add -> case_sub -> case_mult -> case_etc
 if fail -> error_case
 
 After all 16 test cases pass -> pass_case; display GOOD
+```
 
+## Team
 
+* Hong Peng Fei
+* Khong Jia Wei
+* Faith See
+* Timothy Liu
 
