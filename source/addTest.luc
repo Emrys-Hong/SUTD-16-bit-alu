@@ -2,26 +2,193 @@ module addTest (
     input clk,  // clock
     input rst,  // reset
     
-    output out[16]
+    // input
+    input button,
+    // out is to show input1 input2 input3
+    output out[16],
+    output v,
+    output n,
+    output z,
+    output true
   ) {
   
   .clk(clk) {
-    edge_detector edge;
       .rst(rst) {
-        fsm state = {BEGIN, PP, PN, NN, V, N, Z};
-      dff timer[27];
+        fsm state = {BEGIN, PP, PN, NN, V, N, Z, GOOD, ERROR};
+      dff timer[28];
       add add;
     }
   }
   
-  const P1 = 16b0000000000000000;
-  const
+  // checking cases
+  const P1 = 16b0000000000000011;
+  const P2 = 16b0100000000000001;
+  const P3 = 16b0000000000000000;
+  const N1 = 16b1011110000001111;
+  const N2 = 16b1000000000000001;
+  const N3 = 16b1000000000000001;
+  
+  // correct results
+  const PP = 16b0100000000000100;
+  const PN = 16b1011110000010010;
+  const NN = 16b0011110000001111;
+  const V  = 16b0000000000000010;
+  
   always {
+    // define default outputs
     out = 0;
-    seg = 0;
+    v = add.v;
+    n = add.n;
+    z = add.z;
+    add.a = 0;
+    add.b = 0;
+    timer.d = timer.q+1;
+    // alufn for add
+    add.io_dip = 8b00000000;
+    // define true to be false
+    true = 0;
     
+    // cases
     case(state.q) {
-      1: 
+      state.BEGIN:
+        if (timer.q[27:26]==2 & ~button) {
+          state.d = state.PP;
+        }
+        
+      state.PP:
+        add.a = P1;
+        add.b = P2;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = P1;
+        } else if (timer.q[27:26]==1) {
+          out = P2;
+        } else if ( timer.q[27:26]==2) {
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if ((add.out==PP)&(add.v==0)&(add.z==0)&(add.n==0) ){
+              state.d = state.PN;
+          } else {
+              state.d = state.ERROR;
+          }
+        }
+          
+        
+      state.PN:
+        add.a = P1;
+        add.b = N1;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = P1;
+        } else if (timer.q[27:26]==1) {
+          out = N1;
+        } else if ( (timer.q[27:26]==2) ){
+            // show result
+          out = add.out;
+        } else if ( timer.q[27:26]==3) {
+          if ((add.out==PN)&(add.v==0)&(add.z==0)&(add.n==1) ){
+            state.d = state.NN;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+        
+      state.NN:
+        add.a = N1;
+        add.b = N2;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = N1;
+        } else if (timer.q[27:26]==1) {
+          out = N2;
+        } else if ( (timer.q[27:26]==2)  ){
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if ((add.out==NN)&(add.v==1)&(add.z==0)&(add.n==0)) {
+            state.d = state.V;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+        
+      state.V:
+        add.a = N2;
+        add.b = N3;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = N2;
+        } else if (timer.q[27:26]==1) {
+          out = N3;
+        } else if ( (timer.q[27:26]==2) ){
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if ((add.out==V)&(add.v==1)&(add.z==0)&(add.n==0) ){
+            state.d = state.Z;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+        
+      state.Z:
+        add.a = P3;
+        add.b = P3;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = P3;
+        } else if (timer.q[27:26]==1) {
+          out = P3;
+        } else if ( (timer.q[27:26]==2) ){
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if ((add.out==0)&(add.v==0)&(add.z==0)&(add.n==0)){
+            state.d = state.N;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+        
+      state.N:
+        add.a = P1;
+        add.b = N1;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = P1;
+        } else if (timer.q[27:26]==1) {
+          out = N1;
+        } else if ( timer.q[27:26]==2  ){
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if ((add.out==PN)&(add.v==0)&(add.z==0)&(add.n==1)) {
+            state.d = state.GOOD;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.GOOD:
+        if (timer.q[27] == 1) {
+          true = 1;
+          
+        } else if (timer.q[25] == 1) {
+          out = 16b1111111100000000;
+        } else if (timer.q[25]==0){
+          out = 16b0000000000000000;
+        }
+        
+      state.ERROR:
+        if (timer.q[25] == 1) {
+          out = 16b0000000011111111;
+        } else {
+          out = 16b0000000000000000;
+        }
+        
+        
     }
   }
 }

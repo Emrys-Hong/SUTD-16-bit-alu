@@ -58,6 +58,21 @@ module tst_4 (
     .v(M_alu_v),
     .n(M_alu_n)
   );
+  wire [16-1:0] M_addTest_out;
+  wire [1-1:0] M_addTest_v;
+  wire [1-1:0] M_addTest_n;
+  wire [1-1:0] M_addTest_z;
+  wire [1-1:0] M_addTest_true;
+  addTest_12 addTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_addTest_out),
+    .v(M_addTest_v),
+    .n(M_addTest_n),
+    .z(M_addTest_z),
+    .true(M_addTest_true)
+  );
   
   localparam OADD = 8'h00;
   
@@ -84,8 +99,6 @@ module tst_4 (
   localparam OCMPLT = 8'hd4;
   
   localparam OCMPLE = 8'hdc;
-  
-  localparam RADD = 16'h7a00;
   
   localparam RSUB = 16'h3000;
   
@@ -135,25 +148,11 @@ module tst_4 (
         end
       end
       ADD_state: begin
+        out = M_addTest_out;
         M_alu_io_dip = 8'h00;
         seg = 13'h1bbb;
-        if (M_edge_out) begin
+        if (M_addTest_true == 1'h1) begin
           M_state_d = SUB_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h7a00) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       SUB_state: begin

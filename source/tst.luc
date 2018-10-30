@@ -16,6 +16,7 @@ module tst (
          SRA, CMPEQ, CMPLE, CMPLT, GOOD, ERROR};
       dff timer[27];
       alu alu;
+      addTest addTest(.button(button));
     }
   }
   
@@ -33,7 +34,6 @@ module tst (
     const OCMPLT = 8b11010100; 
     const OCMPLE = 8b11011100;
   
-    const RADD   = 16b0111101000000000;
     const RSUB   = 16b0011000000000000;
     const RMUL   = 16b0100100100000000;
     const RAND   = 16b0000010100000000; 
@@ -70,20 +70,12 @@ module tst (
       
       // ADD
       state.ADD:
+        out = addTest.out;
         alu.io_dip=OADD;
         seg = c{1,11,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if(addTest.true==1){
           state.d = state.SUB;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RADD) {
-              state.d=state.ERROR;
-          }
         }
         
         

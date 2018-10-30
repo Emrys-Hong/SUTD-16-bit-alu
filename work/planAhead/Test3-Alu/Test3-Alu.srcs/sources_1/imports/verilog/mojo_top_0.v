@@ -134,9 +134,8 @@ module mojo_top_0 (
           end
         end else begin
           if (io_dip[16+6+1-:2] == 1'h0) begin
-            io_led[0+7-:8] = 1'h0;
-            io_led[8+7-:8] = 1'h0;
-            io_led[8+7-:8] = 1'h0;
+            io_led[0+7-:8] = M_tst_out[0+7-:8];
+            io_led[8+7-:8] = M_tst_out[8+7-:8];
             M_seg_values = {M_tst_seg[12+3-:4], M_tst_seg[8+3-:4], M_tst_seg[4+3-:4], M_tst_seg[0+3-:4]};
           end
         end

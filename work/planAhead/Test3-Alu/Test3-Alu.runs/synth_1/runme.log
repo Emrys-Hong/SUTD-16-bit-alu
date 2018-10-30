@@ -7,35 +7,37 @@ Reading design: mojo_top_0.prj
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/sft_9.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/sft_9.v" into library work
 Parsing module <sft_9>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mul_10.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mul_10.v" into library work
 Parsing module <mul_10>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/cmp_7.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/cmp_7.v" into library work
 Parsing module <cmp_7>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/bol_8.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/bol_8.v" into library work
 Parsing module <bol_8>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/add_6.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/add_6.v" into library work
 Parsing module <add_6>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/seven_seg_13.v" into library work
-Parsing module <seven_seg_13>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_11.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/seven_seg_14.v" into library work
+Parsing module <seven_seg_14>.
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_11.v" into library work
 Parsing module <edge_detector_11>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/decoder_14.v" into library work
-Parsing module <decoder_14>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/counter_12.v" into library work
-Parsing module <counter_12>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/alu_3.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/decoder_15.v" into library work
+Parsing module <decoder_15>.
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/counter_13.v" into library work
+Parsing module <counter_13>.
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/alu_3.v" into library work
 Parsing module <alu_3>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/addTest_12.v" into library work
+Parsing module <addTest_12>.
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" into library work
 Parsing module <tst_4>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/multi_seven_seg_5.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/multi_seven_seg_5.v" into library work
 Parsing module <multi_seven_seg_5>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_2.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_2.v" into library work
 Parsing module <edge_detector_2>.
-Analyzing Verilog file "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Analyzing Verilog file "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -59,32 +61,36 @@ Elaborating module <bol_8>.
 Elaborating module <sft_9>.
 
 Elaborating module <mul_10>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 59: Assignment to M_alu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 60: Assignment to M_alu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 61: Assignment to M_alu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 59: Assignment to M_alu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 60: Assignment to M_alu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 61: Assignment to M_alu_n ignored, since the identifier is never used
 
 Elaborating module <tst_4>.
 
 Elaborating module <edge_detector_11>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 57: Assignment to M_alu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 58: Assignment to M_alu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 59: Assignment to M_alu_n ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 74: Assignment to M_tst_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 57: Assignment to M_alu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 58: Assignment to M_alu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 59: Assignment to M_alu_n ignored, since the identifier is never used
+
+Elaborating module <addTest_12>.
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 71: Assignment to M_addTest_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 72: Assignment to M_addTest_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 73: Assignment to M_addTest_z ignored, since the identifier is never used
 
 Elaborating module <multi_seven_seg_5>.
 
-Elaborating module <counter_12>.
+Elaborating module <counter_13>.
 
-Elaborating module <seven_seg_13>.
+Elaborating module <seven_seg_14>.
 
-Elaborating module <decoder_14>.
+Elaborating module <decoder_15>.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_button<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_button<4:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -93,10 +99,9 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 69: Output port <out> of the instance <tst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <M_input2_q>.
     Found 16-bit register for signal <M_result_q>.
     Found 16-bit register for signal <M_input1_q>.
@@ -133,28 +138,28 @@ INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.s
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <reset_conditioner_1>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_1> synthesized.
 
 Synthesizing Unit <edge_detector_2>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_2.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_2.v".
     Found 1-bit register for signal <M_last_q>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <edge_detector_2> synthesized.
 
 Synthesizing Unit <alu_3>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/alu_3.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/alu_3.v".
     Found 16-bit 4-to-1 multiplexer for signal <out> created at line 105.
     Summary:
 	inferred   8 Multiplexer(s).
 Unit <alu_3> synthesized.
 
 Synthesizing Unit <add_6>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/add_6.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/add_6.v".
 WARNING:Xst:647 - Input <io_dip<6:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -165,7 +170,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
 Unit <add_6> synthesized.
 
 Synthesizing Unit <cmp_7>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/cmp_7.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/cmp_7.v".
 WARNING:Xst:647 - Input <io_dip<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -180,7 +185,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
 Unit <cmp_7> synthesized.
 
 Synthesizing Unit <bol_8>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/bol_8.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/bol_8.v".
 WARNING:Xst:647 - Input <io_dip<7:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -188,7 +193,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
 Unit <bol_8> synthesized.
 
 Synthesizing Unit <sft_9>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/sft_9.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/sft_9.v".
 WARNING:Xst:647 - Input <io_dip<7:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -203,7 +208,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
 Unit <sft_9> synthesized.
 
 Synthesizing Unit <mul_10>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mul_10.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mul_10.v".
 WARNING:Xst:647 - Input <io_dip<7:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -270,16 +275,19 @@ Synthesizing Unit <div_16u_16u>.
 Unit <div_16u_16u> synthesized.
 
 Synthesizing Unit <tst_4>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v".
-INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 50: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 50: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 50: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v".
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 50: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 50: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 50: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 66: Output port <v> of the instance <addTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 66: Output port <n> of the instance <addTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 66: Output port <z> of the instance <addTest> is unconnected or connected to loadless signal.
     Found 4-bit register for signal <M_state_q>.
     Found 27-bit register for signal <M_timer_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 15                                             |
-    | Transitions        | 64                                             |
+    | Transitions        | 61                                             |
     | Inputs             | 13                                             |
     | Outputs            | 10                                             |
     | Clock              | clk (rising_edge)                              |
@@ -290,8 +298,8 @@ INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.s
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 27-bit adder for signal <M_timer_d> created at line 127.
-    Found 16-bit 16-to-1 multiplexer for signal <seg> created at line 130.
+    Found 27-bit adder for signal <M_timer_d> created at line 140.
+    Found 16-bit 16-to-1 multiplexer for signal <seg> created at line 143.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  27 D-type flip-flop(s).
@@ -300,44 +308,70 @@ INFO:Xst:3210 - "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.s
 Unit <tst_4> synthesized.
 
 Synthesizing Unit <edge_detector_11>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_11.v".
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/edge_detector_11.v".
     Found 1-bit register for signal <M_last_q>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <edge_detector_11> synthesized.
 
+Synthesizing Unit <addTest_12>.
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/addTest_12.v".
+    Found 4-bit register for signal <M_state_q>.
+    Found 28-bit register for signal <M_timer_q>.
+    Found finite state machine <FSM_1> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 47                                             |
+    | Inputs             | 12                                             |
+    | Outputs            | 23                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 28-bit adder for signal <M_timer_d> created at line 81.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  28 D-type flip-flop(s).
+	inferred  20 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <addTest_12> synthesized.
+
 Synthesizing Unit <multi_seven_seg_5>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/multi_seven_seg_5.v".
-    Found 4-bit adder for signal <M_ctr_value[1]_GND_14_o_add_0_OUT> created at line 48.
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/multi_seven_seg_5.v".
+    Found 4-bit adder for signal <M_ctr_value[1]_GND_15_o_add_0_OUT> created at line 48.
     Found 31-bit shifter logical right for signal <n0010> created at line 48
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Combinational logic shifter(s).
 Unit <multi_seven_seg_5> synthesized.
 
-Synthesizing Unit <counter_12>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/counter_12.v".
+Synthesizing Unit <counter_13>.
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/counter_13.v".
     Found 18-bit register for signal <M_ctr_q>.
-    Found 18-bit adder for signal <M_ctr_q[17]_GND_15_o_add_0_OUT> created at line 35.
+    Found 18-bit adder for signal <M_ctr_q[17]_GND_16_o_add_0_OUT> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  18 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
-Unit <counter_12> synthesized.
+Unit <counter_13> synthesized.
 
-Synthesizing Unit <seven_seg_13>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/seven_seg_13.v".
+Synthesizing Unit <seven_seg_14>.
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/seven_seg_14.v".
     Found 16x7-bit Read Only RAM for signal <segs>
     Summary:
 	inferred   1 RAM(s).
-Unit <seven_seg_13> synthesized.
+Unit <seven_seg_14> synthesized.
 
-Synthesizing Unit <decoder_14>.
-    Related source file is "/home/emrys/mojo/Test3-Alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/decoder_14.v".
+Synthesizing Unit <decoder_15>.
+    Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/decoder_15.v".
     Summary:
 	no macro.
-Unit <decoder_14> synthesized.
+Unit <decoder_15> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -347,9 +381,9 @@ Macro Statistics
  16x7-bit single-port Read Only RAM                    : 1
 # Multipliers                                          : 2
  16x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 72
+# Adders/Subtractors                                   : 74
  16-bit adder                                          : 3
- 16-bit addsub                                         : 2
+ 16-bit addsub                                         : 3
  17-bit adder                                          : 4
  18-bit adder                                          : 5
  19-bit adder                                          : 4
@@ -361,17 +395,18 @@ Macro Statistics
  25-bit adder                                          : 4
  26-bit adder                                          : 4
  27-bit adder                                          : 5
- 28-bit adder                                          : 4
+ 28-bit adder                                          : 5
  29-bit adder                                          : 4
  30-bit adder                                          : 4
  31-bit adder                                          : 4
  32-bit adder                                          : 4
  4-bit adder                                           : 1
-# Registers                                            : 8
+# Registers                                            : 9
  1-bit register                                        : 2
  16-bit register                                       : 3
  18-bit register                                       : 1
  27-bit register                                       : 1
+ 28-bit register                                       : 1
  4-bit register                                        : 1
 # Comparators                                          : 40
  16-bit comparator equal                               : 2
@@ -393,11 +428,11 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 534
- 1-bit 2-to-1 multiplexer                              : 493
+# Multiplexers                                         : 554
+ 1-bit 2-to-1 multiplexer                              : 494
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 16-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 17
+ 16-bit 2-to-1 multiplexer                             : 36
  16-bit 4-to-1 multiplexer                             : 6
  18-bit 2-to-1 multiplexer                             : 1
 # Logic shifters                                       : 7
@@ -407,9 +442,9 @@ Macro Statistics
  31-bit shifter logical right                          : 1
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
-# FSMs                                                 : 1
-# Xors                                                 : 6
- 1-bit xor2                                            : 4
+# FSMs                                                 : 2
+# Xors                                                 : 8
+ 1-bit xor2                                            : 6
  16-bit xor2                                           : 2
 
 =========================================================================
@@ -419,9 +454,13 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <counter_12>.
+Synthesizing (advanced) Unit <addTest_12>.
+The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
+Unit <addTest_12> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter_13>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
-Unit <counter_12> synthesized (advanced).
+Unit <counter_13> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
 The following registers are absorbed into accumulator <M_result_q>: 1 register on signal <M_result_q>.
@@ -429,7 +468,7 @@ The following registers are absorbed into accumulator <M_input1_q>: 1 register o
 The following registers are absorbed into accumulator <M_input2_q>: 1 register on signal <M_input2_q>.
 Unit <mojo_top_0> synthesized (advanced).
 
-Synthesizing (advanced) Unit <seven_seg_13>.
+Synthesizing (advanced) Unit <seven_seg_14>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -441,7 +480,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs ei
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <segs>          |          |
     -----------------------------------------------------------------------
-Unit <seven_seg_13> synthesized (advanced).
+Unit <seven_seg_14> synthesized (advanced).
 
 Synthesizing (advanced) Unit <tst_4>.
 The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
@@ -455,13 +494,14 @@ Macro Statistics
  16x7-bit single-port distributed Read Only RAM        : 1
 # Multipliers                                          : 2
  16x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 35
+# Adders/Subtractors                                   : 36
  16-bit adder carry in                                 : 32
- 16-bit addsub                                         : 2
+ 16-bit addsub                                         : 3
  4-bit adder                                           : 1
-# Counters                                             : 2
+# Counters                                             : 3
  18-bit up counter                                     : 1
  27-bit up counter                                     : 1
+ 28-bit up counter                                     : 1
 # Accumulators                                         : 3
  16-bit up accumulator                                 : 3
 # Registers                                            : 6
@@ -486,20 +526,20 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 532
- 1-bit 2-to-1 multiplexer                              : 492
+# Multiplexers                                         : 552
+ 1-bit 2-to-1 multiplexer                              : 493
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 16-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 17
+ 16-bit 2-to-1 multiplexer                             : 36
  16-bit 4-to-1 multiplexer                             : 6
 # Logic shifters                                       : 7
  16-bit shifter arithmetic right                       : 2
  16-bit shifter logical left                           : 2
  16-bit shifter logical right                          : 2
  31-bit shifter logical right                          : 1
-# FSMs                                                 : 1
-# Xors                                                 : 6
- 1-bit xor2                                            : 4
+# FSMs                                                 : 2
+# Xors                                                 : 8
+ 1-bit xor2                                            : 6
  16-bit xor2                                           : 2
 
 =========================================================================
@@ -514,8 +554,8 @@ Optimizing FSM <tst/FSM_0> on signal <M_state_q[1:4]> with user encoding.
 -------------------
  0000  | 0000
  0001  | 0001
- 1111  | 1111
  0010  | 0010
+ 1111  | 1111
  0011  | 0011
  0100  | 0100
  0110  | 0110
@@ -528,6 +568,21 @@ Optimizing FSM <tst/FSM_0> on signal <M_state_q[1:4]> with user encoding.
  1101  | 1101
  1110  | 1110
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <tst/addTest/FSM_1> on signal <M_state_q[1:9]> with one-hot encoding.
+--------------------
+ State | Encoding
+--------------------
+ 0000  | 000000001
+ 0001  | 000000010
+ 1000  | 000000100
+ 0010  | 000001000
+ 0011  | 000010000
+ 0100  | 000100000
+ 0110  | 001000000
+ 0111  | 010000000
+ 0101  | 100000000
+--------------------
 
 Optimizing unit <mojo_top_0> ...
 
@@ -540,26 +595,46 @@ Optimizing unit <mul_10> ...
 Optimizing unit <div_16u_16u> ...
 
 Optimizing unit <tst_4> ...
+
+Optimizing unit <addTest_12> ...
+WARNING:Xst:1293 - FF/Latch <tst/addTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <tst/alu/mul/Mmult_n0010> is unconnected in block <mojo_top_0>.
+WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd4 tst/addTest/M_state_q_FSM_FFd4 signal will be lost.
+WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd3 tst/addTest/M_state_q_FSM_FFd3 signal will be lost.
+WARNING:Xst:1293 - FF/Latch <tst/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_0> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_1> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_2> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_3> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_4> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_5> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_6> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_7> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_8> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_9> 
 INFO:Xst:2261 - The FF/Latch <confirm/M_last_q> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/L_edge/M_last_q> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_0> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_1> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_2> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_3> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_4> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_5> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_6> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_7> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_10> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_8> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_11> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_9> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_12> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_13> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_14> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_15> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_16> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/M_timer_q_17> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_10> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_11> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_12> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_13> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_14> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_20> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_15> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_21> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_16> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_22> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_17> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_23> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_18> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_24> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_19> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_25> 
+INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_26> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -594,8 +669,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 119
- Flip-Flops                                            : 119
+# Registers                                            : 140
+ Flip-Flops                                            : 140
 
 =========================================================================
 
@@ -619,7 +694,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 119   |
+clk                                | BUFGP                  | 140   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -632,7 +707,7 @@ Speed Grade: -2
 
    Minimum period: 50.711ns (Maximum Frequency: 19.720MHz)
    Minimum input arrival time before clock: 9.447ns
-   Maximum output required time after clock: 12.757ns
-   Maximum combinational path delay: 11.870ns
+   Maximum output required time after clock: 10.379ns
+   Maximum combinational path delay: 8.861ns
 
 =========================================================================
