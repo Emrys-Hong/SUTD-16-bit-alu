@@ -14,6 +14,7 @@
     <src>cmp.luc</src>
     <src>decimal_counter.luc</src>
     <src>bol.luc</src>
+    <src>addTest.luc</src>
     <ucf lib="true">mojo.ucf</ucf>
     <ucf lib="true">io_shield.ucf</ucf>
     <component>counter.luc</component>

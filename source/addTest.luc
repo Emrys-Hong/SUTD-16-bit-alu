@@ -1,0 +1,27 @@
+module addTest (
+    input clk,  // clock
+    input rst,  // reset
+    
+    output out[16]
+  ) {
+  
+  .clk(clk) {
+    edge_detector edge;
+      .rst(rst) {
+        fsm state = {BEGIN, PP, PN, NN, V, N, Z};
+      dff timer[27];
+      add add;
+    }
+  }
+  
+  const P1 = 16b0000000000000000;
+  const
+  always {
+    out = 0;
+    seg = 0;
+    
+    case(state.q) {
+      1: 
+    }
+  }
+}
