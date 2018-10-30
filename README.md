@@ -60,8 +60,12 @@ case_add -> case_sub -> case_mult -> case_etc
 
 if fail -> error_case
 
-After all 16 test cases pass -> pass_case; display GOOD
+After 16 test cases pass -> pass_case; display GOOD
 ```
+
+In diagram form:
+
+![image_test_fsm](https://github.com/Emrys-Hong/16-bit-alu/blob/master/16-bit%20FPGA%20State%20Machine_01.png)
 
 ## Team
 
@@ -69,4 +73,5 @@ After all 16 test cases pass -> pass_case; display GOOD
 * Khong Jia Wei
 * Faith See
 * Timothy Liu
+
 
