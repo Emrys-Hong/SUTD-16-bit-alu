@@ -62,13 +62,5 @@ if fail -> error_case
 
 After all 16 test cases pass -> pass_case; display GOOD
 
-```
-
-#### Error Module
-
-```
-TODO
-```
-
 
 
