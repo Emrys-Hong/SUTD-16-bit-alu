@@ -1,0 +1,157 @@
+module shlTest (
+    input clk,  // clock
+    input rst,  // reset
+    
+    // input
+    input button,
+    // out is to show input1 input2 input3
+    output out[16],
+    output true
+  ) {
+  
+  .clk(clk) {
+      .rst(rst) {
+        fsm state = {BEGIN, C1, C2, C3, C4, GOOD, ERROR};
+      dff timer[28];
+      shl shl;
+    }
+  }
+  
+  // checking cases
+  const C1A = 16b0110100101101010;
+  const C1B = 16b0000000000000100;
+  const C2A = 16b0110100101101010;
+  const C2B = 16b0000000000010000;
+  const C3A = 16b0111111111111111;
+  const C3B = 16b0000000000010000;
+  const C4A = 16b1000000000000000;
+  const C4B = 16b0000000000010000;
+  
+  // correct results
+  const C1 = 16b1001011010100000;
+  const C2 = 16b0000000000000000;
+  const C3 = 16b0000000000000000;
+  const C4 = 16b0000000000000000;
+  
+  always {
+    // define default outputs
+    out = 0;
+    shl.a = 0;
+    shl.b = 0;
+    timer.d = timer.q+1;
+    // alufn for add
+    shl.io_dip = 8b00100000;
+    // define true to be false
+    true = 0;
+    
+    // cases
+    case(state.q) {
+      state.BEGIN:
+        if (timer.q[27:26]==2 & ~button) {
+          timer.d = 0;
+          state.d = state.C1;
+        }
+        
+      state.C1:
+        add.a = C1A;
+        add.b = C1B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = C1A;
+        } else if (timer.q[27:26]==1) {
+          out = C1B;
+        } else if ( timer.q[27:26]==2) {
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if (add.out==C1){
+            timer.d = 0;
+            state.d = state.C2;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+          
+        
+      state.C2:
+        add.a = C2A;
+        add.b = C2B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = C2A;
+        } else if (timer.q[27:26]==1) {
+          out = C2B;
+        } else if ( (timer.q[27:26]==2) ){
+            // show result
+          out = add.out;
+        } else if ( timer.q[27:26]==3) {
+          if ((add.out==C2) ){
+            timer.d = 0;
+            state.d = state.C3;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+        
+      state.C3:
+        add.a = C3A;
+        add.b = C3B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = C3A;
+        } else if (timer.q[27:26]==1) {
+          out = C3B;
+        } else if ( (timer.q[27:26]==2)  ){
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if (add.out==C3) {
+            timer.d = 0;
+            state.d = state.C4;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+        
+      state.C4:
+        add.a = C4A;
+        add.b = C4B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = C4A;
+        } else if (timer.q[27:26]==1) {
+          out = C4B;
+        } else if ( (timer.q[27:26]==2) ){
+            // show result
+          out = add.out;
+        } else if (timer.q[27:26]==3) {
+          if (add.out==C4){
+            timer.d = 0;
+            state.d = state.GOOD;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.GOOD:
+        if (timer.q[27] == 1) {
+          true = 1;
+          
+        } else if (timer.q[25] == 1) {
+          out = 16b1111111100000000;
+        } else if (timer.q[25]==0){
+          out = 16b0000000000000000;
+        }
+        
+      state.ERROR:
+        if (timer.q[25] == 1) {
+          out = 16b0000000011111111;
+        } else {
+          out = 16b0000000000000000;
+        }
+        
+        
+    }
+  }
+}
