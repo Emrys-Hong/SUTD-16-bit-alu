@@ -1,50 +1,53 @@
-module addTest (
+module cmpeqTest (
     input clk,  // clock
     input rst,  // reset
-    
     // input
     input button,
     // out is to show input1 input2 input3
     output out[16],
-    output v,
-    output n,
-    output z,
     output true
   ) {
   
   .clk(clk) {
-      .rst(rst) {
-        fsm state = {BEGIN, PP, PN, NN, V, N, Z, GOOD, ERROR};
+    .rst(rst) {
+      fsm state = {BEGIN, PP1, PP2, NN1, NN2, PP3, NN3, GOOD, ERROR};
       dff timer[28];
-      add add;
+      cmp cmpeq;
     }
   }
   
   // checking cases
-  const P1 = 16b0000000000000011;
-  const P2 = 16b0100000000000001;
-  const P3 = 16b0000000000000000;
-  const N1 = 16b1011110000001111;
-  const N2 = 16b1000000000000001;
-  const N3 = 16b1000000000000001;
+  const PP1A = 16b0110100101101010;
+  const PP1B = 16b0110100101100000;
+  const PP2A = 16b0110100101101010;
+  const PP2B = 16b0110100101101010;
+  const NN1A = 16b1000101010011100;
+  const NN1B = 16b1000101010010000;
+  const NN2A = 16b1000101010011100;
+  const NN2B = 16b1000101010011100;
+  const PP3A = 16b0111111111111111;
+  const PP3B = 16b0111111111111111;
+  const NN3A = 16b1000000000000000;
+  const NN3B = 16b1000000000000000;
+  
   
   // correct results
-  const PP = 16b0100000000000100;
-  const PN = 16b1011110000010010;
-  const NN = 16b0011110000001111;
-  const V  = 16b0000000000000010;
+  const PP1 = 1b0;
+  const PP2 = 1b1;
+  const NN1 = 1b0;
+  const NN2 = 1b1;
+  const PP3 = 1b1;
+  const NN3 = 1b1;
+  
   
   always {
     // define default outputs
     out = 0;
-    v = add.v;
-    n = add.n;
-    z = add.z;
-    add.a = 0;
-    add.b = 0;
+    cmpeq.a = 0;
+    cmpeq.b = 0;
     timer.d = timer.q+1;
     // alufn for add
-    add.io_dip = 8b00000000;
+    cmpeq.io_dip = 8b00110011;
     // define true to be false
     true = 0;
     
@@ -53,124 +56,122 @@ module addTest (
       state.BEGIN:
         if (timer.q[27:26]==2 & ~button) {
           timer.d = 0;
-          state.d = state.PP;
+          state.d = state.PP1;
         }
-        
-      state.PP:
-        add.a = P1;
-        add.b = P2;
+      
+      state.PP1:
+        cmpeq.a = PP1A;
+        cmpeq.b = PP1B;
         if (timer.q[27:26]==0) {
           // show input1
-          out = P1;
+          out = PP1A;
         } else if (timer.q[27:26]==1) {
-          out = P2;
+          out = PP1B;
         } else if ( timer.q[27:26]==2) {
-            // show result
-          out = add.out;
+          // show result
+          out = cmpeq.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==PP)&(add.v==0)&(add.z==0)&(add.n==0) ){
+          if (cmpeq.out==PP1){
             timer.d = 0;
-            state.d = state.PN;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-          
-        
-      state.PN:
-        add.a = P1;
-        add.b = N1;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = P1;
-        } else if (timer.q[27:26]==1) {
-          out = N1;
-        } else if ( (timer.q[27:26]==2) ){
-            // show result
-          out = add.out;
-        } else if ( timer.q[27:26]==3) {
-          if ((add.out==PN) ){//&(add.v==0)&(add.z==0)&(add.n==1)
-            timer.d = 0;
-            state.d = state.NN;
+            state.d = state.PP2;
           } else {
             state.d = state.ERROR;
           }
         }
       
-        
-      state.NN:
-        add.a = N1;
-        add.b = N2;
+      state.PP2:
+        cmpeq.a = PP2A;
+        cmpeq.b = PP2B;
         if (timer.q[27:26]==0) {
           // show input1
-          out = N1;
+          out = PP2A;
         } else if (timer.q[27:26]==1) {
-          out = N2;
-        } else if ( (timer.q[27:26]==2)  ){
-            // show result
-          out = add.out;
+          out = PP2B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmpeq.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==NN)&(add.v==1)&(add.z==0)&(add.n==0)) {
+          if (cmpeq.out==PP2){
             timer.d = 0;
-            state.d = state.V;
+            state.d = state.PP3;
           } else {
             state.d = state.ERROR;
           }
         }
-        
-      state.V:
-        add.a = N2;
-        add.b = N3;
+      
+      state.PP3:
+        cmpeq.a = PP3A;
+        cmpeq.b = PP3B;
         if (timer.q[27:26]==0) {
           // show input1
-          out = N2;
+          out = PP3A;
         } else if (timer.q[27:26]==1) {
-          out = N3;
-        } else if ( (timer.q[27:26]==2) ){
-            // show result
-          out = add.out;
+          out = PP3B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmpeq.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==V)&(add.v==1)&(add.z==0)&(add.n==0) ){
+          if (cmpeq.out==PP3){
             timer.d = 0;
-            state.d = state.Z;
+            state.d = state.NN1;
           } else {
             state.d = state.ERROR;
           }
         }
-        
-      state.Z:
-        add.a = P3;
-        add.b = P3;
+      
+      state.NN1:
+        cmpeq.a = NN1A;
+        cmpeq.b = NN1B;
         if (timer.q[27:26]==0) {
           // show input1
-          out = P3;
+          out = NN1A;
         } else if (timer.q[27:26]==1) {
-          out = P3;
-        } else if ( (timer.q[27:26]==2) ){
-            // show result
-          out = add.out;
+          out = NN1B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmpeq.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==0)&(add.v==0)&(add.z==0)&(add.n==0)){
+          if (cmpeq.out==NN1){
             timer.d = 0;
-            state.d = state.N;
+            state.d = state.NN2;
           } else {
             state.d = state.ERROR;
           }
         }
-        
-      state.N:
-        add.a = P1;
-        add.b = N1;
+      
+      state.NN2:
+        cmpeq.a = NN2A;
+        cmpeq.b = NN2B;
         if (timer.q[27:26]==0) {
           // show input1
-          out = P1;
+          out = NN2A;
         } else if (timer.q[27:26]==1) {
-          out = N1;
-        } else if ( timer.q[27:26]==2  ){
-            // show result
-          out = add.out;
+          out = NN2B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmpeq.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==PN)&(add.v==0)&(add.z==0)&(add.n==1)) {
+          if (cmpeq.out==NN2){
+            timer.d = 0;
+            state.d = state.NN3;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.NN3:
+        cmpeq.a = NN3A;
+        cmpeq.b = NN3B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = NN3A;
+        } else if (timer.q[27:26]==1) {
+          out = NN3B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmpeq.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmpeq.out==NN3){
             timer.d = 0;
             state.d = state.GOOD;
           } else {
@@ -187,15 +188,13 @@ module addTest (
         } else if (timer.q[25]==0){
           out = 16b0000000000000000;
         }
-        
+      
       state.ERROR:
         if (timer.q[25] == 1) {
           out = 16b0000000011111111;
         } else {
           out = 16b0000000000000000;
         }
-        
-        
     }
   }
 }

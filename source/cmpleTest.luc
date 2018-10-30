@@ -1,0 +1,245 @@
+module cmpleTest (
+    input clk,  // clock
+    input rst,  // reset
+    // input
+    input button,
+    // out is to show input1 input2 input3
+    output out[16],
+    output true
+  ) {
+  
+  .clk(clk) {
+    .rst(rst) {
+      fsm state = {BEGIN, PP1, PP2, PP3, PP4, NN1, NN2, NN3, NN4, GOOD, ERROR};
+      dff timer[28];
+      cmp cmple;
+    }
+  }
+  
+  // checking cases
+  const PP1A = 16b0110100101100000;
+  const PP1B = 16b0110100101101010;
+  const PP2A = 16b0110100101101010;
+  const PP2B = 16b0110100101100000;
+  const PP3A = 16b0110100101101010;
+  const PP3B = 16b0110100101101010;
+  const PP4A = 16b0111111111111111;
+  const PP4B = 16b0111111111111111;
+  const NN1A = 16b1000101010010000;
+  const NN1B = 16b1000101010011100;
+  const NN2A = 16b1000101010011100;
+  const NN2B = 16b1000101010010000;
+  const NN3A = 16b1000101010011100;
+  const NN3B = 16b1000101010011100;
+  const NN4A = 16b1000000000000000;
+  const NN4B = 16b1000000000000000;
+  
+  // correct results
+  const PP1 = 1b1;
+  const PP2 = 1b0;
+  const PP3 = 1b1;
+  const PP4 = 1b1;
+  const NN1 = 1b1;
+  const NN2 = 1b0;
+  const NN3 = 1b1;
+  const NN4 = 1b1;
+  
+  
+  always {
+    // define default outputs
+    out = 0;
+    cmple.a = 0;
+    cmple.b = 0;
+    timer.d = timer.q+1;
+    // alufn for add
+    cmple.io_dip = 8b00110111;
+    // define true to be false
+    true = 0;
+    
+    // cases
+    case(state.q) {
+      state.BEGIN:
+        if (timer.q[27:26]==2 & ~button) {
+          timer.d = 0;
+          state.d = state.PP1;
+        }
+      
+      state.PP1:
+        cmple.a = PP1A;
+        cmple.b = PP1B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = PP1A;
+        } else if (timer.q[27:26]==1) {
+          out = PP1B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==PP1){
+            timer.d = 0;
+            state.d = state.PP2;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.PP2:
+        cmple.a = PP2A;
+        cmple.b = PP2B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = PP2A;
+        } else if (timer.q[27:26]==1) {
+          out = PP2B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==PP2){
+            timer.d = 0;
+            state.d = state.PP3;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.PP3:
+        cmple.a = PP3A;
+        cmple.b = PP3B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = PP3A;
+        } else if (timer.q[27:26]==1) {
+          out = PP3B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==PP3){
+            timer.d = 0;
+            state.d = state.PP4;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+        
+        state.PP4:
+        cmple.a = PP4A;
+        cmple.b = PP4B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = PP4A;
+        } else if (timer.q[27:26]==1) {
+          out = PP4B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==PP4){
+            timer.d = 0;
+            state.d = state.NN1;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.NN1:
+        cmple.a = NN1A;
+        cmple.b = NN1B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = NN1A;
+        } else if (timer.q[27:26]==1) {
+          out = NN1B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==NN1){
+            timer.d = 0;
+            state.d = state.NN2;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.NN2:
+        cmple.a = NN2A;
+        cmple.b = NN2B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = NN2A;
+        } else if (timer.q[27:26]==1) {
+          out = NN2B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==NN2){
+            timer.d = 0;
+            state.d = state.NN3;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.NN3:
+        cmple.a = NN3A;
+        cmple.b = NN3B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = NN3A;
+        } else if (timer.q[27:26]==1) {
+          out = NN3B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==NN3){
+            timer.d = 0;
+            state.d = state.NN4;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+        
+        state.NN4:
+        cmple.a = NN4A;
+        cmple.b = NN4B;
+        if (timer.q[27:26]==0) {
+          // show input1
+          out = NN4A;
+        } else if (timer.q[27:26]==1) {
+          out = NN4B;
+        } else if ( timer.q[27:26]==2) {
+          // show result
+          out = cmple.out;
+        } else if (timer.q[27:26]==3) {
+          if (cmple.out==NN4){
+            timer.d = 0;
+            state.d = state.GOOD;
+          } else {
+            state.d = state.ERROR;
+          }
+        }
+      
+      state.GOOD:
+        if (timer.q[27] == 1) {
+          true = 1;
+          
+        } else if (timer.q[25] == 1) {
+          out = 16b1111111100000000;
+        } else if (timer.q[25]==0){
+          out = 16b0000000000000000;
+        }
+      
+      state.ERROR:
+        if (timer.q[25] == 1) {
+          out = 16b0000000011111111;
+        } else {
+          out = 16b0000000000000000;
+        }
+    }
+  }
+}
