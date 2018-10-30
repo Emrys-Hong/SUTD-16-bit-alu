@@ -14,6 +14,10 @@
     <src>mul.luc</src>
     <src>cmpltTest.luc</src>
     <src>addTest.luc</src>
+    <src>andTest.luc</src>
+    <src>orTest.luc</src>
+    <src>xorTest.luc</src>
+    <src>bolATest.luc</src>
     <src>number.luc</src>
     <src>bol.luc</src>
     <src>seven_seg.luc</src>
