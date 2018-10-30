@@ -10,6 +10,7 @@
 * Boolean (AND, OR, XOR)
 * Shift Left/Right (with optional sign extension)
 * Comparison (equal, less than, or both)
+* Multiplication and Division
 
 ### Additional Functionality
 
