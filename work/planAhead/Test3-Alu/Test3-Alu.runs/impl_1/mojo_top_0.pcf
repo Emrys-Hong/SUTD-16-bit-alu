@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Oct 31 00:02:10 2018
+// Written by: Map P.20131013 on Wed Oct 31 00:39:56 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -93,49 +93,53 @@ TIMEGRP clk = BEL "M_input2_q_5_1" BEL "M_input1_q_14_1" BEL "clk_BUFGP/BUFG"
         "M_result_q_11" BEL "M_result_q_12" BEL "M_result_q_13" BEL
         "M_result_q_14" BEL "M_result_q_15" BEL "M_input2_q_6_1" BEL
         "M_input1_q_15_1" BEL "M_input1_q_15_2" BEL "M_input1_q_15_3" BEL
-        "M_input1_q_15_4" BEL "M_input2_q_7_1" BEL "M_input2_q_8_1" BEL
-        "M_input2_q_9_1" BEL "M_input2_q_0" BEL "M_input2_q_1" BEL
-        "M_input2_q_2" BEL "M_input2_q_3" BEL "M_input2_q_4" BEL
-        "M_input2_q_5" BEL "M_input2_q_6" BEL "M_input2_q_7" BEL
-        "M_input2_q_8" BEL "M_input2_q_9" BEL "seg/ctr/M_ctr_q_0" BEL
-        "seg/ctr/M_ctr_q_1" BEL "seg/ctr/M_ctr_q_2" BEL "seg/ctr/M_ctr_q_3"
-        BEL "seg/ctr/M_ctr_q_4" BEL "seg/ctr/M_ctr_q_5" BEL
-        "seg/ctr/M_ctr_q_6" BEL "seg/ctr/M_ctr_q_7" BEL "seg/ctr/M_ctr_q_8"
-        BEL "seg/ctr/M_ctr_q_9" BEL "seg/ctr/M_ctr_q_10" BEL
-        "seg/ctr/M_ctr_q_11" BEL "seg/ctr/M_ctr_q_12" BEL "seg/ctr/M_ctr_q_13"
-        BEL "seg/ctr/M_ctr_q_14" BEL "seg/ctr/M_ctr_q_15" BEL
-        "seg/ctr/M_ctr_q_16" BEL "seg/ctr/M_ctr_q_17" BEL "M_result_q_0" BEL
-        "M_result_q_1" BEL "confirm/M_last_q" BEL "M_result_q_2" BEL
-        "M_result_q_3" BEL "M_result_q_4" BEL "M_result_q_5" BEL
-        "M_result_q_6" BEL "M_result_q_7" BEL "M_result_q_8" BEL
-        "M_result_q_9" BEL "M_input2_q_10_1" BEL "tst/M_state_q_FSM_FFd4" BEL
-        "tst/M_timer_q_26" BEL "tst/M_timer_q_25" BEL "tst/M_timer_q_24" BEL
-        "tst/M_timer_q_23" BEL "tst/M_timer_q_22" BEL "tst/M_timer_q_21" BEL
-        "tst/M_timer_q_20" BEL "tst/M_timer_q_19" BEL "tst/M_timer_q_18" BEL
-        "tst/M_timer_q_17" BEL "tst/M_timer_q_16" BEL "tst/M_timer_q_15" BEL
-        "tst/M_timer_q_14" BEL "tst/M_timer_q_13" BEL "tst/M_timer_q_12" BEL
-        "tst/M_timer_q_11" BEL "tst/M_timer_q_10" BEL "tst/M_timer_q_9" BEL
-        "tst/M_timer_q_8" BEL "tst/M_timer_q_7" BEL "tst/M_timer_q_6" BEL
-        "tst/M_timer_q_5" BEL "tst/M_timer_q_4" BEL "tst/M_timer_q_3" BEL
-        "tst/M_timer_q_2" BEL "tst/M_timer_q_1" BEL "tst/M_timer_q_0" BEL
-        "tst/addTest/M_timer_q_27" BEL "tst/addTest/M_state_q_FSM_FFd5" BEL
-        "tst/addTest/M_state_q_FSM_FFd6" BEL "tst/addTest/M_state_q_FSM_FFd7"
-        BEL "tst/addTest/M_state_q_FSM_FFd9" BEL
-        "tst/addTest/M_state_q_FSM_FFd8" BEL "M_input2_q_11_1" BEL
-        "M_input2_q_0_1" BEL "M_input1_q_0" BEL "M_input2_q_0_2" BEL
-        "M_input1_q_1" BEL "M_input2_q_0_3" BEL "M_input1_q_2" BEL
-        "M_input1_q_3" BEL "M_input1_q_4" BEL "M_input1_q_5" BEL
-        "M_input1_q_6" BEL "M_input1_q_7" BEL "M_input1_q_8" BEL
-        "M_input1_q_9" BEL "M_input2_q_12_1" BEL "M_input2_q_1_1" BEL
-        "M_input2_q_1_2" BEL "M_input1_q_10" BEL "M_input1_q_11" BEL
-        "M_input1_q_12" BEL "M_input1_q_13" BEL "M_input1_q_14" BEL
-        "M_input1_q_15" BEL "M_input2_q_13_1" BEL "M_input2_q_10" BEL
-        "M_input2_q_11" BEL "M_input2_q_12" BEL "M_input2_q_13" BEL
-        "M_input2_q_14" BEL "M_input2_q_15" BEL "M_input2_q_2_1" BEL
-        "M_input2_q_2_2" BEL "M_input2_q_2_3" BEL "M_input2_q_14_1" BEL
-        "M_input2_q_3_1" BEL "M_input2_q_3_2" BEL "M_input2_q_3_3" BEL
-        "M_input2_q_15_1" BEL "M_input2_q_4_1" BEL "M_input1_q_13_1" BEL
-        "M_input1_q_13_2" BEL "M_input1_q_13_3";
+        "M_input2_q_7_1" BEL "M_input2_q_8_1" BEL "M_input2_q_9_1" BEL
+        "M_input2_q_0" BEL "M_input2_q_1" BEL "M_input2_q_2" BEL
+        "M_input2_q_3" BEL "M_input2_q_4" BEL "M_input2_q_5" BEL
+        "M_input2_q_6" BEL "M_input2_q_7" BEL "M_input2_q_8" BEL
+        "M_input2_q_9" BEL "seg/ctr/M_ctr_q_0" BEL "seg/ctr/M_ctr_q_1" BEL
+        "seg/ctr/M_ctr_q_2" BEL "seg/ctr/M_ctr_q_3" BEL "seg/ctr/M_ctr_q_4"
+        BEL "seg/ctr/M_ctr_q_5" BEL "seg/ctr/M_ctr_q_6" BEL
+        "seg/ctr/M_ctr_q_7" BEL "seg/ctr/M_ctr_q_8" BEL "seg/ctr/M_ctr_q_9"
+        BEL "seg/ctr/M_ctr_q_10" BEL "seg/ctr/M_ctr_q_11" BEL
+        "seg/ctr/M_ctr_q_12" BEL "seg/ctr/M_ctr_q_13" BEL "seg/ctr/M_ctr_q_14"
+        BEL "seg/ctr/M_ctr_q_15" BEL "seg/ctr/M_ctr_q_16" BEL
+        "seg/ctr/M_ctr_q_17" BEL "M_result_q_0" BEL "M_result_q_1" BEL
+        "confirm/M_last_q" BEL "M_result_q_2" BEL "M_result_q_3" BEL
+        "M_result_q_4" BEL "M_result_q_5" BEL "M_result_q_6" BEL
+        "M_result_q_7" BEL "M_result_q_8" BEL "M_result_q_9" BEL
+        "M_input2_q_10_1" BEL "tst/M_state_q_FSM_FFd4" BEL
+        "tst/addTest/M_state_q_FSM_FFd5" BEL "tst/addTest/M_state_q_FSM_FFd6"
+        BEL "tst/addTest/M_state_q_FSM_FFd7" BEL
+        "tst/addTest/M_state_q_FSM_FFd8" BEL "tst/addTest/M_state_q_FSM_FFd9"
+        BEL "tst/addTest/M_timer_q_27" BEL "tst/addTest/M_timer_q_26" BEL
+        "tst/addTest/M_timer_q_25" BEL "tst/addTest/M_timer_q_24" BEL
+        "tst/addTest/M_timer_q_23" BEL "tst/addTest/M_timer_q_22" BEL
+        "tst/addTest/M_timer_q_21" BEL "tst/addTest/M_timer_q_20" BEL
+        "tst/addTest/M_timer_q_19" BEL "tst/addTest/M_timer_q_18" BEL
+        "tst/addTest/M_timer_q_17" BEL "tst/addTest/M_timer_q_16" BEL
+        "tst/addTest/M_timer_q_15" BEL "tst/addTest/M_timer_q_14" BEL
+        "tst/addTest/M_timer_q_13" BEL "tst/addTest/M_timer_q_12" BEL
+        "tst/addTest/M_timer_q_11" BEL "tst/addTest/M_timer_q_10" BEL
+        "tst/addTest/M_timer_q_9" BEL "tst/addTest/M_timer_q_8" BEL
+        "tst/addTest/M_timer_q_7" BEL "tst/addTest/M_timer_q_6" BEL
+        "tst/addTest/M_timer_q_5" BEL "tst/addTest/M_timer_q_4" BEL
+        "tst/addTest/M_timer_q_3" BEL "tst/addTest/M_timer_q_2" BEL
+        "tst/addTest/M_timer_q_1" BEL "tst/addTest/M_timer_q_0" BEL
+        "M_input2_q_11_1" BEL "M_input2_q_0_1" BEL "M_input1_q_0" BEL
+        "M_input2_q_0_2" BEL "M_input1_q_1" BEL "M_input2_q_0_3" BEL
+        "M_input1_q_2" BEL "M_input1_q_3" BEL "M_input1_q_4" BEL
+        "M_input1_q_5" BEL "M_input1_q_6" BEL "M_input1_q_7" BEL
+        "M_input1_q_8" BEL "M_input1_q_9" BEL "M_input2_q_12_1" BEL
+        "M_input2_q_1_1" BEL "M_input2_q_1_2" BEL "M_input1_q_10" BEL
+        "M_input1_q_11" BEL "M_input1_q_12" BEL "M_input1_q_13" BEL
+        "M_input1_q_14" BEL "M_input1_q_15" BEL "M_input2_q_13_1" BEL
+        "M_input2_q_10" BEL "M_input2_q_11" BEL "M_input2_q_12" BEL
+        "M_input2_q_13" BEL "M_input2_q_14" BEL "M_input2_q_15" BEL
+        "M_input2_q_2_1" BEL "M_input2_q_2_2" BEL "M_input2_q_2_3" BEL
+        "M_input2_q_14_1" BEL "M_input2_q_3_1" BEL "M_input2_q_3_2" BEL
+        "M_input2_q_3_3" BEL "M_input2_q_15_1" BEL "M_input2_q_4_1" BEL
+        "M_input1_q_13_1" BEL "M_input1_q_13_2" BEL "M_input1_q_13_3";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

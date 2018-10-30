@@ -52,6 +52,7 @@ module addTest (
     case(state.q) {
       state.BEGIN:
         if (timer.q[27:26]==2 & ~button) {
+          timer.d = 0;
           state.d = state.PP;
         }
         
@@ -68,9 +69,10 @@ module addTest (
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==PP)&(add.v==0)&(add.z==0)&(add.n==0) ){
-              state.d = state.PN;
+            timer.d = 0;
+            state.d = state.PN;
           } else {
-              state.d = state.ERROR;
+            state.d = state.ERROR;
           }
         }
           
@@ -87,7 +89,8 @@ module addTest (
             // show result
           out = add.out;
         } else if ( timer.q[27:26]==3) {
-          if ((add.out==PN)&(add.v==0)&(add.z==0)&(add.n==1) ){
+          if ((add.out==PN) ){//&(add.v==0)&(add.z==0)&(add.n==1)
+            timer.d = 0;
             state.d = state.NN;
           } else {
             state.d = state.ERROR;
@@ -108,6 +111,7 @@ module addTest (
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==NN)&(add.v==1)&(add.z==0)&(add.n==0)) {
+            timer.d = 0;
             state.d = state.V;
           } else {
             state.d = state.ERROR;
@@ -127,6 +131,7 @@ module addTest (
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==V)&(add.v==1)&(add.z==0)&(add.n==0) ){
+            timer.d = 0;
             state.d = state.Z;
           } else {
             state.d = state.ERROR;
@@ -146,6 +151,7 @@ module addTest (
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==0)&(add.v==0)&(add.z==0)&(add.n==0)){
+            timer.d = 0;
             state.d = state.N;
           } else {
             state.d = state.ERROR;
@@ -165,6 +171,7 @@ module addTest (
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==PN)&(add.v==0)&(add.z==0)&(add.n==1)) {
+            timer.d = 0;
             state.d = state.GOOD;
           } else {
             state.d = state.ERROR;

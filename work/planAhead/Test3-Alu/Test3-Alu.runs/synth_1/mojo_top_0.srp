@@ -370,7 +370,7 @@ Synthesizing Unit <addTest_12>.
     Found finite state machine <FSM_1> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
-    | Transitions        | 47                                             |
+    | Transitions        | 44                                             |
     | Inputs             | 12                                             |
     | Outputs            | 23                                             |
     | Clock              | clk (rising_edge)                              |
@@ -381,11 +381,11 @@ Synthesizing Unit <addTest_12>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_d> created at line 81.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_14_o_add_0_OUT> created at line 81.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  20 Multiplexer(s).
+	inferred  41 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <addTest_12> synthesized.
 
@@ -476,13 +476,14 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 554
+# Multiplexers                                         : 575
  1-bit 2-to-1 multiplexer                              : 494
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 36
  16-bit 4-to-1 multiplexer                             : 6
  18-bit 2-to-1 multiplexer                             : 1
+ 28-bit 2-to-1 multiplexer                             : 21
 # Logic shifters                                       : 7
  16-bit shifter arithmetic right                       : 2
  16-bit shifter logical left                           : 2
@@ -501,10 +502,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-
-Synthesizing (advanced) Unit <addTest_12>.
-The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
-Unit <addTest_12> synthesized (advanced).
 
 Synthesizing (advanced) Unit <counter_13>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
@@ -542,18 +539,18 @@ Macro Statistics
  16x7-bit single-port distributed Read Only RAM        : 1
 # Multipliers                                          : 2
  16x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 36
+# Adders/Subtractors                                   : 37
  16-bit adder carry in                                 : 32
  16-bit addsub                                         : 3
+ 28-bit adder                                          : 1
  4-bit adder                                           : 1
-# Counters                                             : 3
+# Counters                                             : 2
  18-bit up counter                                     : 1
  27-bit up counter                                     : 1
- 28-bit up counter                                     : 1
 # Accumulators                                         : 3
  16-bit up accumulator                                 : 3
-# Registers                                            : 6
- Flip-Flops                                            : 6
+# Registers                                            : 34
+ Flip-Flops                                            : 34
 # Comparators                                          : 40
  16-bit comparator equal                               : 2
  16-bit comparator greater                             : 2
@@ -574,12 +571,13 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 552
+# Multiplexers                                         : 573
  1-bit 2-to-1 multiplexer                              : 493
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 36
  16-bit 4-to-1 multiplexer                             : 6
+ 28-bit 2-to-1 multiplexer                             : 21
 # Logic shifters                                       : 7
  16-bit shifter arithmetic right                       : 2
  16-bit shifter logical left                           : 2
@@ -647,49 +645,49 @@ Optimizing unit <tst_4> ...
 Optimizing unit <addTest_12> ...
 WARNING:Xst:1293 - FF/Latch <tst/addTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <tst/alu/mul/Mmult_n0010> is unconnected in block <mojo_top_0>.
-WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd4 tst/addTest/M_state_q_FSM_FFd4 signal will be lost.
 WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd3 tst/addTest/M_state_q_FSM_FFd3 signal will be lost.
+WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd4 tst/addTest/M_state_q_FSM_FFd4 signal will be lost.
 WARNING:Xst:1293 - FF/Latch <tst/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_0> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_1> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_2> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_3> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_4> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_5> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_6> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_7> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_8> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_9> 
 INFO:Xst:2261 - The FF/Latch <confirm/M_last_q> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/L_edge/M_last_q> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_10> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_11> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_12> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_13> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_14> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_20> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_15> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_21> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_16> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_22> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_17> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_23> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_18> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_24> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_19> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_25> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_26> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 16.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 17.
+WARNING:Xst:2677 - Node <tst/M_timer_q_26> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_25> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_24> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_23> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_22> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_21> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_20> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_19> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_18> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_17> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_16> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_15> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_14> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_13> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_12> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_11> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_10> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_9> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_8> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_0> of sequential type is unconnected in block <mojo_top_0>.
 FlipFlop M_input1_q_13 has been replicated 3 time(s)
 FlipFlop M_input1_q_14 has been replicated 5 time(s)
-FlipFlop M_input1_q_15 has been replicated 4 time(s)
+FlipFlop M_input1_q_15 has been replicated 3 time(s)
 FlipFlop M_input2_q_0 has been replicated 3 time(s)
 FlipFlop M_input2_q_1 has been replicated 2 time(s)
 FlipFlop M_input2_q_10 has been replicated 1 time(s)
@@ -717,8 +715,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 140
- Flip-Flops                                            : 140
+# Registers                                            : 139
+ Flip-Flops                                            : 139
 
 =========================================================================
 
@@ -741,23 +739,23 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1437
-#      GND                         : 10
-#      INV                         : 7
-#      LUT1                        : 71
+# BELS                             : 1412
+#      GND                         : 9
+#      INV                         : 6
+#      LUT1                        : 45
 #      LUT2                        : 55
-#      LUT3                        : 110
-#      LUT4                        : 181
-#      LUT5                        : 162
-#      LUT6                        : 259
-#      MUXCY                       : 344
+#      LUT3                        : 111
+#      LUT4                        : 182
+#      LUT5                        : 169
+#      LUT6                        : 280
+#      MUXCY                       : 318
 #      MUXF7                       : 5
-#      VCC                         : 8
+#      VCC                         : 7
 #      XORCY                       : 225
-# FlipFlops/Latches                : 140
+# FlipFlops/Latches                : 139
 #      FD                          : 1
 #      FDR                         : 51
-#      FDRE                        : 83
+#      FDRE                        : 82
 #      FDS                         : 5
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -775,15 +773,15 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             140  out of  11440     1%  
- Number of Slice LUTs:                  845  out of   5720    14%  
-    Number used as Logic:               845  out of   5720    14%  
+ Number of Slice Registers:             139  out of  11440     1%  
+ Number of Slice LUTs:                  848  out of   5720    14%  
+    Number used as Logic:               848  out of   5720    14%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    905
-   Number with an unused Flip Flop:     765  out of    905    84%  
-   Number with an unused LUT:            60  out of    905     6%  
-   Number of fully used LUT-FF pairs:    80  out of    905     8%  
+ Number of LUT Flip Flop pairs used:    906
+   Number with an unused Flip Flop:     767  out of    906    84%  
+   Number with an unused LUT:            58  out of    906     6%  
+   Number of fully used LUT-FF pairs:    81  out of    906     8%  
    Number of unique control sets:         8
 
 IO Utilization: 
@@ -815,7 +813,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 140   |
+clk                                | BUFGP                  | 139   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -828,7 +826,7 @@ Speed Grade: -2
 
    Minimum period: 50.711ns (Maximum Frequency: 19.720MHz)
    Minimum input arrival time before clock: 9.447ns
-   Maximum output required time after clock: 10.379ns
+   Maximum output required time after clock: 11.073ns
    Maximum combinational path delay: 8.861ns
 
 Timing Details:
@@ -838,7 +836,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 50.711ns (frequency: 19.720MHz)
-  Total number of paths / destination ports: 578098312977852203008 / 356
+  Total number of paths / destination ports: 578098312977852268544 / 353
 -------------------------------------------------------------------------
 Delay:               50.711ns (Levels of Logic = 125)
   Source:            M_input2_q_15_1 (FF)
@@ -855,7 +853,7 @@ Delay:               50.711ns (Levels of Logic = 125)
      begin scope: 'alu/mul:M_input2_q_15_1'
      begin scope: 'alu/mul/a[15]_b[15]_div_1:M_input2_q_15_1'
      LUT6:I0->O           15   0.254   1.263  o<15>222 (o<15>222)
-     LUT6:I4->O            2   0.250   1.181  Mmux_a[0]_GND_11_o_MUX_411_o151_SW2 (N45)
+     LUT6:I4->O            2   0.250   1.181  Mmux_a[0]_GND_11_o_MUX_411_o151_SW2 (N43)
      LUT6:I0->O            4   0.254   1.080  Mmux_a[0]_GND_11_o_MUX_411_o151 (a[14]_GND_11_o_MUX_397_o)
      LUT5:I1->O            1   0.254   0.000  Mcompar_o<12>_lut<1> (Mcompar_o<12>_lut<1>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_o<12>_cy<1> (Mcompar_o<12>_cy<1>)
@@ -986,7 +984,7 @@ Delay:               50.711ns (Levels of Logic = 125)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 5918 / 174
+  Total number of paths / destination ports: 5927 / 200
 -------------------------------------------------------------------------
 Offset:              9.447ns (Levels of Logic = 23)
   Source:            io_dip<16> (PAD)
@@ -1002,8 +1000,8 @@ Offset:              9.447ns (Levels of Logic = 23)
      LUT6:I0->O            4   0.254   0.912  Sh121 (Sh12)
      LUT6:I4->O            1   0.250   0.910  Mmux_out25 (Mmux_out24)
      LUT5:I2->O            2   0.235   0.954  Mmux_out28 (Mmux_out27)
-     LUT6:I3->O            1   0.235   0.790  Mmux_out29_SW1 (N54)
-     end scope: 'alu:N54'
+     LUT6:I3->O            1   0.235   0.790  Mmux_out29_SW1 (N52)
+     end scope: 'alu:N52'
      LUT6:I4->O            1   0.250   0.000  Maccum_M_result_q_lut<0> (Maccum_M_result_q_lut<0>)
      MUXCY:S->O            1   0.215   0.000  Maccum_M_result_q_cy<0> (Maccum_M_result_q_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<1> (Maccum_M_result_q_cy<1>)
@@ -1028,32 +1026,32 @@ Offset:              9.447ns (Levels of Logic = 23)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 334 / 27
+  Total number of paths / destination ports: 335 / 27
 -------------------------------------------------------------------------
-Offset:              10.379ns (Levels of Logic = 9)
-  Source:            tst/addTest/M_state_q_FSM_FFd5 (FF)
+Offset:              11.073ns (Levels of Logic = 9)
+  Source:            tst/addTest/M_state_q_FSM_FFd6 (FF)
   Destination:       io_led<1> (PAD)
   Source Clock:      clk rising
 
-  Data Path: tst/addTest/M_state_q_FSM_FFd5 to io_led<1>
+  Data Path: tst/addTest/M_state_q_FSM_FFd6 to io_led<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             22   0.525   1.442  M_state_q_FSM_FFd5 (M_state_q_FSM_FFd5)
-     LUT3:I1->O            1   0.250   0.681  M_add_a<0>1 (M_add_a<0>)
+     FDR:C->Q             48   0.525   2.016  M_state_q_FSM_FFd6 (M_state_q_FSM_FFd6)
+     LUT3:I0->O            1   0.235   0.681  M_add_a<0>1 (M_add_a<0>)
      begin scope: 'tst/addTest/add:b<0>'
      MUXCY:DI->O           1   0.181   0.000  Maddsub_holder_cy<0> (Maddsub_holder_cy<0>)
-     XORCY:CI->O           5   0.206   1.271  Maddsub_holder_xor<1> (out<1>)
+     XORCY:CI->O           4   0.206   1.234  Maddsub_holder_xor<1> (out<1>)
      end scope: 'tst/addTest/add:out<1>'
      end scope: 'tst/addTest:M_add_out<1>'
      end scope: 'tst:M_add_out<1>'
-     LUT5:I0->O            1   0.254   0.790  Mmux_io_led<1>11 (Mmux_io_led<1>1)
-     LUT6:I4->O            1   0.250   0.682  Mmux_io_led<1>13 (Mmux_io_led<1>12)
-     LUT6:I5->O            1   0.254   0.681  Mmux_io_led<1>14 (io_led_1_OBUF)
+     LUT6:I1->O            1   0.254   0.958  Mmux_io_led<1>11 (Mmux_io_led<1>1)
+     LUT6:I2->O            1   0.254   0.682  Mmux_io_led<1>12 (Mmux_io_led<1>11)
+     LUT6:I5->O            1   0.254   0.681  Mmux_io_led<1>13 (io_led_1_OBUF)
      OBUF:I->O                 2.912          io_led_1_OBUF (io_led<1>)
     ----------------------------------------
-    Total                     10.379ns (4.832ns logic, 5.547ns route)
-                                       (46.6% logic, 53.4% route)
+    Total                     11.073ns (4.821ns logic, 6.252ns route)
+                                       (43.5% logic, 56.5% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1092,14 +1090,14 @@ clk            |   50.711|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.89 secs
+Total CPU time to Xst completion: 6.05 secs
  
 --> 
 
 
-Total memory usage is 409092 kilobytes
+Total memory usage is 410008 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   44 (   0 filtered)
-Number of infos    :   39 (   0 filtered)
+Number of warnings :   71 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

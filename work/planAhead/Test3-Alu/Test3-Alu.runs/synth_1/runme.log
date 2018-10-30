@@ -322,7 +322,7 @@ Synthesizing Unit <addTest_12>.
     Found finite state machine <FSM_1> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
-    | Transitions        | 47                                             |
+    | Transitions        | 44                                             |
     | Inputs             | 12                                             |
     | Outputs            | 23                                             |
     | Clock              | clk (rising_edge)                              |
@@ -333,11 +333,11 @@ Synthesizing Unit <addTest_12>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_d> created at line 81.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_14_o_add_0_OUT> created at line 81.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  20 Multiplexer(s).
+	inferred  41 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <addTest_12> synthesized.
 
@@ -428,13 +428,14 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 554
+# Multiplexers                                         : 575
  1-bit 2-to-1 multiplexer                              : 494
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 36
  16-bit 4-to-1 multiplexer                             : 6
  18-bit 2-to-1 multiplexer                             : 1
+ 28-bit 2-to-1 multiplexer                             : 21
 # Logic shifters                                       : 7
  16-bit shifter arithmetic right                       : 2
  16-bit shifter logical left                           : 2
@@ -453,10 +454,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-
-Synthesizing (advanced) Unit <addTest_12>.
-The following registers are absorbed into counter <M_timer_q>: 1 register on signal <M_timer_q>.
-Unit <addTest_12> synthesized (advanced).
 
 Synthesizing (advanced) Unit <counter_13>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
@@ -494,18 +491,18 @@ Macro Statistics
  16x7-bit single-port distributed Read Only RAM        : 1
 # Multipliers                                          : 2
  16x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 36
+# Adders/Subtractors                                   : 37
  16-bit adder carry in                                 : 32
  16-bit addsub                                         : 3
+ 28-bit adder                                          : 1
  4-bit adder                                           : 1
-# Counters                                             : 3
+# Counters                                             : 2
  18-bit up counter                                     : 1
  27-bit up counter                                     : 1
- 28-bit up counter                                     : 1
 # Accumulators                                         : 3
  16-bit up accumulator                                 : 3
-# Registers                                            : 6
- Flip-Flops                                            : 6
+# Registers                                            : 34
+ Flip-Flops                                            : 34
 # Comparators                                          : 40
  16-bit comparator equal                               : 2
  16-bit comparator greater                             : 2
@@ -526,12 +523,13 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 552
+# Multiplexers                                         : 573
  1-bit 2-to-1 multiplexer                              : 493
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 36
  16-bit 4-to-1 multiplexer                             : 6
+ 28-bit 2-to-1 multiplexer                             : 21
 # Logic shifters                                       : 7
  16-bit shifter arithmetic right                       : 2
  16-bit shifter logical left                           : 2
@@ -599,49 +597,49 @@ Optimizing unit <tst_4> ...
 Optimizing unit <addTest_12> ...
 WARNING:Xst:1293 - FF/Latch <tst/addTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/addTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <tst/alu/mul/Mmult_n0010> is unconnected in block <mojo_top_0>.
-WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd4 tst/addTest/M_state_q_FSM_FFd4 signal will be lost.
 WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd3 tst/addTest/M_state_q_FSM_FFd3 signal will be lost.
+WARNING:Xst:638 - in unit mojo_top_0 Conflict on KEEP property on signal tst/addTest/M_state_q_FSM_FFd1 and tst/addTest/M_state_q_FSM_FFd4 tst/addTest/M_state_q_FSM_FFd4 signal will be lost.
 WARNING:Xst:1293 - FF/Latch <tst/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_0> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_1> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_2> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_3> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_4> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_5> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_6> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_7> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_8> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_9> 
 INFO:Xst:2261 - The FF/Latch <confirm/M_last_q> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/L_edge/M_last_q> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_10> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_11> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_12> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_13> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_14> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_20> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_15> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_21> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_16> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_22> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_17> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_23> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_18> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_24> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_19> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_25> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_25> 
-INFO:Xst:2261 - The FF/Latch <tst/M_timer_q_26> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/addTest/M_timer_q_26> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 16.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 17.
+WARNING:Xst:2677 - Node <tst/M_timer_q_26> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_25> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_24> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_23> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_22> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_21> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_20> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_19> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_18> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_17> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_16> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_15> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_14> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_13> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_12> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_11> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_10> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_9> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_8> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <tst/M_timer_q_0> of sequential type is unconnected in block <mojo_top_0>.
 FlipFlop M_input1_q_13 has been replicated 3 time(s)
 FlipFlop M_input1_q_14 has been replicated 5 time(s)
-FlipFlop M_input1_q_15 has been replicated 4 time(s)
+FlipFlop M_input1_q_15 has been replicated 3 time(s)
 FlipFlop M_input2_q_0 has been replicated 3 time(s)
 FlipFlop M_input2_q_1 has been replicated 2 time(s)
 FlipFlop M_input2_q_10 has been replicated 1 time(s)
@@ -669,8 +667,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 140
- Flip-Flops                                            : 140
+# Registers                                            : 139
+ Flip-Flops                                            : 139
 
 =========================================================================
 
@@ -694,7 +692,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 140   |
+clk                                | BUFGP                  | 139   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -707,7 +705,7 @@ Speed Grade: -2
 
    Minimum period: 50.711ns (Maximum Frequency: 19.720MHz)
    Minimum input arrival time before clock: 9.447ns
-   Maximum output required time after clock: 10.379ns
+   Maximum output required time after clock: 11.073ns
    Maximum combinational path delay: 8.861ns
 
 =========================================================================

@@ -85,6 +85,7 @@ module addTest_12 (
     case (M_state_q)
       BEGIN_state: begin
         if (M_timer_q[26+1-:2] == 2'h2 & ~button) begin
+          M_timer_d = 1'h0;
           M_state_d = PP_state;
         end
       end
@@ -102,6 +103,7 @@ module addTest_12 (
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
                 if ((M_add_out == 16'h4004) & (M_add_v == 1'h0) & (M_add_z == 1'h0) & (M_add_n == 1'h0)) begin
+                  M_timer_d = 1'h0;
                   M_state_d = PN_state;
                 end else begin
                   M_state_d = ERROR_state;
@@ -124,7 +126,8 @@ module addTest_12 (
               out = M_add_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_add_out == 16'hbc12) & (M_add_v == 1'h0) & (M_add_z == 1'h0) & (M_add_n == 1'h1)) begin
+                if ((M_add_out == 16'hbc12)) begin
+                  M_timer_d = 1'h0;
                   M_state_d = NN_state;
                 end else begin
                   M_state_d = ERROR_state;
@@ -148,6 +151,7 @@ module addTest_12 (
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
                 if ((M_add_out == 16'h3c0f) & (M_add_v == 1'h1) & (M_add_z == 1'h0) & (M_add_n == 1'h0)) begin
+                  M_timer_d = 1'h0;
                   M_state_d = V_state;
                 end else begin
                   M_state_d = ERROR_state;
@@ -171,6 +175,7 @@ module addTest_12 (
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
                 if ((M_add_out == 16'h0002) & (M_add_v == 1'h1) & (M_add_z == 1'h0) & (M_add_n == 1'h0)) begin
+                  M_timer_d = 1'h0;
                   M_state_d = Z_state;
                 end else begin
                   M_state_d = ERROR_state;
@@ -194,6 +199,7 @@ module addTest_12 (
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
                 if ((M_add_out == 1'h0) & (M_add_v == 1'h0) & (M_add_z == 1'h0) & (M_add_n == 1'h0)) begin
+                  M_timer_d = 1'h0;
                   M_state_d = N_state;
                 end else begin
                   M_state_d = ERROR_state;
@@ -217,6 +223,7 @@ module addTest_12 (
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
                 if ((M_add_out == 16'hbc12) & (M_add_v == 1'h0) & (M_add_z == 1'h0) & (M_add_n == 1'h1)) begin
+                  M_timer_d = 1'h0;
                   M_state_d = GOOD_state;
                 end else begin
                   M_state_d = ERROR_state;
