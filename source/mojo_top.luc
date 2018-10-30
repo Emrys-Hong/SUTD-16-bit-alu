@@ -1,0 +1,110 @@
+module mojo_top (
+    input clk,              // 50MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input cclk,             // configuration clock, AVR ready when high
+    output spi_miso,        // AVR SPI MISO
+    input spi_ss,           // AVR SPI Slave Select
+    input spi_mosi,         // AVR SPI MOSI
+    input spi_sck,          // AVR SPI Clock
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    input avr_tx,           // AVR TX (FPGA RX)
+    output avr_rx,          // AVR RX (FPGA TX)
+    input avr_rx_busy,      // AVR RX buffer full
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8]     // DIP switches on IO Shield
+  ) {
+  
+  sig rst;                  // reset signal
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+    edge_detector confirm(#RISE(1), #FALL(0)); // detect rising edge_detector
+    .rst(rst) {
+      alu alu;
+      dff input1[16];
+      dff input2[16];
+      dff result[16];
+      tst tst; // auto testing
+      multi_seven_seg seg;
+    }
+  }
+  
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    led = 8h00;             // turn LEDs off
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial port
+    
+    io_led = 3x{{8h00}};    // turn LEDs off
+    io_seg = 8hff;          // turn segments off
+    io_sel = 4hf;           // select no digits
+    
+    confirm.in = io_button[1];
+    
+    // define input for alu
+    alu.a = input1.q;
+    alu.b = input2.q;
+    alu.io_dip = io_dip[2];
+    
+    // show the result of the add to io_led, first initializing
+    io_led[0] = result.q[7-:8];
+    io_led[1] = result.q[15-:8];
+    // io_led show operation type
+    io_led[2] = io_dip[2];
+    // define input for auto testing
+    tst.button = io_button[1];
+    // define input for seg
+    seg.values = {4h0,4h0,4h0,4h0};
+    // define output for seg
+    io_seg = ~seg.seg;
+    io_sel = ~seg.sel;
+    
+    if (io_dip[2][7:6] == 1) {
+      // enter input1 state
+      io_led[0] = input1.q[7-:8];
+      io_led[1] = input1.q[15-:8];
+      seg.values = {4h1,4h0,4h0,4h0};
+      if(confirm.out) {
+        // for input 1
+        // add io_dip[1:0] and store them in dff a
+        input1.d = input1.q + c{io_dip[1],io_dip[0]};
+      }        
+    } else if (io_dip[2][7:6] == 2) {
+      // enter input2 state
+      io_led[0] = input2.q[7-:8];
+      io_led[1] = input2.q[15-:8];
+      seg.values = {4h2,4h0,4h0,4h0};
+      if (confirm.out) {
+        // for input 2
+        // add io_dip[1:0] and store them in dff b
+        input2.d = input2.q + c{io_dip[1], io_dip[0]};
+      }
+    } else if (io_dip[2][7:6] == 3) {
+      // show the result
+      io_led[0] = result.q[7-:8];
+      io_led[1] = result.q[15-:8];
+      seg.values = {4h3,4h0,4h0,4h0};
+        if (confirm.out) {
+          // show the result in the adder
+          // and store it in result
+          result.d = result.q + alu.out;
+        }
+    } else if (io_dip[2][7:6] == 0) {
+      // redefine io_led and set them to 0
+      io_led[0] = 0;
+      io_led[1] = 0;
+      io_led[1] = 0;
+      
+      seg.values = {tst.seg[15-:4],tst.seg[11-:4],tst.seg[7-:4],tst.seg[3-:4]};
+    }
+  }
+}

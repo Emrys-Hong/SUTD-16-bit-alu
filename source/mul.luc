@@ -1,0 +1,21 @@
+module mul (
+    input clk,  // clock
+    input rst,  // reset
+    
+    // inputs
+    input io_dip[8],
+    input a[16],
+    input b[16],
+    //outputs
+    output out[16]
+  ) {
+
+  always {
+    out = 0;
+    
+    case(io_dip[1:0]) {
+    2: out = a*b;
+    3: out = a/b;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+module cmp (
+    input clk,  // clock
+    input rst,  // reset
+    
+    // inputs
+    input io_dip[8],
+    input a[16],
+    input b[16],
+    //outputs
+    output out[16]
+  ) {
+  
+  sig holder[16];
+  
+  always {
+    
+    holder = 0;
+    
+    case (io_dip[2-:2]) {
+    1: holder = c{15b0, (a==b)};
+    2: holder = c{15b0, (a<b)};
+    3: holder = c{15b0, (a<=b)};
+    } 
+      
+    out = holder[15-:16];
+    
+  }
+}

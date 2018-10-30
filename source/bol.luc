@@ -1,0 +1,23 @@
+module bol (
+    input clk,  // clock
+    input rst,  // reset
+    
+    // inputs
+    input io_dip[8],
+    input a[16],
+    input b[16],
+    //outputs
+    output out[16]
+  ) {
+
+  always {
+    out = 0;
+    
+    case(io_dip[3-:4]) {
+    8: out = a&b; // and
+    14:out = a|b; // or
+    6: out = a^b; //xor
+    10:out = a;
+    }
+  }
+}

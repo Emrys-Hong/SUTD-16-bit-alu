@@ -1,0 +1,41 @@
+module add (
+    input clk,  // clock
+    input rst,  // reset
+    
+    // inputs
+    input io_dip[8],
+    input a[16],
+    input b[16],
+    //outputs
+    output out[16],
+    output z,
+    output v,
+    output n
+  ) {
+  
+  sig holder[16];
+  
+  always {
+    
+    // function adding or substraction
+    if (io_dip[0] == 0) {
+      holder = a+b;
+    } else {
+      holder = a-b;
+    }
+    
+    out = holder[15-:16];    
+    
+    // for z=1 if out == 0
+    if (holder == 0) {
+      z = 1;
+    } else {
+      z = 0;
+    }
+    
+    // double check this formula
+    v = ( (io_dip[7]^a[15]) & (io_dip[7]^b[15]) & ~holder[15]) | (~(io_dip[7]^a[15]) & ~(io_dip[7]^b[15]) & holder[15]);
+    n = holder[15];
+    
+  }
+}

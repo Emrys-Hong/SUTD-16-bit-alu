@@ -1,0 +1,57 @@
+module alu (
+    input clk,  // clock
+    input rst,  // reset
+    
+    // inputs
+    input io_dip[8],
+    input a[16],
+    input b[16],
+    //outputs
+    output out[16],
+    output z,
+    output v,
+    output n
+  ) {
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    .rst(rst) {
+      add add;
+      cmp cmp;
+      bol bol;
+      sft sft;
+      mul mul;
+    }
+  }
+  
+  always {
+    // add
+    add.a=a; add.b=b; add.io_dip=io_dip;
+    
+    // cmp
+    cmp.a=a; cmp.b=b; cmp.io_dip=io_dip; 
+    
+    // bol
+    bol.a=a; bol.b=b; bol.io_dip=io_dip; 
+    
+    // sft
+    sft.a=a; sft.b=b; sft.io_dip=io_dip; 
+    
+    // mul
+    mul.a=a; mul.b=b; mul.io_dip=io_dip;
+    
+    case(io_dip[5-:2]) {
+      
+      0: if (io_dip[1]==0) {out=add.out; z=add.z; v=add.v; n=add.n;}
+        else {out=mul.out; z=0; v=0; n=0;}
+    
+      1: out=bol.out; z=0; v=0; n=0;
+    
+      2: out=sft.out; z=0; v=0; n=0;
+        
+      3: out=cmp.out; z=0; v=0; n=0;
+        
+    }
+  }
+}
