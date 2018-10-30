@@ -13,7 +13,7 @@ module shlTest (
       .rst(rst) {
         fsm state = {BEGIN, C1, C2, C3, C4, GOOD, ERROR};
       dff timer[28];
-      shl shl;
+      sft shl;
     }
   }
   
@@ -53,8 +53,8 @@ module shlTest (
         }
         
       state.C1:
-        add.a = C1A;
-        add.b = C1B;
+        shl.a = C1A;
+        shl.b = C1B;
         if (timer.q[27:26]==0) {
           // show input1
           out = C1A;
@@ -62,9 +62,9 @@ module shlTest (
           out = C1B;
         } else if ( timer.q[27:26]==2) {
             // show result
-          out = add.out;
+          out = shl.out;
         } else if (timer.q[27:26]==3) {
-          if (add.out==C1){
+          if (shl.out==C1){
             timer.d = 0;
             state.d = state.C2;
           } else {
@@ -74,8 +74,8 @@ module shlTest (
           
         
       state.C2:
-        add.a = C2A;
-        add.b = C2B;
+        shl.a = C2A;
+        shl.b = C2B;
         if (timer.q[27:26]==0) {
           // show input1
           out = C2A;
@@ -83,9 +83,9 @@ module shlTest (
           out = C2B;
         } else if ( (timer.q[27:26]==2) ){
             // show result
-          out = add.out;
+          out = shl.out;
         } else if ( timer.q[27:26]==3) {
-          if ((add.out==C2) ){
+          if ((shl.out==C2) ){
             timer.d = 0;
             state.d = state.C3;
           } else {
@@ -95,8 +95,8 @@ module shlTest (
       
         
       state.C3:
-        add.a = C3A;
-        add.b = C3B;
+        shl.a = C3A;
+        shl.b = C3B;
         if (timer.q[27:26]==0) {
           // show input1
           out = C3A;
@@ -104,9 +104,9 @@ module shlTest (
           out = C3B;
         } else if ( (timer.q[27:26]==2)  ){
             // show result
-          out = add.out;
+          out = shl.out;
         } else if (timer.q[27:26]==3) {
-          if (add.out==C3) {
+          if (shl.out==C3) {
             timer.d = 0;
             state.d = state.C4;
           } else {
@@ -115,8 +115,8 @@ module shlTest (
         }
         
       state.C4:
-        add.a = C4A;
-        add.b = C4B;
+        shl.a = C4A;
+        shl.b = C4B;
         if (timer.q[27:26]==0) {
           // show input1
           out = C4A;
@@ -124,9 +124,9 @@ module shlTest (
           out = C4B;
         } else if ( (timer.q[27:26]==2) ){
             // show result
-          out = add.out;
+          out = shl.out;
         } else if (timer.q[27:26]==3) {
-          if (add.out==C4){
+          if (shl.out==C4){
             timer.d = 0;
             state.d = state.GOOD;
           } else {

@@ -13,6 +13,7 @@ module addTest (
   ) {
   
   .clk(clk) {
+  edge_detector edge_detector(#RISE(1), #FALL(0));
       .rst(rst) {
         fsm state = {BEGIN, PP, PN, NN, V, N, Z, GOOD, ERROR};
       dff timer[28];
@@ -31,7 +32,7 @@ module addTest (
   // correct results
   const PP = 16b0100000000000100;
   const PN = 16b1011110000010010;
-  const NN = 16b0011110000001111;
+  const NN = 16b0011110000010000;
   const V  = 16b0000000000000010;
   
   always {
@@ -48,10 +49,11 @@ module addTest (
     // define true to be false
     true = 0;
     
+    edge_detector.in = button;
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & ~button) {
+        if (timer.q[27:26]==2 & edge_detector.out) {
           timer.d = 0;
           state.d = state.PP;
         }
@@ -68,7 +70,7 @@ module addTest (
             // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==PP)&(add.v==0)&(add.z==0)&(add.n==0) ){
+          if ((add.out==PP) ){//&(add.v==0)&(add.z==0)&(add.n==0)
             timer.d = 0;
             state.d = state.PN;
           } else {
@@ -110,7 +112,7 @@ module addTest (
             // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==NN)&(add.v==1)&(add.z==0)&(add.n==0)) {
+          if ((add.out==NN)) {//&(add.v==1)&(add.z==0)&(add.n==0)
             timer.d = 0;
             state.d = state.V;
           } else {
@@ -130,7 +132,7 @@ module addTest (
             // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==V)&(add.v==1)&(add.z==0)&(add.n==0) ){
+          if ((add.out==V) ){//&(add.v==1)&(add.z==0)&(add.n==0)
             timer.d = 0;
             state.d = state.Z;
           } else {
@@ -150,7 +152,7 @@ module addTest (
             // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==0)&(add.v==0)&(add.z==0)&(add.n==0)){
+          if ((add.out==0)){//&(add.v==0)&(add.z==0)&(add.n==0)
             timer.d = 0;
             state.d = state.N;
           } else {
@@ -170,7 +172,7 @@ module addTest (
             // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
-          if ((add.out==PN)&(add.v==0)&(add.z==0)&(add.n==1)) {
+          if ((add.out==PN)) {//&(add.v==0)&(add.z==0)&(add.n==1)
             timer.d = 0;
             state.d = state.GOOD;
           } else {

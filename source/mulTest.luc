@@ -9,6 +9,7 @@ module mulTest (
   ) {
   
   .clk(clk) {
+  edge_detector edge_detector(#RISE(1), #FALL(0));
     .rst(rst) {
       fsm state = {BEGIN, PP1, PP2, NN1, NN2, PN1, PN2, PN3, GOOD, ERROR};
       dff timer[28];
@@ -53,10 +54,11 @@ module mulTest (
     // define true to be false
     true = 0;
     
+    edge_detector.in = button;
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & ~button) {
+        if (timer.q[27:26]==2 & edge_detector.out) {
           timer.d = 0;
           state.d = state.PP1;
         }

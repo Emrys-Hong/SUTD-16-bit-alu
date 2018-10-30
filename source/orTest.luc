@@ -13,6 +13,7 @@ module orTest (
   ) {
   
   .clk(clk) {
+  edge_detector edge_detector;
       .rst(rst) {
         fsm state = {BEGIN, LL, AL, LB, AB, GOOD, ERROR};
       dff timer[28];
@@ -27,7 +28,6 @@ module orTest (
   always {
     // define default outputs
     out = 0;
-    bout = bol.out;
     bol.a = 0;
     bol.b = 0;
     timer.d = timer.q+1;
@@ -37,10 +37,11 @@ module orTest (
     // define true to be false
     true = 0;
     
+    edge_detector.in = button;
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & ~button) {
+        if (timer.q[27:26]==2 & edge_detector.out) {
           timer.d = 0;
           state.d = state.LL;
         }

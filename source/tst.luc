@@ -17,6 +17,18 @@ module tst (
       dff timer[27];
       alu alu;
       addTest addTest(.button(button));
+      subTest subTest(.button(button));
+      mulTest mulTest(.button(button));
+      orTest  orTest(.button(button));
+      andTest andTest(.button(button));
+      xorTest xorTest(.button(button));
+      bolATest bolATest(.button(button));
+      shlTest shlTest(.button(button));
+      shrTest shrTest(.button(button));
+      sraTest sraTest(.button(button));
+      cmpeqTest cmpeqTest(.button(button));
+      cmpleTest cmpleTest(.button(button));
+      cmpltTest cmpltTest(.button(button));
     }
   }
   
@@ -75,224 +87,129 @@ module tst (
         seg = c{1,11,11,11}; 
         // duration 1s
         if(addTest.true==1){
-          state.d = state.SUB;
+          state.d = state.OR;
         }
         
         
       // SUB
       state.SUB:
+      out = subTest.out;
         alu.io_dip=OSUB;
         seg = c{2,11,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (subTest.true==1) {
           state.d = state.MUL;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RSUB) {
-              state.d=state.ERROR;
-          }
         }
         
       // MUL
       state.MUL:
+      out = mulTest.out;
         alu.io_dip=OMUL;
         seg = c{3,11,11,11}; 
         // duration 1s
-        if (edge.out) {
-          state.d = state.AND;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RMUL) {
-              state.d=state.ERROR;
-          }
+        if (mulTest.true==1) {
+          state.d = state.OR;
         }
         
       // OR
       state.OR:
+      out = orTest.out;
         alu.io_dip=OOR;
         seg = c{4,11,11,11}; 
         // duration 1s
-        if (edge.out) {
-          state.d = state.AND;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=ROR) {
-              state.d=state.ERROR;
-          }
+        if (orTest.true==1) {
+          state.d = state.ADD;
         }
       
       // AND
       state.AND:
+        out = andTest.out;
         alu.io_dip=OAND;
         seg = c{5,11,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (andTest.true) {
           state.d = state.XOR;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RAND) {
-              state.d=state.ERROR;
-          }
         }
         
       // XOR
       state.XOR:
+      out = xorTest.out;
         alu.io_dip=OXOR;
         seg = c{6,11,11,11};
         // duration 1s
-        if (edge.out) {
+        if (xorTest.true) {
           state.d = state.A;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RXOR) {
-              state.d=state.ERROR;
-          }
         }
         
       // A
       state.A:
+      out = bolATest.out;
         alu.io_dip=OA;
         seg = c{7,11,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (bolATest.true) {
           state.d = state.SHL;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RA) {
-              state.d=state.ERROR;
-          }
         }
         
       // SHL
       state.SHL:
+      out = shlTest.out;
         alu.io_dip=OSHL;
         seg = c{8,11,11,11};
         // duration 1s
-        if (edge.out) {
+        if (shlTest.true==1) {
           state.d = state.SHR;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RSHL) {
-              state.d=state.ERROR;
-          }
+        
         }
         
       // SHR
       state.SHR:
+      out = shrTest.out;
         alu.io_dip=OSHR;
         seg = c{9,11,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (shrTest.true==1) {
           state.d = state.SRA;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RSHR) {
-              state.d=state.ERROR;
-          }
         }
         
       // SRA
       state.SRA:
+      out = sraTest.out;
         alu.io_dip=OSRA;
         seg = c{1,0,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (sraTest.true) {
           state.d = state.CMPEQ;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RSRA) {
-              state.d=state.ERROR;
-          }
         }
         
       // CMPEQ
       state.CMPEQ:
+      out = cmpeqTest.out;
         alu.io_dip=OCMPEQ;
         seg = c{1,1,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (cmpeqTest.true==1) {
           state.d = state.CMPLE;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RCMPEQ) {
-              state.d=state.ERROR;
-          }
         }
         
       // CMPLE
       state.CMPLE:
+      out = cmpleTest.out;
         alu.io_dip=OCMPLE;
         seg = c{1,2,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (cmpleTest.true==1) {
           state.d = state.CMPLT;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RCMPLE) {
-              state.d=state.ERROR;
-          }
         }
         
       // CMPLT
       state.CMPLT:
+      out = cmpltTest.out;
         alu.io_dip=OCMPLT;
         seg = c{1,3,11,11}; 
         // duration 1s
-        if (edge.out) {
+        if (cmpleTest.true) {
           state.d = state.GOOD;
-        } else if (timer.q[26:25]==1) {
-          seg=c{A[15-:4], A[11-:4], A[7-:4], A[3-:4]};
-        } else if (timer.q[26:25]==2) {
-          seg=c{B[15-:4], B[11-:4], B[7-:4], B[3-:4]};
-        } else if (timer.q[26:25]==3) {
-          seg=c{alu.out[15-:4], alu.out[12-:4], alu.out[7-:4], alu.out[3-:4]};
-          if (alu.out!=RCMPLT) {
-              state.d=state.ERROR;
-          }
         }
         
       // GOOD
@@ -302,9 +219,7 @@ module tst (
       // ERROR
       state.ERROR:
         seg = c{11,11,11,11};
-      
-        
-    
   }
 }
 }
+

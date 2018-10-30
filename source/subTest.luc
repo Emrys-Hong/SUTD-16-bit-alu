@@ -12,6 +12,7 @@ module subTest (
   ) {
   
   .clk(clk) {
+  edge_detector edge_detector(#RISE(1), #FALL(0));
     .rst(rst) {
       fsm state = {BEGIN, PP1, PP2, PP3, PP4, ZERO, NN1, NN2, NN3, NN4, PN1, PN2, GOOD, ERROR};
       dff timer[28];
@@ -70,10 +71,11 @@ module subTest (
     // define true to be false
     true = 0;
     
+    edge_detector.in = button;
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & ~button) {
+        if (timer.q[27:26]==2 & edge_detector.out) {
           timer.d = 0;
           state.d = state.PP1;
         }
@@ -90,7 +92,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==PP1)&(sub.v==0)&(sub.z==0)&(sub.n==0) ){
+          if ((sub.out==PP1) ){//&(sub.v==0)&(sub.z==0)&(sub.n==0)
             timer.d = 0;
             state.d = state.PP2;
           } else {
@@ -110,7 +112,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==PP2)&(sub.v==0)&(sub.z==0)&(sub.n==1) ){
+          if ((sub.out==PP2) ){//&(sub.v==0)&(sub.z==0)&(sub.n==1)
             timer.d = 0;
             state.d = state.PP3;
           } else {
@@ -130,7 +132,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==PP3)&(sub.v==0)&(sub.z==1)&(sub.n==0) ){
+          if ((sub.out==PP3) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
             timer.d = 0;
             state.d = state.PP4;
           } else {
@@ -150,7 +152,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==PP4)&(sub.v==0)&(sub.z==1)&(sub.n==0) ){
+          if ((sub.out==PP4) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
             timer.d = 0;
             state.d = state.ZERO;
           } else {
@@ -170,7 +172,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==ZERO)&(sub.v==0)&(sub.z==1)&(sub.n==0) ){
+          if ((sub.out==ZERO) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
             timer.d = 0;
             state.d = state.NN1;
           } else {
@@ -190,7 +192,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN1)&(sub.v==0)&(sub.z==0)&(sub.n==1) ){
+          if ((sub.out==NN1) ){//&(sub.v==0)&(sub.z==0)&(sub.n==1)
             timer.d = 0;
             state.d = state.NN2;
           } else {
@@ -210,7 +212,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN2)&(sub.v==0)&(sub.z==0)&(sub.n==0) ){
+          if ((sub.out==NN2) ){//&(sub.v==0)&(sub.z==0)&(sub.n==0)
             timer.d = 0;
             state.d = state.NN3;
           } else {
@@ -230,7 +232,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN3)&(sub.v==0)&(sub.z==1)&(sub.n==0) ){
+          if ((sub.out==NN3) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
             timer.d = 0;
             state.d = state.NN4;
           } else {
@@ -250,7 +252,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN4)&(sub.v==0)&(sub.z==1)&(sub.n==0) ){
+          if ((sub.out==NN4) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
             timer.d = 0;
             state.d = state.PN1;
           } else {
@@ -270,7 +272,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==PN1)&(sub.v==0)&(sub.z==0)&(sub.n==0) ){
+          if ((sub.out==PN1) ){//&(sub.v==0)&(sub.z==0)&(sub.n==0)
             timer.d = 0;
             state.d = state.PN2;
           } else {
@@ -290,7 +292,7 @@ module subTest (
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==PN2)&(sub.v==1)&(sub.z==0)&(sub.n==0) ){
+          if ((sub.out==PN2) ){//&(sub.v==1)&(sub.z==0)&(sub.n==0)
             timer.d = 0;
             state.d = state.GOOD;
           } else {

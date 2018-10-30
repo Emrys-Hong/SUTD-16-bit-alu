@@ -73,6 +73,120 @@ module tst_4 (
     .z(M_addTest_z),
     .true(M_addTest_true)
   );
+  wire [16-1:0] M_subTest_out;
+  wire [1-1:0] M_subTest_v;
+  wire [1-1:0] M_subTest_n;
+  wire [1-1:0] M_subTest_z;
+  wire [1-1:0] M_subTest_true;
+  subTest_13 subTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_subTest_out),
+    .v(M_subTest_v),
+    .n(M_subTest_n),
+    .z(M_subTest_z),
+    .true(M_subTest_true)
+  );
+  wire [16-1:0] M_mulTest_out;
+  wire [1-1:0] M_mulTest_true;
+  mulTest_14 mulTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_mulTest_out),
+    .true(M_mulTest_true)
+  );
+  wire [16-1:0] M_orTest_out;
+  wire [1-1:0] M_orTest_true;
+  orTest_15 orTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_orTest_out),
+    .true(M_orTest_true)
+  );
+  wire [16-1:0] M_andTest_out;
+  wire [1-1:0] M_andTest_true;
+  andTest_16 andTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_andTest_out),
+    .true(M_andTest_true)
+  );
+  wire [16-1:0] M_xorTest_out;
+  wire [1-1:0] M_xorTest_true;
+  xorTest_17 xorTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_xorTest_out),
+    .true(M_xorTest_true)
+  );
+  wire [16-1:0] M_bolATest_out;
+  wire [1-1:0] M_bolATest_true;
+  bolATest_18 bolATest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_bolATest_out),
+    .true(M_bolATest_true)
+  );
+  wire [16-1:0] M_shlTest_out;
+  wire [1-1:0] M_shlTest_true;
+  shlTest_19 shlTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_shlTest_out),
+    .true(M_shlTest_true)
+  );
+  wire [16-1:0] M_shrTest_out;
+  wire [1-1:0] M_shrTest_true;
+  shrTest_20 shrTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_shrTest_out),
+    .true(M_shrTest_true)
+  );
+  wire [16-1:0] M_sraTest_out;
+  wire [1-1:0] M_sraTest_true;
+  sraTest_21 sraTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_sraTest_out),
+    .true(M_sraTest_true)
+  );
+  wire [16-1:0] M_cmpeqTest_out;
+  wire [1-1:0] M_cmpeqTest_true;
+  cmpeqTest_22 cmpeqTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_cmpeqTest_out),
+    .true(M_cmpeqTest_true)
+  );
+  wire [16-1:0] M_cmpleTest_out;
+  wire [1-1:0] M_cmpleTest_true;
+  cmpleTest_23 cmpleTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_cmpleTest_out),
+    .true(M_cmpleTest_true)
+  );
+  wire [16-1:0] M_cmpltTest_out;
+  wire [1-1:0] M_cmpltTest_true;
+  cmpltTest_24 cmpltTest (
+    .clk(clk),
+    .rst(rst),
+    .button(button),
+    .out(M_cmpltTest_out),
+    .true(M_cmpltTest_true)
+  );
   
   localparam OADD = 8'h00;
   
@@ -152,271 +266,103 @@ module tst_4 (
         M_alu_io_dip = 8'h00;
         seg = 13'h1bbb;
         if (M_addTest_true == 1'h1) begin
-          M_state_d = SUB_state;
+          M_state_d = OR_state;
         end
       end
       SUB_state: begin
+        out = M_subTest_out;
         M_alu_io_dip = 8'h04;
         seg = 14'h2bbb;
-        if (M_edge_out) begin
+        if (M_subTest_true == 1'h1) begin
           M_state_d = MUL_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h3000) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       MUL_state: begin
+        out = M_mulTest_out;
         M_alu_io_dip = 8'h08;
         seg = 14'h3bbb;
-        if (M_edge_out) begin
-          M_state_d = AND_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h4900) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
+        if (M_mulTest_true == 1'h1) begin
+          M_state_d = OR_state;
         end
       end
       OR_state: begin
+        out = M_orTest_out;
         M_alu_io_dip = 8'h78;
         seg = 15'h4bbb;
-        if (M_edge_out) begin
-          M_state_d = AND_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h7500) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
+        if (M_orTest_true == 1'h1) begin
+          M_state_d = ADD_state;
         end
       end
       AND_state: begin
+        out = M_andTest_out;
         M_alu_io_dip = 8'h60;
         seg = 15'h5bbb;
-        if (M_edge_out) begin
+        if (M_andTest_true) begin
           M_state_d = XOR_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h0500) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       XOR_state: begin
+        out = M_xorTest_out;
         M_alu_io_dip = 8'h58;
         seg = 15'h6bbb;
-        if (M_edge_out) begin
+        if (M_xorTest_true) begin
           M_state_d = A_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h7000) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       A_state: begin
+        out = M_bolATest_out;
         M_alu_io_dip = 8'h68;
         seg = 15'h7bbb;
-        if (M_edge_out) begin
+        if (M_bolATest_true) begin
           M_state_d = SHL_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h2500) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       SHL_state: begin
+        out = M_shlTest_out;
         M_alu_io_dip = 8'h80;
         seg = 16'h8bbb;
-        if (M_edge_out) begin
+        if (M_shlTest_true == 1'h1) begin
           M_state_d = SHR_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'ha000) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       SHR_state: begin
+        out = M_shrTest_out;
         M_alu_io_dip = 8'h84;
         seg = 16'h9bbb;
-        if (M_edge_out) begin
+        if (M_shrTest_true == 1'h1) begin
           M_state_d = SRA_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h0100) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       SRA_state: begin
+        out = M_sraTest_out;
         M_alu_io_dip = 8'h8c;
         seg = 10'h2bb;
-        if (M_edge_out) begin
+        if (M_sraTest_true) begin
           M_state_d = CMPEQ_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h0100) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       CMPEQ_state: begin
+        out = M_cmpeqTest_out;
         M_alu_io_dip = 8'hcc;
         seg = 10'h3bb;
-        if (M_edge_out) begin
+        if (M_cmpeqTest_true == 1'h1) begin
           M_state_d = CMPLE_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h0000) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       CMPLE_state: begin
+        out = M_cmpleTest_out;
         M_alu_io_dip = 8'hdc;
         seg = 11'h6bb;
-        if (M_edge_out) begin
+        if (M_cmpleTest_true == 1'h1) begin
           M_state_d = CMPLT_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h0000) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       CMPLT_state: begin
+        out = M_cmpltTest_out;
         M_alu_io_dip = 8'hd4;
         seg = 11'h7bb;
-        if (M_edge_out) begin
+        if (M_cmpleTest_true) begin
           M_state_d = GOOD_state;
-        end else begin
-          if (M_timer_q[25+1-:2] == 1'h1) begin
-            seg = 16'h5500;
-          end else begin
-            if (M_timer_q[25+1-:2] == 2'h2) begin
-              seg = 16'h2500;
-            end else begin
-              if (M_timer_q[25+1-:2] == 2'h3) begin
-                seg = {M_alu_out[12+3-:4], M_alu_out[9+3-:4], M_alu_out[4+3-:4], M_alu_out[0+3-:4]};
-                if (M_alu_out != 16'h0000) begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
         end
       end
       GOOD_state: begin
