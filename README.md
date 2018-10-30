@@ -1,6 +1,6 @@
 # 16-bit-alu
 
-16-bit 2-input ALU using the Lucid language programming on the Mojo v3 FPGA development board (Spartan 6).
+16-bit 2-input ALU using the Lucid programming language on the Mojo v3 FPGA development board (Spartan 6).
 
 ## ALU Functionality
 
@@ -14,21 +14,22 @@
 ### Additional Functionality
 
 * Auto Testing
+* Ability to check for overflow for the Adder module: if an error is detected, it will be displayed
 * Ability to do `C1*INPUT_1 OPR C2*INPUT_2`, where `C1` and `C2` are constants, and `OPR` is the operation on the two operands `INPUT_1` and `INPUT_2`.
 
 ## Using the ALU on Mojo v3 with IO Shield
 
 The ALU/Mojo will have a series of four primary states
 
-State | `io_dip[2][7,6]` | Purpose/Function
+State | `io_dip[2][7:6]` | Purpose/Function
 ------|----------------|------------------
-1 | `[0][1]` | Press `io_button[1]` -> `store io_dip[1,0]` into `input_1`
-2 | `[1][0]` | Press `io_button[1]` -> `store io_dip[1,0]` into `input_2`
+1 | `[0][1]` | Press `io_button[1]` -> `store io_dip[1:0]` into `input_1`
+2 | `[1][0]` | Press `io_button[1]` -> `store io_dip[1:0]` into `input_2`
 3 | `[1][1]` | Display result from ALU on `io_led`, depending on `io_dip[2][5,0]` as `ALUFN`
 4 | `[0][0]` | Automated testing state (running test cases)
 
 * `io_button[1]` is the center button on the 5-button pad on the Mojo v3 IO Shield
-* `io_dip[2][7,6]` are the two leftmost dip switches on the Mojo v3 IO Shield
+* `io_dip[2][7:6]` are the two leftmost dip switches on the Mojo v3 IO Shield
 
 ## Other technical details
 
@@ -40,22 +41,33 @@ For every button press, if you press more than one time, you increment a constan
 
 #### Alu module 
 
-in the always loop:
+In the always loop:
 
+```
 Alu.input1 = dff1.q
 Alu.input2 = dff2.q
 
-dffAlu.d = dffAlu.q + result
+dffAlu.d = dffAlu.q + Alu.output
+```
 
 #### Automated Testing module
 
 This module uses a Finite State Machine (FSM) to iterate through a series of test cases for the variations operations the ALU should be capable of performing, testing some postive, negative, mixed and boundary cases.
 
-case add -> case sub -> case mult -> etc.
+```
+case_add -> case_sub -> case_mult -> case_etc
 
-if fail -> error case
+if fail -> error_case
 
-error module
+After all 16 test cases pass -> pass_case; display GOOD
+
+```
+
+#### Error Module
+
+```
+TODO
+```
 
 
 
