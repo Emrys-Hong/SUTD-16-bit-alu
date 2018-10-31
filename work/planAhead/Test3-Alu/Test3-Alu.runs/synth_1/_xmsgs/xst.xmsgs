@@ -14,25 +14,28 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 61: Assignment to <arg fmt="%s" index="1">M_alu_n</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 55: Assignment to <arg fmt="%s" index="1">M_addTest_v</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 57: Assignment to <arg fmt="%s" index="1">M_addTest_v</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 56: Assignment to <arg fmt="%s" index="1">M_addTest_n</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 58: Assignment to <arg fmt="%s" index="1">M_addTest_n</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 57: Assignment to <arg fmt="%s" index="1">M_addTest_z</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 59: Assignment to <arg fmt="%s" index="1">M_addTest_z</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 71: Assignment to <arg fmt="%s" index="1">M_subTest_v</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 75: Assignment to <arg fmt="%s" index="1">M_subTest_v</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 72: Assignment to <arg fmt="%s" index="1">M_subTest_n</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 76: Assignment to <arg fmt="%s" index="1">M_subTest_n</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 73: Assignment to <arg fmt="%s" index="1">M_subTest_z</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 77: Assignment to <arg fmt="%s" index="1">M_subTest_z</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 184: Assignment to <arg fmt="%s" index="1">M_cmpltTest_true</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 210: Assignment to <arg fmt="%s" index="1">M_cmpltTest_true</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 76: Assignment to <arg fmt="%s" index="1">M_tst_step</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">io_button&lt;0:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -68,6 +71,9 @@
 <msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">52</arg>: Output port &lt;<arg fmt="%s" index="3">n</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">alu</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">70</arg>: Output port &lt;<arg fmt="%s" index="3">step</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">tst</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">io_dip&lt;6:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
@@ -98,7 +104,7 @@
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">rst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">io_dip&lt;7:4&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">io_dip&lt;7:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">b&lt;15:4&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -119,31 +125,25 @@
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">rst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">v</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addTest</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">51</arg>: Output port &lt;<arg fmt="%s" index="3">v</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addTest</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">n</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addTest</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">51</arg>: Output port &lt;<arg fmt="%s" index="3">n</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addTest</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">z</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addTest</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">51</arg>: Output port &lt;<arg fmt="%s" index="3">z</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addTest</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">65</arg>: Output port &lt;<arg fmt="%s" index="3">v</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">subTest</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">69</arg>: Output port &lt;<arg fmt="%s" index="3">v</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">subTest</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">65</arg>: Output port &lt;<arg fmt="%s" index="3">n</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">subTest</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">69</arg>: Output port &lt;<arg fmt="%s" index="3">n</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">subTest</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">65</arg>: Output port &lt;<arg fmt="%s" index="3">z</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">subTest</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">69</arg>: Output port &lt;<arg fmt="%s" index="3">z</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">subTest</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">178</arg>: Output port &lt;<arg fmt="%s" index="3">true</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">cmpltTest</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">0011</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">M_state_q</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">0101</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">M_state_q</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v</arg>&quot; line <arg fmt="%s" index="2">204</arg>: Output port &lt;<arg fmt="%s" index="3">true</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">cmpltTest</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_segs</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -152,316 +152,19 @@
 <msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">L_edge/M_last_q</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">tst_4</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;addTest/edge_detector/M_last_q&gt; &lt;subTest/edge_detector/M_last_q&gt; &lt;mulTest/edge_detector/M_last_q&gt; &lt;orTest/edge_detector/M_last_q&gt; &lt;andTest/edge_detector/M_last_q&gt; &lt;xorTest/edge_detector/M_last_q&gt; &lt;bolATest/edge_detector/M_last_q&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">tst/cmpltTest/M_state_q_FSM_FFd1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mojo_top_0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">tst/cmpltTest/M_state_q_FSM_FFd2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mojo_top_0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">tst/cmpltTest/M_state_q_FSM_FFd4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mojo_top_0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">tst/cmpltTest/M_state_q_FSM_FFd5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mojo_top_0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mulTest/M_timer_q_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2973" delta="new" >All outputs of instance &lt;<arg fmt="%s" index="1">mulTest/mul</arg>&gt; of block &lt;<arg fmt="%s" index="2">mul_10</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">sraTest/M_state_q_FSM_FFd1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">sraTest/M_state_q_FSM_FFd2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">sraTest/M_state_q_FSM_FFd2</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd4</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd4</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd4</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd3</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd3</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd3</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd2</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd2</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_timer_q_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">cmpltTest/M_state_q_FSM_FFd1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tst_4</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd2</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd1</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd1</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">xorTest/M_state_q_FSM_FFd4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">xorTest/M_state_q_FSM_FFd4</arg> <arg fmt="%s" index="4">xorTest/M_state_q_FSM_FFd4</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">xorTest/M_state_q_FSM_FFd2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">xorTest/M_state_q_FSM_FFd3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">xorTest/M_state_q_FSM_FFd1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">xorTest/M_state_q_FSM_FFd2</arg> <arg fmt="%s" index="4">xorTest/M_state_q_FSM_FFd2</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">xorTest/M_state_q_FSM_FFd3</arg> <arg fmt="%s" index="4">xorTest/M_state_q_FSM_FFd3</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd7</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd7</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd8</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd8</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd6</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd6</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">M_state_q_FSM_FFd5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">M_state_q_FSM_FFd5</arg> <arg fmt="%s" index="4">M_state_q_FSM_FFd5</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">shrTest/M_state_q_FSM_FFd4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">shrTest/M_state_q_FSM_FFd3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">shrTest/M_state_q_FSM_FFd2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">sraTest/M_state_q_FSM_FFd4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">sraTest/M_state_q_FSM_FFd3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">shrTest/M_state_q_FSM_FFd4</arg> <arg fmt="%s" index="4">shrTest/M_state_q_FSM_FFd4</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="638" delta="new" >in unit <arg fmt="%s" index="1">tst_4</arg> Conflict on KEEP property on signal <arg fmt="%s" index="2">M_state_q_FSM_FFd1</arg> and <arg fmt="%s" index="3">sraTest/M_state_q_FSM_FFd4</arg> <arg fmt="%s" index="4">sraTest/M_state_q_FSM_FFd4</arg> signal will be lost.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">shrTest/M_state_q_FSM_FFd1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">shlTest/M_state_q_FSM_FFd3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">shlTest/M_state_q_FSM_FFd2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">shlTest/M_state_q_FSM_FFd1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">tst_4</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">tst/cmpltTest/M_state_q_FSM_FFd3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mojo_top_0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">confirm/M_last_q</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">mojo_top_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;tst/L_edge/M_last_q&gt; </arg>

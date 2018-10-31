@@ -7,16 +7,14 @@ module orTest (
     input count[4],
     // out is to show input1 input2 input3
     output out[16],
-    //output v,
-    //output n,
-    //output z,
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
-  edge_detector edge_detector;
-      .rst(rst) {
-        fsm state = {BEGIN, LL, AL, LB, AB, GOOD, ERROR};
+    edge_detector edge_detector;
+    .rst(rst) {
+      fsm state = {BEGIN, LL, AL, LB, AB, GOOD, ERROR};
       dff timer[28];
       bol bol;
     }
@@ -25,20 +23,21 @@ module orTest (
   // input/output for checking cases
   const HH = 16b1111111111111111;
   const LL = 16b1000000000000001;
-
+  
   always {
     // define default outputs
     out = 0;
     bol.a = 0;
     bol.b = 0;
     timer.d = timer.q+1;
-
+    
     // alufn for bool OR
     bol.io_dip = 8b00011110;
     // define true to be false
     true = 0;
     
     edge_detector.in = button;
+    step = 0;
     // cases
     case(state.q) {
       state.BEGIN:
@@ -46,17 +45,18 @@ module orTest (
           timer.d = 0;
           state.d = state.LL;
         }
-        
+      
       state.LL:
         bol.a = LL;
         bol.b = LL;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = LL;
         } else if (timer.q[27:26]==1) {
           out = LL;
         } else if ( timer.q[27:26]==2) {
-            // show result
+          // show result
           out = bol.out;
         } else if (timer.q[27:26]==3) {
           if (bol.out==LL){
@@ -66,17 +66,18 @@ module orTest (
             state.d = state.ERROR;
           }
         }
-
+      
       state.AL:
         bol.a = HH;
         bol.b = LL;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = HH;
         } else if (timer.q[27:26]==1) {
           out = LL;
         } else if ( timer.q[27:26]==2) {
-            // show result
+          // show result
           out = bol.out;
         } else if (timer.q[27:26]==3) {
           if (bol.out==HH){
@@ -86,17 +87,18 @@ module orTest (
             state.d = state.ERROR;
           }
         }
-
+      
       state.LB:
         bol.a = LL;
         bol.b = HH;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = HH;
         } else if (timer.q[27:26]==1) {
           out = LL;
         } else if ( timer.q[27:26]==2) {
-            // show result
+          // show result
           out = bol.out;
         } else if (timer.q[27:26]==3) {
           if (bol.out==HH){
@@ -106,17 +108,18 @@ module orTest (
             state.d = state.ERROR;
           }
         }
-          
+      
       state.AB:
         bol.a = HH;
         bol.b = HH;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = HH;
         } else if (timer.q[27:26]==1) {
           out = LL;
         } else if ( timer.q[27:26]==2) {
-            // show result
+          // show result
           out = bol.out;
         } else if (timer.q[27:26]==3) {
           if (bol.out==HH){
@@ -136,14 +139,14 @@ module orTest (
         } else if (timer.q[25]==0){
           out = 16b0000000000000000;
         }
-        
+      
       state.ERROR:
         if (timer.q[25] == 1) {
           out = 16b0000000011111111;
         } else {
           out = 16b0000000000000000;
         }
-        
+      
     }
   }
 }

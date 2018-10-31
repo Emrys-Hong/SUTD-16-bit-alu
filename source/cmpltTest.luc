@@ -6,7 +6,8 @@ module cmpltTest (
     input count[4],
     // out is to show input1 input2 input3
     output out[16],
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
@@ -56,6 +57,7 @@ module cmpltTest (
     cmplt.io_dip = 8b00110101;
     // define true to be false
     true = 0;
+    step = 0;
     
     // cases
     case(state.q) {
@@ -68,6 +70,7 @@ module cmpltTest (
       state.PP1:
         cmplt.a = PP1A;
         cmplt.b = PP1B;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP1A;
@@ -88,6 +91,7 @@ module cmpltTest (
       state.PP2:
         cmplt.a = PP2A;
         cmplt.b = PP2B;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP2A;
@@ -108,6 +112,7 @@ module cmpltTest (
       state.PP3:
         cmplt.a = PP3A;
         cmplt.b = PP3B;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP3A;
@@ -124,10 +129,11 @@ module cmpltTest (
             state.d = state.ERROR;
           }
         }
-        
-        state.PP4:
+      
+      state.PP4:
         cmplt.a = PP4A;
         cmplt.b = PP4B;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP4A;
@@ -148,6 +154,7 @@ module cmpltTest (
       state.NN1:
         cmplt.a = NN1A;
         cmplt.b = NN1B;
+        step = 16;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN1A;
@@ -168,6 +175,7 @@ module cmpltTest (
       state.NN2:
         cmplt.a = NN2A;
         cmplt.b = NN2B;
+        step = 32;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN2A;
@@ -188,6 +196,7 @@ module cmpltTest (
       state.NN3:
         cmplt.a = NN3A;
         cmplt.b = NN3B;
+        step = 64;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN3A;
@@ -204,8 +213,9 @@ module cmpltTest (
             state.d = state.ERROR;
           }
         }
-        
-        state.NN4:
+      
+      state.NN4:
+        step = 128;
         cmplt.a = NN4A;
         cmplt.b = NN4B;
         if (timer.q[27:26]==0) {

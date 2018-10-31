@@ -9,7 +9,8 @@ module tst_4 (
     input rst,
     input button,
     output reg [15:0] seg,
-    output reg [15:0] out
+    output reg [15:0] out,
+    output reg [7:0] step
   );
   
   
@@ -46,6 +47,7 @@ module tst_4 (
   wire [1-1:0] M_addTest_n;
   wire [1-1:0] M_addTest_z;
   wire [1-1:0] M_addTest_true;
+  wire [8-1:0] M_addTest_step;
   addTest_12 addTest (
     .clk(clk),
     .rst(rst),
@@ -55,13 +57,15 @@ module tst_4 (
     .v(M_addTest_v),
     .n(M_addTest_n),
     .z(M_addTest_z),
-    .true(M_addTest_true)
+    .true(M_addTest_true),
+    .step(M_addTest_step)
   );
   wire [16-1:0] M_subTest_out;
   wire [1-1:0] M_subTest_v;
   wire [1-1:0] M_subTest_n;
   wire [1-1:0] M_subTest_z;
   wire [1-1:0] M_subTest_true;
+  wire [8-1:0] M_subTest_step;
   subTest_13 subTest (
     .clk(clk),
     .rst(rst),
@@ -71,117 +75,140 @@ module tst_4 (
     .v(M_subTest_v),
     .n(M_subTest_n),
     .z(M_subTest_z),
-    .true(M_subTest_true)
+    .true(M_subTest_true),
+    .step(M_subTest_step)
   );
   wire [16-1:0] M_mulTest_out;
   wire [1-1:0] M_mulTest_true;
+  wire [8-1:0] M_mulTest_step;
   mulTest_14 mulTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_mulTest_out),
-    .true(M_mulTest_true)
+    .true(M_mulTest_true),
+    .step(M_mulTest_step)
   );
   wire [16-1:0] M_orTest_out;
   wire [1-1:0] M_orTest_true;
+  wire [8-1:0] M_orTest_step;
   orTest_15 orTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_orTest_out),
-    .true(M_orTest_true)
+    .true(M_orTest_true),
+    .step(M_orTest_step)
   );
   wire [16-1:0] M_andTest_out;
   wire [1-1:0] M_andTest_true;
+  wire [8-1:0] M_andTest_step;
   andTest_16 andTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_andTest_out),
-    .true(M_andTest_true)
+    .true(M_andTest_true),
+    .step(M_andTest_step)
   );
   wire [16-1:0] M_xorTest_out;
   wire [1-1:0] M_xorTest_true;
+  wire [8-1:0] M_xorTest_step;
   xorTest_17 xorTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_xorTest_out),
-    .true(M_xorTest_true)
+    .true(M_xorTest_true),
+    .step(M_xorTest_step)
   );
   wire [16-1:0] M_bolATest_out;
   wire [1-1:0] M_bolATest_true;
+  wire [8-1:0] M_bolATest_step;
   bolATest_18 bolATest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_bolATest_out),
-    .true(M_bolATest_true)
+    .true(M_bolATest_true),
+    .step(M_bolATest_step)
   );
   wire [16-1:0] M_shlTest_out;
   wire [1-1:0] M_shlTest_true;
+  wire [8-1:0] M_shlTest_step;
   shlTest_19 shlTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_shlTest_out),
-    .true(M_shlTest_true)
+    .true(M_shlTest_true),
+    .step(M_shlTest_step)
   );
   wire [16-1:0] M_shrTest_out;
   wire [1-1:0] M_shrTest_true;
+  wire [8-1:0] M_shrTest_step;
   shrTest_20 shrTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_shrTest_out),
-    .true(M_shrTest_true)
+    .true(M_shrTest_true),
+    .step(M_shrTest_step)
   );
   wire [16-1:0] M_sraTest_out;
   wire [1-1:0] M_sraTest_true;
+  wire [8-1:0] M_sraTest_step;
   sraTest_21 sraTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_sraTest_out),
-    .true(M_sraTest_true)
+    .true(M_sraTest_true),
+    .step(M_sraTest_step)
   );
   wire [16-1:0] M_cmpeqTest_out;
   wire [1-1:0] M_cmpeqTest_true;
+  wire [8-1:0] M_cmpeqTest_step;
   cmpeqTest_22 cmpeqTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_cmpeqTest_out),
-    .true(M_cmpeqTest_true)
+    .true(M_cmpeqTest_true),
+    .step(M_cmpeqTest_step)
   );
   wire [16-1:0] M_cmpleTest_out;
   wire [1-1:0] M_cmpleTest_true;
+  wire [8-1:0] M_cmpleTest_step;
   cmpleTest_23 cmpleTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_cmpleTest_out),
-    .true(M_cmpleTest_true)
+    .true(M_cmpleTest_true),
+    .step(M_cmpleTest_step)
   );
   wire [16-1:0] M_cmpltTest_out;
   wire [1-1:0] M_cmpltTest_true;
+  wire [8-1:0] M_cmpltTest_step;
   cmpltTest_24 cmpltTest (
     .clk(clk),
     .rst(rst),
     .button(button),
     .count(M_counter_q),
     .out(M_cmpltTest_out),
-    .true(M_cmpltTest_true)
+    .true(M_cmpltTest_true),
+    .step(M_cmpltTest_step)
   );
   
   always @* begin
@@ -191,6 +218,7 @@ module tst_4 (
     
     seg = 1'h0;
     out = 1'h0;
+    step = 1'h0;
     M_timer_d = M_timer_q + 1'h1;
     M_edge_in = button;
     
@@ -204,14 +232,16 @@ module tst_4 (
       end
       ADD_state: begin
         out = M_addTest_out;
+        step = M_addTest_step;
         seg = 13'h1bbb;
         if (M_addTest_true == 1'h1) begin
-          M_counter_d = M_counter_q + 3'h4;
-          M_state_d = AND_state;
+          M_counter_d = M_counter_q + 1'h1;
+          M_state_d = SUB_state;
         end
       end
       SUB_state: begin
         out = M_subTest_out;
+        step = M_subTest_step;
         seg = 14'h2bbb;
         if (M_subTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -220,6 +250,7 @@ module tst_4 (
       end
       MUL_state: begin
         out = M_mulTest_out;
+        step = M_mulTest_step;
         seg = 14'h3bbb;
         if (M_mulTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -228,14 +259,16 @@ module tst_4 (
       end
       OR_state: begin
         out = M_orTest_out;
+        step = M_orTest_step;
         seg = 15'h4bbb;
         if (M_orTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
-          M_state_d = ADD_state;
+          M_state_d = AND_state;
         end
       end
       AND_state: begin
         out = M_andTest_out;
+        step = M_andTest_step;
         seg = 15'h5bbb;
         if (M_andTest_true) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -244,6 +277,7 @@ module tst_4 (
       end
       XOR_state: begin
         out = M_xorTest_out;
+        step = M_xorTest_step;
         seg = 15'h6bbb;
         if (M_xorTest_true) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -252,6 +286,7 @@ module tst_4 (
       end
       A_state: begin
         out = M_bolATest_out;
+        step = M_bolATest_step;
         seg = 15'h7bbb;
         if (M_bolATest_true) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -260,6 +295,7 @@ module tst_4 (
       end
       SHL_state: begin
         out = M_shlTest_out;
+        step = M_shlTest_step;
         seg = 16'h8bbb;
         if (M_shlTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -268,6 +304,7 @@ module tst_4 (
       end
       SHR_state: begin
         out = M_shrTest_out;
+        step = M_shrTest_step;
         seg = 16'h9bbb;
         if (M_shrTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -276,6 +313,7 @@ module tst_4 (
       end
       SRA_state: begin
         out = M_sraTest_out;
+        step = M_sraTest_step;
         seg = 10'h2bb;
         if (M_sraTest_true) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -284,6 +322,7 @@ module tst_4 (
       end
       CMPEQ_state: begin
         out = M_cmpeqTest_out;
+        step = M_cmpeqTest_step;
         seg = 10'h3bb;
         if (M_cmpeqTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -292,6 +331,7 @@ module tst_4 (
       end
       CMPLE_state: begin
         out = M_cmpleTest_out;
+        step = M_cmpleTest_step;
         seg = 11'h6bb;
         if (M_cmpleTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
@@ -300,6 +340,7 @@ module tst_4 (
       end
       CMPLT_state: begin
         out = M_cmpltTest_out;
+        step = M_cmpltTest_step;
         seg = 11'h7bb;
         if (M_cmpleTest_true) begin
           M_counter_d = M_counter_q + 1'h1;

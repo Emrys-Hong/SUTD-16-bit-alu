@@ -65,13 +65,15 @@ module mojo_top_0 (
   reg [15:0] M_result_d, M_result_q = 1'h0;
   wire [16-1:0] M_tst_seg;
   wire [16-1:0] M_tst_out;
+  wire [8-1:0] M_tst_step;
   reg [1-1:0] M_tst_button;
   tst_4 tst (
     .clk(clk),
     .rst(rst),
     .button(M_tst_button),
     .seg(M_tst_seg),
-    .out(M_tst_out)
+    .out(M_tst_out),
+    .step(M_tst_step)
   );
   wire [7-1:0] M_seg_seg;
   wire [4-1:0] M_seg_sel;
@@ -136,6 +138,7 @@ module mojo_top_0 (
           if (io_dip[16+6+1-:2] == 1'h0) begin
             io_led[0+7-:8] = M_tst_out[0+7-:8];
             io_led[8+7-:8] = M_tst_out[8+7-:8];
+            io_led[16+7-:8] = 8'h80;
             M_seg_values = {M_tst_seg[12+3-:4], M_tst_seg[8+3-:4], M_tst_seg[4+3-:4], M_tst_seg[0+3-:4]};
           end
         end

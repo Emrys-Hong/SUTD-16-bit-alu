@@ -16,7 +16,7 @@ module sft (
     case (io_dip[1-:2]) {
     0: out = a << b[3-:4];
     1: out = a >> b[3-:4];
-    3: out = $signed(a) >>> io_dip[3-:4];
+    3: out = $signed(a) >>> b[3-:4];
     }
   }
 }

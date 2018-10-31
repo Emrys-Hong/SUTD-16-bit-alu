@@ -10,7 +10,8 @@ module xorTest_17 (
     input button,
     input [3:0] count,
     output reg [15:0] out,
-    output reg true
+    output reg true,
+    output reg [7:0] step
   );
   
   
@@ -64,6 +65,7 @@ module xorTest_17 (
     M_bol_io_dip = 8'h16;
     true = 1'h0;
     M_edge_detector_in = button;
+    step = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
@@ -75,6 +77,7 @@ module xorTest_17 (
       LL_state: begin
         M_bol_a = 16'h8001;
         M_bol_b = 16'h8001;
+        step = 1'h1;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8001;
         end else begin
@@ -85,7 +88,7 @@ module xorTest_17 (
               out = M_bol_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_bol_out == 16'h8001) begin
+                if (M_bol_out == 16'h0000) begin
                   M_timer_d = 1'h0;
                   M_state_d = AL_state;
                 end else begin
@@ -99,6 +102,7 @@ module xorTest_17 (
       AL_state: begin
         M_bol_a = 16'hffff;
         M_bol_b = 16'h8001;
+        step = 2'h2;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'hffff;
         end else begin
@@ -123,6 +127,7 @@ module xorTest_17 (
       LB_state: begin
         M_bol_a = 16'h8001;
         M_bol_b = 16'hffff;
+        step = 3'h4;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'hffff;
         end else begin
@@ -147,6 +152,7 @@ module xorTest_17 (
       AB_state: begin
         M_bol_a = 16'hffff;
         M_bol_b = 16'hffff;
+        step = 4'h8;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'hffff;
         end else begin

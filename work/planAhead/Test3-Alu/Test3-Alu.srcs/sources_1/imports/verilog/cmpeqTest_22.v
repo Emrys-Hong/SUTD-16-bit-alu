@@ -10,7 +10,8 @@ module cmpeqTest_22 (
     input button,
     input [3:0] count,
     output reg [15:0] out,
-    output reg true
+    output reg true,
+    output reg [7:0] step
   );
   
   
@@ -86,6 +87,7 @@ module cmpeqTest_22 (
     M_timer_d = M_timer_q + 1'h1;
     M_cmpeq_io_dip = 8'h33;
     true = 1'h0;
+    step = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
@@ -97,6 +99,7 @@ module cmpeqTest_22 (
       PP1_state: begin
         M_cmpeq_a = 16'h696a;
         M_cmpeq_b = 16'h6960;
+        step = 1'h1;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h696a;
         end else begin
@@ -121,6 +124,7 @@ module cmpeqTest_22 (
       PP2_state: begin
         M_cmpeq_a = 16'h696a;
         M_cmpeq_b = 16'h696a;
+        step = 2'h2;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h696a;
         end else begin
@@ -145,6 +149,7 @@ module cmpeqTest_22 (
       PP3_state: begin
         M_cmpeq_a = 16'h7fff;
         M_cmpeq_b = 16'h7fff;
+        step = 3'h4;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h7fff;
         end else begin
@@ -169,6 +174,7 @@ module cmpeqTest_22 (
       NN1_state: begin
         M_cmpeq_a = 16'h8a9c;
         M_cmpeq_b = 16'h8a90;
+        step = 4'h8;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8a9c;
         end else begin
@@ -193,6 +199,7 @@ module cmpeqTest_22 (
       NN2_state: begin
         M_cmpeq_a = 16'h8a9c;
         M_cmpeq_b = 16'h8a9c;
+        step = 5'h10;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8a9c;
         end else begin
@@ -217,6 +224,7 @@ module cmpeqTest_22 (
       NN3_state: begin
         M_cmpeq_a = 16'h8000;
         M_cmpeq_b = 16'h8000;
+        step = 6'h20;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8000;
         end else begin

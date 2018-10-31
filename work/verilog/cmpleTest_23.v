@@ -10,7 +10,8 @@ module cmpleTest_23 (
     input button,
     input [3:0] count,
     output reg [15:0] out,
-    output reg true
+    output reg true,
+    output reg [7:0] step
   );
   
   
@@ -100,6 +101,7 @@ module cmpleTest_23 (
     M_timer_d = M_timer_q + 1'h1;
     M_cmple_io_dip = 8'h37;
     true = 1'h0;
+    step = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
@@ -111,6 +113,7 @@ module cmpleTest_23 (
       PP1_state: begin
         M_cmple_a = 16'h6960;
         M_cmple_b = 16'h696a;
+        step = 1'h1;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h6960;
         end else begin
@@ -135,6 +138,7 @@ module cmpleTest_23 (
       PP2_state: begin
         M_cmple_a = 16'h696a;
         M_cmple_b = 16'h6960;
+        step = 2'h2;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h696a;
         end else begin
@@ -159,6 +163,7 @@ module cmpleTest_23 (
       PP3_state: begin
         M_cmple_a = 16'h696a;
         M_cmple_b = 16'h696a;
+        step = 3'h4;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h696a;
         end else begin
@@ -183,6 +188,7 @@ module cmpleTest_23 (
       PP4_state: begin
         M_cmple_a = 16'h7fff;
         M_cmple_b = 16'h7fff;
+        step = 4'h8;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h7fff;
         end else begin
@@ -207,6 +213,7 @@ module cmpleTest_23 (
       NN1_state: begin
         M_cmple_a = 16'h8a90;
         M_cmple_b = 16'h8a9c;
+        step = 5'h10;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8a90;
         end else begin
@@ -231,6 +238,7 @@ module cmpleTest_23 (
       NN2_state: begin
         M_cmple_a = 16'h8a9c;
         M_cmple_b = 16'h8a90;
+        step = 6'h20;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8a9c;
         end else begin
@@ -255,6 +263,7 @@ module cmpleTest_23 (
       NN3_state: begin
         M_cmple_a = 16'h8a9c;
         M_cmple_b = 16'h8a9c;
+        step = 7'h40;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8a9c;
         end else begin
@@ -279,6 +288,7 @@ module cmpleTest_23 (
       NN4_state: begin
         M_cmple_a = 16'h8000;
         M_cmple_b = 16'h8000;
+        step = 8'h80;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8000;
         end else begin

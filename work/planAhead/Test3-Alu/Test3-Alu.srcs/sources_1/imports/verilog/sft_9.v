@@ -26,7 +26,7 @@ module sft_9 (
         out = a >> b[0+3-:4];
       end
       2'h3: begin
-        out = $signed(a) >>> io_dip[0+3-:4];
+        out = $signed(a) >>> b[0+3-:4];
       end
     endcase
   end

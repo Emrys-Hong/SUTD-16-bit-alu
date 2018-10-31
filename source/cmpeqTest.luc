@@ -6,7 +6,8 @@ module cmpeqTest (
     input count[4],
     // out is to show input1 input2 input3
     output out[16],
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
@@ -51,7 +52,7 @@ module cmpeqTest (
     cmpeq.io_dip = 8b00110011;
     // define true to be false
     true = 0;
-    
+    step = 0;
     // cases
     case(state.q) {
       state.BEGIN:
@@ -63,6 +64,7 @@ module cmpeqTest (
       state.PP1:
         cmpeq.a = PP1A;
         cmpeq.b = PP1B;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP1A;
@@ -83,6 +85,7 @@ module cmpeqTest (
       state.PP2:
         cmpeq.a = PP2A;
         cmpeq.b = PP2B;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP2A;
@@ -103,6 +106,7 @@ module cmpeqTest (
       state.PP3:
         cmpeq.a = PP3A;
         cmpeq.b = PP3B;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP3A;
@@ -123,6 +127,7 @@ module cmpeqTest (
       state.NN1:
         cmpeq.a = NN1A;
         cmpeq.b = NN1B;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN1A;
@@ -143,6 +148,7 @@ module cmpeqTest (
       state.NN2:
         cmpeq.a = NN2A;
         cmpeq.b = NN2B;
+        step = 16;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN2A;
@@ -163,6 +169,7 @@ module cmpeqTest (
       state.NN3:
         cmpeq.a = NN3A;
         cmpeq.b = NN3B;
+        step = 32;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN3A;

@@ -10,7 +10,8 @@ module sraTest_21 (
     input button,
     input [3:0] count,
     output reg [15:0] out,
-    output reg true
+    output reg true,
+    output reg [7:0] step
   );
   
   
@@ -38,29 +39,29 @@ module sraTest_21 (
     .out(M_shl_out)
   );
   
-  localparam C1A = 16'h696a;
+  localparam C1A = 16'h7f00;
   
   localparam C1B = 16'h0004;
   
+  localparam C1 = 16'h07f0;
+  
   localparam C2A = 16'ha96a;
   
-  localparam C2B = 16'h0010;
+  localparam C2B = 16'h0000;
+  
+  localparam C2 = 16'ha96a;
   
   localparam C3A = 16'h7fff;
   
-  localparam C3B = 16'h0010;
+  localparam C3B = 16'h0002;
+  
+  localparam C3 = 16'h1fff;
   
   localparam C4A = 16'h8000;
   
-  localparam C4B = 16'h0010;
+  localparam C4B = 16'h0001;
   
-  localparam C1 = 16'h0696;
-  
-  localparam C2 = 16'h0000;
-  
-  localparam C3 = 16'hfa96;
-  
-  localparam C4 = 16'hffff;
+  localparam C4 = 16'hc000;
   
   always @* begin
     M_state_d = M_state_q;
@@ -70,21 +71,23 @@ module sraTest_21 (
     M_shl_a = 1'h0;
     M_shl_b = 1'h0;
     M_timer_d = M_timer_q + 1'h1;
-    M_shl_io_dip = 8'h20;
+    M_shl_io_dip = 8'h23;
     true = 1'h0;
+    step = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
-        if (count == 4'ha & ~button) begin
+        if (count == 4'ha & button) begin
           M_timer_d = 1'h0;
           M_state_d = C1_state;
         end
       end
       C1_state: begin
-        M_shl_a = 16'h696a;
+        M_shl_a = 16'h7f00;
         M_shl_b = 16'h0004;
+        step = 1'h1;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h696a;
+          out = 16'h7f00;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
             out = 16'h0004;
@@ -93,7 +96,7 @@ module sraTest_21 (
               out = M_shl_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_shl_out == 16'h0696) begin
+                if (M_shl_out == 16'h07f0) begin
                   M_timer_d = 1'h0;
                   M_state_d = C2_state;
                 end else begin
@@ -106,18 +109,19 @@ module sraTest_21 (
       end
       C2_state: begin
         M_shl_a = 16'ha96a;
-        M_shl_b = 16'h0010;
+        M_shl_b = 16'h0000;
+        step = 2'h2;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'ha96a;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h0010;
+            out = 16'h0000;
           end else begin
             if ((M_timer_q[26+1-:2] == 2'h2)) begin
               out = M_shl_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_shl_out == 16'h0000)) begin
+                if ((M_shl_out == 16'ha96a)) begin
                   M_timer_d = 1'h0;
                   M_state_d = C3_state;
                 end else begin
@@ -130,18 +134,19 @@ module sraTest_21 (
       end
       C3_state: begin
         M_shl_a = 16'h7fff;
-        M_shl_b = 16'h0010;
+        M_shl_b = 16'h0002;
+        step = 3'h4;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h7fff;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h0010;
+            out = 16'h0002;
           end else begin
             if ((M_timer_q[26+1-:2] == 2'h2)) begin
               out = M_shl_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_shl_out == 16'hfa96) begin
+                if (M_shl_out == 16'h1fff) begin
                   M_timer_d = 1'h0;
                   M_state_d = C4_state;
                 end else begin
@@ -154,18 +159,19 @@ module sraTest_21 (
       end
       C4_state: begin
         M_shl_a = 16'h8000;
-        M_shl_b = 16'h0010;
+        M_shl_b = 16'h0001;
+        step = 4'h8;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8000;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h0010;
+            out = 16'h0001;
           end else begin
             if ((M_timer_q[26+1-:2] == 2'h2)) begin
               out = M_shl_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_shl_out == 16'hffff) begin
+                if (M_shl_out == 16'hc000) begin
                   M_timer_d = 1'h0;
                   M_state_d = GOOD_state;
                 end else begin

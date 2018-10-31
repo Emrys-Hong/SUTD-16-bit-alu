@@ -7,7 +7,8 @@ module sraTest (
     input count[4],
     // out is to show input1 input2 input3
     output out[16],
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
@@ -19,20 +20,28 @@ module sraTest (
   }
   
   // checking cases
-  const C1A = 16b0110100101101010;
+  const C1A = 16b0111111100000000;
   const C1B = 16b0000000000000100;
+  const C1 =  16b0000011111110000;
+  
   const C2A = 16b1010100101101010;
-  const C2B = 16b0000000000010000;
+  const C2B = 16b0000000000000000;
+  const C2 = 16b1010100101101010;
+  
   const C3A = 16b0111111111111111;
-  const C3B = 16b0000000000010000;
+  const C3B = 16b0000000000000010;
+  const C3 = 16b0001111111111111;
+  
   const C4A = 16b1000000000000000;
-  const C4B = 16b0000000000010000;
+  const C4B = 16b0000000000000001;
+  const C4 =  16b1100000000000000;
+  
   
   // correct results
-  const C1 = 16b0000011010010110;
-  const C2 = 16b0000000000000000;
-  const C3 = 16b1111101010010110;
-  const C4 = 16b1111111111111111;
+  
+  
+  
+  
   
   always {
     // define default outputs
@@ -41,14 +50,14 @@ module sraTest (
     shl.b = 0;
     timer.d = timer.q+1;
     // alufn for add
-    shl.io_dip = 8b00100000;
+    shl.io_dip = 8b00100011;
     // define true to be false
     true = 0;
-    
+    step = 0;
     // cases
     case(state.q) {
       state.BEGIN:
-        if (count==10 & ~button) {
+        if (count==10 & button) {
           timer.d = 0;
           state.d = state.C1;
         }
@@ -56,6 +65,7 @@ module sraTest (
       state.C1:
         shl.a = C1A;
         shl.b = C1B;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = C1A;
@@ -77,6 +87,7 @@ module sraTest (
       state.C2:
         shl.a = C2A;
         shl.b = C2B;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = C2A;
@@ -98,6 +109,7 @@ module sraTest (
       state.C3:
         shl.a = C3A;
         shl.b = C3B;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = C3A;
@@ -118,6 +130,7 @@ module sraTest (
       state.C4:
         shl.a = C4A;
         shl.b = C4B;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = C4A;

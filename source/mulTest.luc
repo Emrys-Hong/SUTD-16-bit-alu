@@ -6,42 +6,36 @@ module mulTest (
     input count[4],
     // out is to show input1 input2 input3
     output out[16],
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
   edge_detector edge_detector(#RISE(1), #FALL(0));
     .rst(rst) {
-      fsm state = {BEGIN, PP1, PP2, NN1, NN2, PN1, PN2, PN3, GOOD, ERROR};
+      fsm state = {BEGIN, PP1, PP2, PP3, PP4, GOOD, ERROR};
       dff timer[28];
       mul mul;
     }
   }
   
   // checking cases
-  const PP1A = 16b0111000011110000;
-  const PP1B = 16b0000000000000011;
-  const PP2A = 16b0000000011110000;
-  const PP2B = 16b0000000000000011;
-  const NN1A = 16b1000000000000000;
-  const NN1B = 16b1111111111111000;
-  const NN2A = 16b1111111111111111;
-  const NN2B = 16b1111111111111000;
-  const PN1A = 16b0000000011110000;
-  const PN1B = 16b1111111111111000;
-  const PN2A = 16b0111000011110000;
-  const PN2B = 16b1111111111111000;
-  const PN3A = 16b0000000011110000;
-  const PN3B = 16b1000000000000000;
+  const PP1A = 16b0000000000000010;
+  const PP1B = 16b0000000000000100;
+  const PP1  = 16b0000000000001000;
   
-  // correct results
-  const PP1 = 16b0101001111010000;
-  const PP2 = 16b0000001011010000;
-  const NN1 = 16b0000000000000000;
-  const NN2 = 16b0000000000000000;
-  const PN1 = 16b1111100010000000;
-  const PN2 = 16b0111100010000000;
-  const PN3 = 16b0000000000000000;
+  const PP2A = 16b0100000000000001;
+  const PP2B = 16b0000000000000011;
+  const PP2 =  16b1100000000000011;
+  
+  const PP3A = 16b0000000000000001;
+  const NN3B = 16b1111111111111111;
+  const PP3  = 16b1111111111111111;
+  
+  const NN4A = 16b1111111111111111;
+  const NN4B = 16b1111111111111000;
+  const PP4  = 16b0000000000001000;
+  
   
   
   always {
@@ -56,6 +50,7 @@ module mulTest (
     true = 0;
     
     edge_detector.in = button;
+    step = 0;
     // cases
     case(state.q) {
       state.BEGIN:
@@ -67,6 +62,7 @@ module mulTest (
       state.PP1:
         mul.a = PP1A;
         mul.b = PP1B;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP1A;
@@ -87,6 +83,7 @@ module mulTest (
       state.PP2:
         mul.a = PP2A;
         mul.b = PP2B;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP2A;
@@ -98,111 +95,54 @@ module mulTest (
         } else if (timer.q[27:26]==3) {
           if (mul.out==PP2){
             timer.d = 0;
-            state.d = state.NN1;
+            state.d = state.PP3;
           } else {
             state.d = state.ERROR;
           }
         }
       
-      state.NN1:
-        mul.a = NN1A;
-        mul.b = NN1B;
+      state.PP3:
+        mul.a = PP3A;
+        mul.b = NN3B;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
-          out = NN1A;
+          out = PP3A;
         } else if (timer.q[27:26]==1) {
-          out = NN1B;
+          out = NN3B;
         } else if ( timer.q[27:26]==2) {
           // show result
           out = mul.out;
         } else if (timer.q[27:26]==3) {
-          if (mul.out==NN1){
+          if (mul.out==PP3){
             timer.d = 0;
-            state.d = state.NN2;
+            state.d = state.PP4;
           } else {
             state.d = state.ERROR;
           }
         }
       
-      state.NN2:
-        mul.a = NN2A;
-        mul.b = NN2B;
+      state.PP4:
+        mul.a = NN4A;
+        mul.b = NN4B;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
-          out = NN2A;
+          out = NN4A;
         } else if (timer.q[27:26]==1) {
-          out = NN2B;
+          out = NN4B;
         } else if ( timer.q[27:26]==2) {
           // show result
           out = mul.out;
         } else if (timer.q[27:26]==3) {
-          if (mul.out==NN2){
-            timer.d = 0;
-            state.d = state.PN1;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.PN1:
-        mul.a = PN1A;
-        mul.b = PN1B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = PN1A;
-        } else if (timer.q[27:26]==1) {
-          out = PN1B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = mul.out;
-        } else if (timer.q[27:26]==3) {
-          if (mul.out==PN1){
-            timer.d = 0;
-            state.d = state.PN2;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.PN2:
-        mul.a = PN2A;
-        mul.b = PN2B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = PN2A;
-        } else if (timer.q[27:26]==1) {
-          out = PN2B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = mul.out;
-        } else if (timer.q[27:26]==3) {
-          if (mul.out==PN2){
-            timer.d = 0;
-            state.d = state.PN3;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.PN3:
-        mul.a = PN3A;
-        mul.b = PN3B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = PN3A;
-        } else if (timer.q[27:26]==1) {
-          out = PN3B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = mul.out;
-        } else if (timer.q[27:26]==3) {
-          if (mul.out==PN3){
+          if (mul.out==PP4){
             timer.d = 0;
             state.d = state.GOOD;
           } else {
             state.d = state.ERROR;
           }
         }
+      
       
       state.GOOD:
         if (timer.q[27] == 1) {

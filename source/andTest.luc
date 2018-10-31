@@ -10,7 +10,8 @@ module andTest (
     //output v,
     //output n,
     //output z,
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
@@ -39,6 +40,8 @@ module andTest (
     true = 0;
     
     edge_detector.in = button;
+    
+    step = 0;
     // cases
     case(state.q) {
       state.BEGIN:
@@ -50,6 +53,7 @@ module andTest (
       state.LL:
         bol.a = LL;
         bol.b = LL;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = LL;
@@ -70,6 +74,7 @@ module andTest (
       state.AL:
         bol.a = HH;
         bol.b = LL;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = HH;
@@ -90,6 +95,7 @@ module andTest (
       state.LB:
         bol.a = LL;
         bol.b = HH;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = HH;
@@ -110,6 +116,7 @@ module andTest (
       state.AB:
         bol.a = HH;
         bol.b = HH;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = HH;

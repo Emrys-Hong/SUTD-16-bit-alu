@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Reading design: mojo_top_0.prj
@@ -142,14 +142,14 @@ Elaborating module <tst_4>.
 Elaborating module <edge_detector_11>.
 
 Elaborating module <addTest_12>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 55: Assignment to M_addTest_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 56: Assignment to M_addTest_n ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 57: Assignment to M_addTest_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 57: Assignment to M_addTest_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 58: Assignment to M_addTest_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 59: Assignment to M_addTest_z ignored, since the identifier is never used
 
 Elaborating module <subTest_13>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 71: Assignment to M_subTest_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 72: Assignment to M_subTest_n ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 73: Assignment to M_subTest_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 75: Assignment to M_subTest_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 76: Assignment to M_subTest_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 77: Assignment to M_subTest_z ignored, since the identifier is never used
 
 Elaborating module <mulTest_14>.
 
@@ -172,7 +172,8 @@ Elaborating module <cmpeqTest_22>.
 Elaborating module <cmpleTest_23>.
 
 Elaborating module <cmpltTest_24>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 184: Assignment to M_cmpltTest_true ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 210: Assignment to M_cmpltTest_true ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 76: Assignment to M_tst_step ignored, since the identifier is never used
 
 Elaborating module <multi_seven_seg_5>.
 
@@ -199,38 +200,24 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
 INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 70: Output port <step> of the instance <tst> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <M_input2_q>.
     Found 16-bit register for signal <M_result_q>.
     Found 16-bit register for signal <M_input1_q>.
-    Found 16-bit adder for signal <M_input1_q[15]_io_dip[15]_add_3_OUT> created at line 117.
-    Found 16-bit adder for signal <M_input2_q[15]_io_dip[15]_add_6_OUT> created at line 125.
-    Found 16-bit adder for signal <M_result_q[15]_M_alu_out[15]_add_9_OUT> created at line 133.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<15>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<14>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<13>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<12>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<11>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<10>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<9>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<8>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<7>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<6>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<5>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<4>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<3>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<2>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<1>> created at line 20.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<0>> created at line 20.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 87
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 87
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 87
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 87
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 87
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 87
+    Found 16-bit adder for signal <M_input1_q[15]_io_dip[15]_add_3_OUT> created at line 119.
+    Found 16-bit adder for signal <M_input2_q[15]_io_dip[15]_add_6_OUT> created at line 127.
+    Found 16-bit adder for signal <M_result_q[15]_M_alu_out[15]_add_9_OUT> created at line 135.
+    Found 24-bit 4-to-1 multiplexer for signal <io_led> created at line 20.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 89
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 89
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 89
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 89
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 89
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 89
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  48 D-type flip-flop(s).
-	inferred  16 Multiplexer(s).
+	inferred   1 Multiplexer(s).
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
@@ -291,13 +278,13 @@ Unit <bol_8> synthesized.
 
 Synthesizing Unit <sft_9>.
     Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/sft_9.v".
-WARNING:Xst:647 - Input <io_dip<7:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_dip<7:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit shifter logical left for signal <a[15]_b[3]_shift_left_0_OUT> created at line 23
     Found 16-bit shifter logical right for signal <a[15]_b[3]_shift_right_1_OUT> created at line 26
-    Found 16-bit shifter arithmetic right for signal <a[15]_io_dip[3]_shift_right_2_OUT> created at line 29
+    Found 16-bit shifter arithmetic right for signal <a[15]_b[3]_shift_right_2_OUT> created at line 29
     Found 16-bit 4-to-1 multiplexer for signal <out> created at line 21.
     Summary:
 	inferred   1 Multiplexer(s).
@@ -373,21 +360,19 @@ Unit <div_16u_16u> synthesized.
 
 Synthesizing Unit <tst_4>.
     Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v".
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 49: Output port <v> of the instance <addTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 49: Output port <n> of the instance <addTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 49: Output port <z> of the instance <addTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 65: Output port <v> of the instance <subTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 65: Output port <n> of the instance <subTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 65: Output port <z> of the instance <subTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 178: Output port <true> of the instance <cmpltTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 51: Output port <v> of the instance <addTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 51: Output port <n> of the instance <addTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 51: Output port <z> of the instance <addTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 69: Output port <v> of the instance <subTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 69: Output port <n> of the instance <subTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 69: Output port <z> of the instance <subTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 204: Output port <true> of the instance <cmpltTest> is unconnected or connected to loadless signal.
     Found 4-bit register for signal <M_counter_q>.
     Found 4-bit register for signal <M_state_q>.
-INFO:Xst:1799 - State 0011 is never reached in FSM <M_state_q>.
-INFO:Xst:1799 - State 0101 is never reached in FSM <M_state_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
-    | States             | 14                                             |
-    | Transitions        | 23                                             |
+    | States             | 15                                             |
+    | Transitions        | 29                                             |
     | Inputs             | 13                                             |
     | Outputs            | 20                                             |
     | Clock              | clk (rising_edge)                              |
@@ -398,13 +383,13 @@ INFO:Xst:1799 - State 0101 is never reached in FSM <M_state_q>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <M_counter_q[3]_GND_12_o_add_5_OUT> created at line 209.
-    Found 4-bit adder for signal <M_counter_q[3]_GND_12_o_add_48_OUT> created at line 305.
-    Found 16-bit 15-to-1 multiplexer for signal <out> created at line 197.
+    Found 4-bit adder for signal <M_counter_d> created at line 346.
+    Found 16-bit 15-to-1 multiplexer for signal <out> created at line 225.
+    Found 8-bit 15-to-1 multiplexer for signal <step> created at line 225.
     Summary:
-	inferred   2 Adder/Subtractor(s).
+	inferred   1 Adder/Subtractor(s).
 	inferred   4 D-type flip-flop(s).
-	inferred   5 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <tst_4> synthesized.
 
@@ -425,7 +410,7 @@ Synthesizing Unit <addTest_12>.
     | States             | 9                                              |
     | Transitions        | 29                                             |
     | Inputs             | 9                                              |
-    | Outputs            | 23                                             |
+    | Outputs            | 29                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -434,7 +419,7 @@ Synthesizing Unit <addTest_12>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_14_o_add_0_OUT> created at line 89.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_14_o_add_0_OUT> created at line 90.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -444,56 +429,57 @@ Unit <addTest_12> synthesized.
 
 Synthesizing Unit <subTest_13>.
     Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/subTest_13.v".
-    Found 4-bit register for signal <M_state_q>.
+    Found 3-bit register for signal <M_state_q>.
     Found 28-bit register for signal <M_timer_q>.
     Found finite state machine <FSM_2> for signal <M_state_q>.
     -----------------------------------------------------------------------
-    | States             | 14                                             |
-    | Transitions        | 49                                             |
-    | Inputs             | 11                                             |
-    | Outputs            | 36                                             |
+    | States             | 8                                              |
+    | Transitions        | 25                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 39                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
-    | Reset State        | 0000                                           |
-    | Power Up State     | 0000                                           |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_15_o_add_0_OUT> created at line 140.
-    Found 16-bit 15-to-1 multiplexer for signal <out> created at line 145.
-    Found 28-bit 11-to-1 multiplexer for signal <M_timer_d> created at line 145.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_15_o_add_0_OUT> created at line 99.
+    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 105.
+    Found 28-bit 6-to-1 multiplexer for signal <M_timer_d> created at line 105.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  31 Multiplexer(s).
+	inferred  19 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <subTest_13> synthesized.
 
 Synthesizing Unit <mulTest_14>.
     Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mulTest_14.v".
-    Found 4-bit register for signal <M_state_q>.
+    Found 3-bit register for signal <M_state_q>.
     Found 28-bit register for signal <M_timer_q>.
     Found finite state machine <FSM_3> for signal <M_state_q>.
     -----------------------------------------------------------------------
-    | States             | 10                                             |
-    | Transitions        | 33                                             |
-    | Inputs             | 9                                              |
-    | Outputs            | 35                                             |
+    | States             | 7                                              |
+    | Transitions        | 21                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 39                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
-    | Reset State        | 0000                                           |
-    | Power Up State     | 0000                                           |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_16_o_add_0_OUT> created at line 100.
-    Found 16-bit 12-to-1 multiplexer for signal <out> created at line 105.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_16_o_add_0_OUT> created at line 80.
+    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 86.
+    Found 28-bit 7-to-1 multiplexer for signal <M_timer_d> created at line 86.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  32 Multiplexer(s).
+	inferred  16 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <mulTest_14> synthesized.
 
@@ -506,7 +492,7 @@ Synthesizing Unit <orTest_15>.
     | States             | 7                                              |
     | Transitions        | 21                                             |
     | Inputs             | 6                                              |
-    | Outputs            | 35                                             |
+    | Outputs            | 39                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -515,8 +501,8 @@ Synthesizing Unit <orTest_15>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_17_o_add_0_OUT> created at line 59.
-    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 64.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_17_o_add_0_OUT> created at line 60.
+    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 66.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -533,7 +519,7 @@ Synthesizing Unit <andTest_16>.
     | States             | 7                                              |
     | Transitions        | 21                                             |
     | Inputs             | 6                                              |
-    | Outputs            | 35                                             |
+    | Outputs            | 39                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -542,8 +528,8 @@ Synthesizing Unit <andTest_16>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_18_o_add_0_OUT> created at line 59.
-    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 64.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_18_o_add_0_OUT> created at line 60.
+    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 66.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -559,8 +545,8 @@ Synthesizing Unit <xorTest_17>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
     | Transitions        | 21                                             |
-    | Inputs             | 7                                              |
-    | Outputs            | 35                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 39                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -569,13 +555,12 @@ Synthesizing Unit <xorTest_17>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_19_o_add_0_OUT> created at line 63.
-    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 68.
-    Found 28-bit 6-to-1 multiplexer for signal <M_timer_d> created at line 68.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_19_o_add_0_OUT> created at line 64.
+    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 70.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  13 Multiplexer(s).
+	inferred  15 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <xorTest_17> synthesized.
 
@@ -588,7 +573,7 @@ Synthesizing Unit <bolATest_18>.
     | States             | 7                                              |
     | Transitions        | 21                                             |
     | Inputs             | 6                                              |
-    | Outputs            | 35                                             |
+    | Outputs            | 39                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -597,8 +582,8 @@ Synthesizing Unit <bolATest_18>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_20_o_add_0_OUT> created at line 63.
-    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 68.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_20_o_add_0_OUT> created at line 60.
+    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 66.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -614,8 +599,8 @@ Synthesizing Unit <shlTest_19>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
     | Transitions        | 21                                             |
-    | Inputs             | 6                                              |
-    | Outputs            | 21                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 25                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -624,12 +609,13 @@ Synthesizing Unit <shlTest_19>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_21_o_add_0_OUT> created at line 72.
-    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 76.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_21_o_add_0_OUT> created at line 73.
+    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 78.
+    Found 28-bit 7-to-1 multiplexer for signal <M_timer_d> created at line 78.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  19 Multiplexer(s).
+	inferred  18 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <shlTest_19> synthesized.
 
@@ -641,8 +627,8 @@ Synthesizing Unit <shrTest_20>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
     | Transitions        | 21                                             |
-    | Inputs             | 6                                              |
-    | Outputs            | 21                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 26                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -651,12 +637,13 @@ Synthesizing Unit <shrTest_20>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_22_o_add_0_OUT> created at line 72.
-    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 76.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_22_o_add_0_OUT> created at line 73.
+    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 78.
+    Found 28-bit 7-to-1 multiplexer for signal <M_timer_d> created at line 78.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  19 Multiplexer(s).
+	inferred  18 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <shrTest_20> synthesized.
 
@@ -669,7 +656,7 @@ Synthesizing Unit <sraTest_21>.
     | States             | 7                                              |
     | Transitions        | 21                                             |
     | Inputs             | 8                                              |
-    | Outputs            | 21                                             |
+    | Outputs            | 26                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -678,13 +665,13 @@ Synthesizing Unit <sraTest_21>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_23_o_add_0_OUT> created at line 72.
-    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 76.
-    Found 28-bit 7-to-1 multiplexer for signal <M_timer_d> created at line 76.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_23_o_add_0_OUT> created at line 73.
+    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 78.
+    Found 28-bit 7-to-1 multiplexer for signal <M_timer_d> created at line 78.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  19 Multiplexer(s).
+	inferred  18 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <sraTest_21> synthesized.
 
@@ -697,7 +684,7 @@ Synthesizing Unit <cmpeqTest_22>.
     | States             | 9                                              |
     | Transitions        | 29                                             |
     | Inputs             | 6                                              |
-    | Outputs            | 36                                             |
+    | Outputs            | 42                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -706,8 +693,8 @@ Synthesizing Unit <cmpeqTest_22>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_24_o_add_0_OUT> created at line 86.
-    Found 16-bit 12-to-1 multiplexer for signal <out> created at line 90.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_24_o_add_0_OUT> created at line 87.
+    Found 16-bit 12-to-1 multiplexer for signal <out> created at line 92.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -724,7 +711,7 @@ Synthesizing Unit <cmpleTest_23>.
     | States             | 11                                             |
     | Transitions        | 37                                             |
     | Inputs             | 6                                              |
-    | Outputs            | 36                                             |
+    | Outputs            | 44                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -733,8 +720,8 @@ Synthesizing Unit <cmpleTest_23>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_25_o_add_0_OUT> created at line 100.
-    Found 16-bit 13-to-1 multiplexer for signal <out> created at line 104.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_25_o_add_0_OUT> created at line 101.
+    Found 16-bit 13-to-1 multiplexer for signal <out> created at line 106.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -751,7 +738,7 @@ Synthesizing Unit <cmpltTest_24>.
     | States             | 11                                             |
     | Transitions        | 37                                             |
     | Inputs             | 6                                              |
-    | Outputs            | 36                                             |
+    | Outputs            | 44                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -760,8 +747,8 @@ Synthesizing Unit <cmpltTest_24>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_26_o_add_0_OUT> created at line 100.
-    Found 16-bit 13-to-1 multiplexer for signal <out> created at line 104.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_26_o_add_0_OUT> created at line 101.
+    Found 16-bit 13-to-1 multiplexer for signal <out> created at line 106.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -809,7 +796,7 @@ Macro Statistics
  16x7-bit single-port Read Only RAM                    : 1
 # Multipliers                                          : 2
  16x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 87
+# Adders/Subtractors                                   : 86
  16-bit adder                                          : 3
  16-bit addsub                                         : 3
  17-bit adder                                          : 4
@@ -828,7 +815,7 @@ Macro Statistics
  30-bit adder                                          : 4
  31-bit adder                                          : 4
  32-bit adder                                          : 4
- 4-bit adder                                           : 3
+ 4-bit adder                                           : 2
 # Registers                                            : 28
  1-bit register                                        : 9
  16-bit register                                       : 3
@@ -855,22 +842,21 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 818
+# Multiplexers                                         : 771
  1-bit 2-to-1 multiplexer                              : 501
- 1-bit 4-to-1 multiplexer                              : 16
- 16-bit 12-to-1 multiplexer                            : 2
+ 16-bit 12-to-1 multiplexer                            : 1
  16-bit 13-to-1 multiplexer                            : 2
- 16-bit 15-to-1 multiplexer                            : 2
- 16-bit 2-to-1 multiplexer                             : 111
+ 16-bit 15-to-1 multiplexer                            : 1
+ 16-bit 2-to-1 multiplexer                             : 97
  16-bit 4-to-1 multiplexer                             : 9
  16-bit 7-to-1 multiplexer                             : 4
- 16-bit 8-to-1 multiplexer                             : 3
+ 16-bit 8-to-1 multiplexer                             : 5
  18-bit 2-to-1 multiplexer                             : 1
- 28-bit 11-to-1 multiplexer                            : 1
- 28-bit 2-to-1 multiplexer                             : 160
+ 24-bit 4-to-1 multiplexer                             : 1
+ 28-bit 2-to-1 multiplexer                             : 143
  28-bit 6-to-1 multiplexer                             : 1
- 28-bit 7-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 4
+ 28-bit 7-to-1 multiplexer                             : 4
+ 8-bit 15-to-1 multiplexer                             : 1
 # Logic shifters                                       : 13
  16-bit shifter arithmetic right                       : 4
  16-bit shifter logical left                           : 4
@@ -914,6 +900,10 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs ei
     -----------------------------------------------------------------------
 Unit <seven_seg_26> synthesized (advanced).
 
+Synthesizing (advanced) Unit <tst_4>.
+The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
+Unit <tst_4> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
@@ -922,17 +912,18 @@ Macro Statistics
  16x7-bit single-port distributed Read Only RAM        : 1
 # Multipliers                                          : 2
  16x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 51
+# Adders/Subtractors                                   : 49
  16-bit adder carry in                                 : 32
  16-bit addsub                                         : 3
  28-bit adder                                          : 13
- 4-bit adder                                           : 3
-# Counters                                             : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 2
  18-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
 # Accumulators                                         : 3
  16-bit up accumulator                                 : 3
-# Registers                                            : 381
- Flip-Flops                                            : 381
+# Registers                                            : 377
+ Flip-Flops                                            : 377
 # Comparators                                          : 46
  16-bit comparator equal                               : 4
  16-bit comparator greater                             : 4
@@ -953,21 +944,20 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 815
+# Multiplexers                                         : 768
  1-bit 2-to-1 multiplexer                              : 499
- 1-bit 4-to-1 multiplexer                              : 16
- 16-bit 12-to-1 multiplexer                            : 2
+ 16-bit 12-to-1 multiplexer                            : 1
  16-bit 13-to-1 multiplexer                            : 2
- 16-bit 15-to-1 multiplexer                            : 2
- 16-bit 2-to-1 multiplexer                             : 111
+ 16-bit 15-to-1 multiplexer                            : 1
+ 16-bit 2-to-1 multiplexer                             : 97
  16-bit 4-to-1 multiplexer                             : 9
  16-bit 7-to-1 multiplexer                             : 4
- 16-bit 8-to-1 multiplexer                             : 3
- 28-bit 11-to-1 multiplexer                            : 1
- 28-bit 2-to-1 multiplexer                             : 160
+ 16-bit 8-to-1 multiplexer                             : 5
+ 24-bit 4-to-1 multiplexer                             : 1
+ 28-bit 2-to-1 multiplexer                             : 143
  28-bit 6-to-1 multiplexer                             : 1
- 28-bit 7-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 4
+ 28-bit 7-to-1 multiplexer                             : 4
+ 8-bit 15-to-1 multiplexer                             : 1
 # Logic shifters                                       : 13
  16-bit shifter arithmetic right                       : 4
  16-bit shifter logical left                           : 4
@@ -1000,40 +990,31 @@ Optimizing FSM <tst/FSM_1> on signal <M_state_q[1:9]> with one-hot encoding.
  0101  | 100000000
 --------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <tst/FSM_2> on signal <M_state_q[1:14]> with one-hot encoding.
--------------------------
+Optimizing FSM <tst/FSM_2> on signal <M_state_q[1:8]> with one-hot encoding.
+-------------------
  State | Encoding
--------------------------
- 0000  | 00000000000001
- 0001  | 00000000000010
- 1101  | 00000000000100
- 0010  | 00000000001000
- 0011  | 00000000010000
- 0100  | 00000000100000
- 0101  | 00000001000000
- 0110  | 00000010000000
- 0111  | 00000100000000
- 1000  | 00001000000000
- 1001  | 00010000000000
- 1010  | 00100000000000
- 1011  | 01000000000000
- 1100  | 10000000000000
--------------------------
+-------------------
+ 000   | 00000001
+ 001   | 00000010
+ 111   | 00000100
+ 010   | 00001000
+ 011   | 00010000
+ 100   | 00100000
+ 101   | 01000000
+ 110   | 10000000
+-------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <tst/FSM_3> on signal <M_state_q[1:4]> with sequential encoding.
+Optimizing FSM <tst/FSM_3> on signal <M_state_q[1:7]> with one-hot encoding.
 -------------------
  State | Encoding
 -------------------
- 0000  | 0000
- 0001  | 0001
- 1001  | 0010
- 0010  | 0011
- 0011  | 0100
- 0100  | 0101
- 0101  | 0110
- 0110  | 0111
- 0111  | 1000
- 1000  | 1001
+ 000   | 0000001
+ 001   | 0000010
+ 110   | 0000100
+ 010   | 0001000
+ 011   | 0010000
+ 100   | 0100000
+ 101   | 1000000
 -------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <tst/FSM_4> on signal <M_state_q[1:7]> with one-hot encoding.
@@ -1176,118 +1157,26 @@ Optimizing FSM <tst/FSM_13> on signal <M_state_q[1:11]> with one-hot encoding.
  1001  | 10000000000
 ----------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <tst/FSM_0> on signal <M_state_q[1:12]> with one-hot encoding.
------------------------
+Optimizing FSM <tst/FSM_0> on signal <M_state_q[1:4]> with user encoding.
+-------------------
  State | Encoding
------------------------
- 0000  | 000000000001
- 0001  | 000000000010
- 0100  | 000000000100
- 0011  | unreached
- 0101  | unreached
- 0110  | 000000001000
- 0111  | 000000010000
- 1000  | 000000100000
- 1001  | 000001000000
- 1010  | 000010000000
- 1011  | 000100000000
- 1100  | 001000000000
- 1101  | 010000000000
- 1110  | 100000000000
------------------------
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_27> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_26> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_25> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_24> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_23> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_22> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_21> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_20> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_19> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_18> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_17> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_16> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_15> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_14> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_13> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_12> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_11> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_10> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_9> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_8> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_7> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_6> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_5> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_4> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_3> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_2> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_1> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <mulTest/M_timer_q_0> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2973 - All outputs of instance <mulTest/mul> of block <mul_10> are unconnected in block <tst_4>. Underlying logic will be removed.
-WARNING:Xst:1293 - FF/Latch <sraTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sraTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_state_q_FSM_FFd4> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_state_q_FSM_FFd3> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_state_q_FSM_FFd2> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal sraTest/M_state_q_FSM_FFd2 and M_state_q_FSM_FFd4 M_state_q_FSM_FFd4 signal will be lost.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd4 and M_state_q_FSM_FFd3 M_state_q_FSM_FFd3 signal will be lost.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd3 and M_state_q_FSM_FFd2 M_state_q_FSM_FFd2 signal will be lost.
-WARNING:Xst:1293 - FF/Latch <M_state_q_FSM_FFd1> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_27> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_26> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_25> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_24> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_23> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_22> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_21> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_20> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_19> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_18> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_17> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_16> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_15> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_14> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_13> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_12> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_11> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_10> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_9> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_8> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_7> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_6> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_5> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_4> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_3> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_2> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_1> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_timer_q_0> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd11> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd10> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd9> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd8> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd7> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd4> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd6> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd5> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd3> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd2> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:2677 - Node <cmpltTest/M_state_q_FSM_FFd1> of sequential type is unconnected in block <tst_4>.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd2 and M_state_q_FSM_FFd1 M_state_q_FSM_FFd1 signal will be lost.
-WARNING:Xst:1293 - FF/Latch <xorTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and xorTest/M_state_q_FSM_FFd4 xorTest/M_state_q_FSM_FFd4 signal will be lost.
-WARNING:Xst:1293 - FF/Latch <xorTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xorTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xorTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_state_q_FSM_FFd7> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_state_q_FSM_FFd8> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_state_q_FSM_FFd6> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and xorTest/M_state_q_FSM_FFd2 xorTest/M_state_q_FSM_FFd2 signal will be lost.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and xorTest/M_state_q_FSM_FFd3 xorTest/M_state_q_FSM_FFd3 signal will be lost.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and M_state_q_FSM_FFd7 M_state_q_FSM_FFd7 signal will be lost.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and M_state_q_FSM_FFd8 M_state_q_FSM_FFd8 signal will be lost.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and M_state_q_FSM_FFd6 M_state_q_FSM_FFd6 signal will be lost.
-WARNING:Xst:1293 - FF/Latch <M_state_q_FSM_FFd5> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and M_state_q_FSM_FFd5 M_state_q_FSM_FFd5 signal will be lost.
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0101  | 0101
+ 0110  | 0110
+ 0100  | 0100
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+ 1101  | 1101
+ 1110  | 1110
+-------------------
 
 Optimizing unit <mojo_top_0> ...
 
@@ -1300,27 +1189,21 @@ Optimizing unit <mul_10> ...
 Optimizing unit <div_16u_16u> ...
 
 Optimizing unit <tst_4> ...
-WARNING:Xst:1293 - FF/Latch <shrTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shrTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shrTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sraTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sraTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and shrTest/M_state_q_FSM_FFd4 shrTest/M_state_q_FSM_FFd4 signal will be lost.
-WARNING:Xst:638 - in unit tst_4 Conflict on KEEP property on signal M_state_q_FSM_FFd1 and sraTest/M_state_q_FSM_FFd4 sraTest/M_state_q_FSM_FFd4 signal will be lost.
-WARNING:Xst:1293 - FF/Latch <shrTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <shlTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shlTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shlTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <tst_4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <confirm/M_last_q> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/L_edge/M_last_q> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 34.
-FlipFlop M_input1_q_13 has been replicated 3 time(s)
-FlipFlop M_input1_q_14 has been replicated 5 time(s)
-FlipFlop M_input1_q_15 has been replicated 3 time(s)
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 44.
+FlipFlop M_input1_q_13 has been replicated 4 time(s)
+FlipFlop M_input1_q_14 has been replicated 4 time(s)
+FlipFlop M_input1_q_15 has been replicated 4 time(s)
 FlipFlop M_input2_q_0 has been replicated 3 time(s)
-FlipFlop M_input2_q_1 has been replicated 2 time(s)
+FlipFlop M_input2_q_1 has been replicated 3 time(s)
 FlipFlop M_input2_q_10 has been replicated 1 time(s)
 FlipFlop M_input2_q_11 has been replicated 1 time(s)
 FlipFlop M_input2_q_12 has been replicated 1 time(s)
@@ -1346,8 +1229,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 498
- Flip-Flops                                            : 498
+# Registers                                            : 578
+ Flip-Flops                                            : 578
 
 =========================================================================
 
@@ -1370,32 +1253,32 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2795
-#      GND                         : 21
-#      INV                         : 16
-#      LUT1                        : 315
-#      LUT2                        : 206
-#      LUT3                        : 123
-#      LUT4                        : 228
-#      LUT5                        : 246
-#      LUT6                        : 478
-#      MUXCY                       : 616
-#      MUXF7                       : 5
-#      VCC                         : 20
-#      XORCY                       : 521
-# FlipFlops/Latches                : 498
+# BELS                             : 3344
+#      GND                         : 25
+#      INV                         : 19
+#      LUT1                        : 369
+#      LUT2                        : 240
+#      LUT3                        : 189
+#      LUT4                        : 262
+#      LUT5                        : 290
+#      LUT6                        : 658
+#      MUXCY                       : 678
+#      MUXF7                       : 13
+#      VCC                         : 24
+#      XORCY                       : 577
+# FlipFlops/Latches                : 578
 #      FD                          : 1
-#      FDR                         : 395
-#      FDRE                        : 86
-#      FDS                         : 16
+#      FDR                         : 472
+#      FDRE                        : 88
+#      FDS                         : 17
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 76
 #      IBUF                        : 26
 #      OBUF                        : 44
 #      OBUFT                       : 6
-# DSPs                             : 1
-#      DSP48A1                     : 1
+# DSPs                             : 2
+#      DSP48A1                     : 2
 
 Device utilization summary:
 ---------------------------
@@ -1404,16 +1287,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             498  out of  11440     4%  
- Number of Slice LUTs:                 1612  out of   5720    28%  
-    Number used as Logic:              1612  out of   5720    28%  
+ Number of Slice Registers:             578  out of  11440     5%  
+ Number of Slice LUTs:                 2027  out of   5720    35%  
+    Number used as Logic:              2027  out of   5720    35%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1981
-   Number with an unused Flip Flop:    1483  out of   1981    74%  
-   Number with an unused LUT:           369  out of   1981    18%  
-   Number of fully used LUT-FF pairs:   129  out of   1981     6%  
-   Number of unique control sets:        19
+ Number of LUT Flip Flop pairs used:   2428
+   Number with an unused Flip Flop:    1850  out of   2428    76%  
+   Number with an unused LUT:           401  out of   2428    16%  
+   Number of fully used LUT-FF pairs:   177  out of   2428     7%  
+   Number of unique control sets:        21
 
 IO Utilization: 
  Number of IOs:                          87
@@ -1421,7 +1304,7 @@ IO Utilization:
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
- Number of DSP48A1s:                      1  out of     16     6%  
+ Number of DSP48A1s:                      2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1444,7 +1327,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 498   |
+clk                                | BUFGP                  | 578   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1456,9 +1339,9 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 50.711ns (Maximum Frequency: 19.720MHz)
-   Minimum input arrival time before clock: 9.447ns
-   Maximum output required time after clock: 10.909ns
-   Maximum combinational path delay: 8.450ns
+   Minimum input arrival time before clock: 9.580ns
+   Maximum output required time after clock: 14.923ns
+   Maximum combinational path delay: 10.040ns
 
 Timing Details:
 ---------------
@@ -1467,7 +1350,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 50.711ns (frequency: 19.720MHz)
-  Total number of paths / destination ports: 578098312977852268544 / 1075
+  Total number of paths / destination ports: 578098312977852203008 / 1237
 -------------------------------------------------------------------------
 Delay:               50.711ns (Levels of Logic = 125)
   Source:            M_input2_q_15_1 (FF)
@@ -1484,7 +1367,7 @@ Delay:               50.711ns (Levels of Logic = 125)
      begin scope: 'alu/mul:M_input2_q_15_1'
      begin scope: 'alu/mul/a[15]_b[15]_div_1:M_input2_q_15_1'
      LUT6:I0->O           15   0.254   1.263  o<15>222 (o<15>222)
-     LUT6:I4->O            2   0.250   1.181  Mmux_a[0]_GND_11_o_MUX_411_o151_SW2 (N97)
+     LUT6:I4->O            2   0.250   1.181  Mmux_a[0]_GND_11_o_MUX_411_o151_SW2 (N113)
      LUT6:I0->O            4   0.254   1.080  Mmux_a[0]_GND_11_o_MUX_411_o151 (a[14]_GND_11_o_MUX_397_o)
      LUT5:I1->O            1   0.254   0.000  Mcompar_o<12>_lut<1> (Mcompar_o<12>_lut<1>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_o<12>_cy<1> (Mcompar_o<12>_cy<1>)
@@ -1615,94 +1498,81 @@ Delay:               50.711ns (Levels of Logic = 125)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 6232 / 505
+  Total number of paths / destination ports: 6869 / 568
 -------------------------------------------------------------------------
-Offset:              9.447ns (Levels of Logic = 23)
-  Source:            io_dip<16> (PAD)
-  Destination:       M_result_q_15 (FF)
+Offset:              9.580ns (Levels of Logic = 8)
+  Source:            io_button<1> (PAD)
+  Destination:       tst/addTest/M_timer_q_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: io_dip<16> to M_result_q_15
+  Data Path: io_button<1> to tst/addTest/M_timer_q_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            80   1.328   2.509  io_dip_16_IBUF (io_dip[0]_GND_5_o_equal_1_o_inv1)
-     begin scope: 'alu:io_dip<0>'
-     LUT6:I0->O            4   0.254   0.912  Sh121 (Sh12)
-     LUT6:I4->O            1   0.250   0.910  Mmux_out25 (Mmux_out24)
-     LUT5:I2->O            2   0.235   0.954  Mmux_out28 (Mmux_out27)
-     LUT6:I3->O            1   0.235   0.790  Mmux_out29_SW1 (N106)
-     end scope: 'alu:N106'
-     LUT6:I4->O            1   0.250   0.000  Maccum_M_result_q_lut<0> (Maccum_M_result_q_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Maccum_M_result_q_cy<0> (Maccum_M_result_q_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<1> (Maccum_M_result_q_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<2> (Maccum_M_result_q_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<3> (Maccum_M_result_q_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<4> (Maccum_M_result_q_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<5> (Maccum_M_result_q_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<6> (Maccum_M_result_q_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<7> (Maccum_M_result_q_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<8> (Maccum_M_result_q_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<9> (Maccum_M_result_q_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<10> (Maccum_M_result_q_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<11> (Maccum_M_result_q_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<12> (Maccum_M_result_q_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  Maccum_M_result_q_cy<13> (Maccum_M_result_q_cy<13>)
-     MUXCY:CI->O           0   0.023   0.000  Maccum_M_result_q_cy<14> (Maccum_M_result_q_cy<14>)
-     XORCY:CI->O           1   0.206   0.000  Maccum_M_result_q_xor<15> (Result<15>3)
-     FDRE:D                    0.074          M_result_q_15
+     IBUF:I->O            21   1.328   1.418  io_button_1_IBUF (io_button_1_IBUF)
+     begin scope: 'tst:button'
+     begin scope: 'tst/addTest:button'
+     LUT2:I0->O           69   0.250   2.196  M_edge_detector_out1 (M_edge_detector_out)
+     LUT6:I3->O            2   0.235   1.181  M_state_q_FSM_FFd9-In1 (M_state_q_FSM_FFd9-In)
+     begin scope: 'tst/addTest/M_state_q_addTest:M_state_q_FSM_FFd9-In'
+     LUT6:I0->O            1   0.254   0.682  M_timer_d<0>2_SW0 (N81)
+     LUT6:I5->O           28   0.254   1.453  M_timer_d<0>2 (M_timer_d<0>2)
+     LUT2:I1->O            1   0.254   0.000  M_timer_d<9>1 (M_timer_d<9>)
+     end scope: 'tst/addTest/M_state_q_addTest:M_timer_d<9>'
+     FDR:D                     0.074          M_timer_q_9
     ----------------------------------------
-    Total                      9.447ns (3.372ns logic, 6.075ns route)
-                                       (35.7% logic, 64.3% route)
+    Total                      9.580ns (2.649ns logic, 6.931ns route)
+                                       (27.7% logic, 72.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 692 / 27
+  Total number of paths / destination ports: 5220 / 27
 -------------------------------------------------------------------------
-Offset:              10.909ns (Levels of Logic = 9)
-  Source:            tst/addTest/M_state_q_FSM_FFd5 (FF)
-  Destination:       io_led<1> (PAD)
+Offset:              14.923ns (Levels of Logic = 9)
+  Source:            tst/mulTest/M_state_q_FSM_FFd2 (FF)
+  Destination:       io_led<0> (PAD)
   Source Clock:      clk rising
 
-  Data Path: tst/addTest/M_state_q_FSM_FFd5 to io_led<1>
+  Data Path: tst/mulTest/M_state_q_FSM_FFd2 to io_led<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             18   0.525   1.665  M_state_q_FSM_FFd5 (M_state_q_FSM_FFd5)
-     LUT5:I0->O            1   0.254   0.681  M_add_a<0>1 (M_add_a<0>)
-     begin scope: 'tst/addTest/add:b<0>'
-     MUXCY:DI->O           1   0.181   0.000  Maddsub_holder_cy<0> (Maddsub_holder_cy<0>)
-     XORCY:CI->O           7   0.206   1.365  Maddsub_holder_xor<1> (out<1>)
-     end scope: 'tst/addTest/add:out<1>'
-     end scope: 'tst/addTest:M_add_out<1>'
-     end scope: 'tst:M_add_out<1>'
-     LUT6:I0->O            1   0.254   0.910  Mmux_io_led<1>12 (Mmux_io_led<1>11)
-     LUT4:I1->O            1   0.235   0.790  Mmux_io_led<1>14 (Mmux_io_led<1>13)
-     LUT6:I4->O            1   0.250   0.681  Mmux_io_led<1>15 (io_led_1_OBUF)
-     OBUF:I->O                 2.912          io_led_1_OBUF (io_led<1>)
+     FDR:C->Q             24   0.525   1.380  M_state_q_FSM_FFd2 (M_state_q_FSM_FFd2)
+     LUT2:I1->O            5   0.254   0.840  M_mul_a<1>1 (M_mul_a<1>)
+     begin scope: 'tst/mulTest/mul:a<1>'
+     DSP48A1:B1->M0        5   3.894   1.271  Mmult_n0010 (out<0>)
+     end scope: 'tst/mulTest/mul:out<0>'
+     end scope: 'tst/mulTest:M_mul_out<0>'
+     end scope: 'tst:M_mul_out<0>'
+     LUT6:I1->O            1   0.254   0.790  Mmux_io_led115 (Mmux_io_led19)
+     LUT6:I4->O            1   0.250   0.682  Mmux_io_led123 (Mmux_io_led117)
+     LUT6:I5->O            1   0.254   0.682  Mmux_io_led124 (Mmux_io_led118)
+     LUT6:I5->O            1   0.254   0.681  Mmux_io_led125 (io_led_0_OBUF)
+     OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
     ----------------------------------------
-    Total                     10.909ns (4.817ns logic, 6.092ns route)
-                                       (44.2% logic, 55.8% route)
+    Total                     14.923ns (8.597ns logic, 6.326ns route)
+                                       (57.6% logic, 42.4% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 96 / 31
+  Total number of paths / destination ports: 123 / 31
 -------------------------------------------------------------------------
-Delay:               8.450ns (Levels of Logic = 4)
-  Source:            io_dip<22> (PAD)
-  Destination:       io_seg<6> (PAD)
+Delay:               10.040ns (Levels of Logic = 5)
+  Source:            io_dip<23> (PAD)
+  Destination:       io_seg<4> (PAD)
 
-  Data Path: io_dip<22> to io_seg<6>
+  Data Path: io_dip<23> to io_seg<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            24   1.328   1.835  io_dip_22_IBUF (io_led_22_OBUF)
-     LUT6:I0->O            7   0.254   1.186  Sh441 (Sh44)
-     LUT4:I0->O            1   0.254   0.681  io_seg<6>1 (io_seg_6_OBUF)
-     OBUF:I->O                 2.912          io_seg_6_OBUF (io_seg<6>)
+     IBUF:I->O            37   1.328   2.034  io_dip_23_IBUF (io_dip_23_IBUF)
+     LUT5:I0->O            1   0.254   0.958  Sh432 (Sh432)
+     LUT6:I2->O            7   0.254   1.365  Sh433 (Sh43)
+     LUT6:I0->O            1   0.254   0.681  io_seg<4>1 (io_seg_4_OBUF)
+     OBUF:I->O                 2.912          io_seg_4_OBUF (io_seg<4>)
     ----------------------------------------
-    Total                      8.450ns (4.748ns logic, 3.702ns route)
-                                       (56.2% logic, 43.8% route)
+    Total                     10.040ns (5.002ns logic, 5.038ns route)
+                                       (49.8% logic, 50.2% route)
 
 =========================================================================
 
@@ -1720,15 +1590,15 @@ clk            |   50.711|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.68 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.02 secs
  
 --> 
 
 
-Total memory usage is 431628 kilobytes
+Total memory usage is 433344 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  139 (   0 filtered)
-Number of infos    :   16 (   0 filtered)
+Number of warnings :   41 (   0 filtered)
+Number of infos    :   15 (   0 filtered)
 

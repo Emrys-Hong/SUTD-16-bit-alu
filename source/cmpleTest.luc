@@ -6,7 +6,8 @@ module cmpleTest (
     input count[4],
     // out is to show input1 input2 input3
     output out[16],
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
@@ -56,7 +57,7 @@ module cmpleTest (
     cmple.io_dip = 8b00110111;
     // define true to be false
     true = 0;
-    
+    step = 0;
     // cases
     case(state.q) {
       state.BEGIN:
@@ -68,6 +69,7 @@ module cmpleTest (
       state.PP1:
         cmple.a = PP1A;
         cmple.b = PP1B;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP1A;
@@ -88,6 +90,7 @@ module cmpleTest (
       state.PP2:
         cmple.a = PP2A;
         cmple.b = PP2B;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP2A;
@@ -108,6 +111,7 @@ module cmpleTest (
       state.PP3:
         cmple.a = PP3A;
         cmple.b = PP3B;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP3A;
@@ -128,6 +132,7 @@ module cmpleTest (
         state.PP4:
         cmple.a = PP4A;
         cmple.b = PP4B;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP4A;
@@ -148,6 +153,7 @@ module cmpleTest (
       state.NN1:
         cmple.a = NN1A;
         cmple.b = NN1B;
+        step = 16;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN1A;
@@ -168,6 +174,7 @@ module cmpleTest (
       state.NN2:
         cmple.a = NN2A;
         cmple.b = NN2B;
+        step = 32;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN2A;
@@ -188,6 +195,7 @@ module cmpleTest (
       state.NN3:
         cmple.a = NN3A;
         cmple.b = NN3B;
+        step = 64;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN3A;
@@ -208,6 +216,7 @@ module cmpleTest (
         state.NN4:
         cmple.a = NN4A;
         cmple.b = NN4B;
+        step = 128;
         if (timer.q[27:26]==0) {
           // show input1
           out = NN4A;

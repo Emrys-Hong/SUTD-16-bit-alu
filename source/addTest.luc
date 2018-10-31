@@ -5,18 +5,20 @@ module addTest (
     // input
     input button,
     input count[4],
+    input error,
     // out is to show input1 input2 input3
     output out[16],
     output v,
     output n,
     output z,
-    output true
+    output true, // will output true if it wants to go the the next step,
+    output step[8]
   ) {
   
   .clk(clk) {
-  edge_detector edge_detector(#RISE(1), #FALL(0));
-      .rst(rst) {
-        fsm state = {BEGIN, PP, PN, NN, V, N, Z, GOOD, ERROR};
+    edge_detector edge_detector(#RISE(1), #FALL(0));
+    .rst(rst) {
+      fsm state = {BEGIN, PP, PN, NN, V, N, Z, GOOD, ERROR};
       dff timer[28];
       add add;
     }
@@ -49,6 +51,11 @@ module addTest (
     add.io_dip = 8b00000000;
     // define true to be false
     true = 0;
+    // first step is 0
+    step = 0;
+    if (error) {
+      add.io_dip = 8b1111111;
+    }
     
     edge_detector.in = button;
     // cases
@@ -58,17 +65,18 @@ module addTest (
           timer.d = 0;
           state.d = state.PP;
         }
-        
+      
       state.PP:
         add.a = P1;
         add.b = P2;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = P1;
         } else if (timer.q[27:26]==1) {
           out = P2;
         } else if ( timer.q[27:26]==2) {
-            // show result
+          // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==PP) ){//&(add.v==0)&(add.z==0)&(add.n==0)
@@ -78,18 +86,19 @@ module addTest (
             state.d = state.ERROR;
           }
         }
-          
-        
+      
+      
       state.PN:
         add.a = P1;
         add.b = N1;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = P1;
         } else if (timer.q[27:26]==1) {
           out = N1;
         } else if ( (timer.q[27:26]==2) ){
-            // show result
+          // show result
           out = add.out;
         } else if ( timer.q[27:26]==3) {
           if ((add.out==PN) ){//&(add.v==0)&(add.z==0)&(add.n==1)
@@ -100,17 +109,18 @@ module addTest (
           }
         }
       
-        
+      
       state.NN:
         add.a = N1;
         add.b = N2;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = N1;
         } else if (timer.q[27:26]==1) {
           out = N2;
         } else if ( (timer.q[27:26]==2)  ){
-            // show result
+          // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==NN)) {//&(add.v==1)&(add.z==0)&(add.n==0)
@@ -120,17 +130,18 @@ module addTest (
             state.d = state.ERROR;
           }
         }
-        
+      
       state.V:
         add.a = N2;
         add.b = N3;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = N2;
         } else if (timer.q[27:26]==1) {
           out = N3;
         } else if ( (timer.q[27:26]==2) ){
-            // show result
+          // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==V) ){//&(add.v==1)&(add.z==0)&(add.n==0)
@@ -140,17 +151,18 @@ module addTest (
             state.d = state.ERROR;
           }
         }
-        
+      
       state.Z:
         add.a = P3;
         add.b = P3;
+        step = 16;
         if (timer.q[27:26]==0) {
           // show input1
           out = P3;
         } else if (timer.q[27:26]==1) {
           out = P3;
         } else if ( (timer.q[27:26]==2) ){
-            // show result
+          // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==0)){//&(add.v==0)&(add.z==0)&(add.n==0)
@@ -160,17 +172,18 @@ module addTest (
             state.d = state.ERROR;
           }
         }
-        
+      
       state.N:
         add.a = P1;
         add.b = N1;
+        step = 32;
         if (timer.q[27:26]==0) {
           // show input1
           out = P1;
         } else if (timer.q[27:26]==1) {
           out = N1;
         } else if ( timer.q[27:26]==2  ){
-            // show result
+          // show result
           out = add.out;
         } else if (timer.q[27:26]==3) {
           if ((add.out==PN)) {//&(add.v==0)&(add.z==0)&(add.n==1)
@@ -190,15 +203,15 @@ module addTest (
         } else if (timer.q[25]==0){
           out = 16b0000000000000000;
         }
-        
+      
       state.ERROR:
         if (timer.q[25] == 1) {
           out = 16b0000000011111111;
         } else {
           out = 16b0000000000000000;
         }
-        
-        
+      
+      
     }
   }
 }

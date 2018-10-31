@@ -13,7 +13,8 @@ module subTest_13 (
     output reg v,
     output reg n,
     output reg z,
-    output reg true
+    output reg true,
+    output reg [7:0] step
   );
   
   
@@ -25,22 +26,16 @@ module subTest_13 (
     .in(M_edge_detector_in),
     .out(M_edge_detector_out)
   );
-  localparam BEGIN_state = 4'd0;
-  localparam PP1_state = 4'd1;
-  localparam PP2_state = 4'd2;
-  localparam PP3_state = 4'd3;
-  localparam PP4_state = 4'd4;
-  localparam ZERO_state = 4'd5;
-  localparam NN1_state = 4'd6;
-  localparam NN2_state = 4'd7;
-  localparam NN3_state = 4'd8;
-  localparam NN4_state = 4'd9;
-  localparam PN1_state = 4'd10;
-  localparam PN2_state = 4'd11;
-  localparam GOOD_state = 4'd12;
-  localparam ERROR_state = 4'd13;
+  localparam BEGIN_state = 3'd0;
+  localparam PP1_state = 3'd1;
+  localparam PP2_state = 3'd2;
+  localparam PP3_state = 3'd3;
+  localparam PP4_state = 3'd4;
+  localparam PP5_state = 3'd5;
+  localparam GOOD_state = 3'd6;
+  localparam ERROR_state = 3'd7;
   
-  reg [3:0] M_state_d, M_state_q = BEGIN_state;
+  reg [2:0] M_state_d, M_state_q = BEGIN_state;
   reg [27:0] M_timer_d, M_timer_q = 1'h0;
   wire [16-1:0] M_sub_out;
   wire [1-1:0] M_sub_z;
@@ -61,71 +56,35 @@ module subTest_13 (
     .n(M_sub_n)
   );
   
-  localparam PP1A = 16'h333c;
+  localparam PP1A = 16'h7fff;
   
-  localparam PP1B = 16'h0c4c;
+  localparam PP1B = 16'h00ff;
   
-  localparam PP2A = 16'h18c6;
+  localparam PP1 = 16'h7f00;
   
-  localparam PP2B = 16'h18c6;
+  localparam PP2A = 16'h7fff;
   
-  localparam PP3A = 16'h0f0f;
+  localparam PP2B = 16'h7fff;
   
-  localparam PP3B = 16'h0f0f;
+  localparam PP2 = 16'h0000;
   
-  localparam PP4A = 16'h7fff;
+  localparam PP3A = 16'h0001;
   
-  localparam PP4B = 16'h7fff;
+  localparam PP3B = 16'h0002;
   
-  localparam ZEROA = 16'h0000;
+  localparam PP3 = 16'hffff;
   
-  localparam ZEROB = 16'h0000;
+  localparam PP4A = 16'h0001;
   
-  localparam NN1A = 16'hff00;
+  localparam NN4B = 16'hffff;
   
-  localparam NN1B = 16'hfff0;
+  localparam PP4 = 16'h0002;
   
-  localparam NN2A = 16'hfccc;
+  localparam NN5A = 16'hffff;
   
-  localparam NN2B = 16'hfc33;
+  localparam NN5B = 16'hfffd;
   
-  localparam NN3A = 16'hf0f0;
-  
-  localparam NN3B = 16'hf0f0;
-  
-  localparam NN4A = 16'h8000;
-  
-  localparam NN4B = 16'h8000;
-  
-  localparam PN1A = 16'h0f0f;
-  
-  localparam PN1B = 16'h8fff;
-  
-  localparam PN2A = 16'h70f0;
-  
-  localparam PN2B = 16'h8f0f;
-  
-  localparam PP1 = 16'h2ef0;
-  
-  localparam PP2 = 16'hf25a;
-  
-  localparam PP3 = 16'h0000;
-  
-  localparam PP4 = 16'h0000;
-  
-  localparam ZERO = 16'h0000;
-  
-  localparam NN1 = 16'hff10;
-  
-  localparam NN2 = 16'h0099;
-  
-  localparam NN3 = 16'h0000;
-  
-  localparam NN4 = 16'h0000;
-  
-  localparam PN1 = 16'h7f10;
-  
-  localparam PN2 = 16'he1e1;
+  localparam PP5 = 16'h0002;
   
   always @* begin
     M_state_d = M_state_q;
@@ -141,6 +100,7 @@ module subTest_13 (
     M_sub_io_dip = 8'h01;
     true = 1'h0;
     M_edge_detector_in = button;
+    step = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
@@ -150,19 +110,20 @@ module subTest_13 (
         end
       end
       PP1_state: begin
-        M_sub_a = 16'h333c;
-        M_sub_b = 16'h0c4c;
+        M_sub_a = 16'h7fff;
+        M_sub_b = 16'h00ff;
+        step = 1'h1;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h333c;
+          out = 16'h7fff;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h0c4c;
+            out = 16'h00ff;
           end else begin
             if (M_timer_q[26+1-:2] == 2'h2) begin
               out = M_sub_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h2ef0)) begin
+                if ((M_sub_out == 16'h7f00)) begin
                   M_timer_d = 1'h0;
                   M_state_d = PP2_state;
                 end else begin
@@ -174,56 +135,9 @@ module subTest_13 (
         end
       end
       PP2_state: begin
-        M_sub_a = 16'h18c6;
-        M_sub_b = 16'h18c6;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h18c6;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h18c6;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_sub_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'hf25a)) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = PP3_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      PP3_state: begin
-        M_sub_a = 16'h0f0f;
-        M_sub_b = 16'h0f0f;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h0f0f;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h0f0f;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_sub_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h0000)) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = PP4_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      PP4_state: begin
         M_sub_a = 16'h7fff;
         M_sub_b = 16'h7fff;
+        step = 2'h2;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h7fff;
         end else begin
@@ -236,7 +150,7 @@ module subTest_13 (
               if (M_timer_q[26+1-:2] == 2'h3) begin
                 if ((M_sub_out == 16'h0000)) begin
                   M_timer_d = 1'h0;
-                  M_state_d = ZERO_state;
+                  M_state_d = PP3_state;
                 end else begin
                   M_state_d = ERROR_state;
                 end
@@ -245,22 +159,23 @@ module subTest_13 (
           end
         end
       end
-      ZERO_state: begin
-        M_sub_a = 16'h0000;
-        M_sub_b = 16'h0000;
+      PP3_state: begin
+        M_sub_a = 16'h0001;
+        M_sub_b = 16'h0002;
+        step = 3'h4;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h0000;
+          out = 16'h0001;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h0000;
+            out = 16'h0002;
           end else begin
             if (M_timer_q[26+1-:2] == 2'h2) begin
               out = M_sub_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h0000)) begin
+                if ((M_sub_out == 16'hffff)) begin
                   M_timer_d = 1'h0;
-                  M_state_d = NN1_state;
+                  M_state_d = PP4_state;
                 end else begin
                   M_state_d = ERROR_state;
                 end
@@ -269,22 +184,23 @@ module subTest_13 (
           end
         end
       end
-      NN1_state: begin
-        M_sub_a = 16'hff00;
-        M_sub_b = 16'hfff0;
+      PP4_state: begin
+        M_sub_a = 16'h0001;
+        M_sub_b = 16'hffff;
+        step = 4'h8;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'hff00;
+          out = 16'h0001;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'hfff0;
+            out = 16'hffff;
           end else begin
             if (M_timer_q[26+1-:2] == 2'h2) begin
               out = M_sub_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'hff10)) begin
+                if ((M_sub_out == 16'h0002)) begin
                   M_timer_d = 1'h0;
-                  M_state_d = NN2_state;
+                  M_state_d = PP5_state;
                 end else begin
                   M_state_d = ERROR_state;
                 end
@@ -293,116 +209,20 @@ module subTest_13 (
           end
         end
       end
-      NN2_state: begin
-        M_sub_a = 16'hfccc;
-        M_sub_b = 16'hfc33;
+      PP5_state: begin
+        M_sub_a = 16'hffff;
+        M_sub_b = 16'hfffd;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'hfccc;
+          out = 16'hffff;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'hfc33;
+            out = 16'hfffd;
           end else begin
             if (M_timer_q[26+1-:2] == 2'h2) begin
               out = M_sub_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h0099)) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = NN3_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      NN3_state: begin
-        M_sub_a = 16'hf0f0;
-        M_sub_b = 16'hf0f0;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'hf0f0;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'hf0f0;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_sub_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h0000)) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = NN4_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      NN4_state: begin
-        M_sub_a = 16'h8000;
-        M_sub_b = 16'h8000;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h8000;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h8000;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_sub_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h0000)) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = PN1_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      PN1_state: begin
-        M_sub_a = 16'h0f0f;
-        M_sub_b = 16'h8fff;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h0f0f;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h8fff;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_sub_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h7f10)) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = PN2_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      PN2_state: begin
-        M_sub_a = 16'h70f0;
-        M_sub_b = 16'h8f0f;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h70f0;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h8f0f;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_sub_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'he1e1)) begin
+                if ((M_sub_out == 16'h0002)) begin
                   M_timer_d = 1'h0;
                   M_state_d = GOOD_state;
                 end else begin

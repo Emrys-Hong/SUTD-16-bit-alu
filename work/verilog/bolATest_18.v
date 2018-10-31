@@ -10,7 +10,8 @@ module bolATest_18 (
     input button,
     input [3:0] count,
     output reg [15:0] out,
-    output reg true
+    output reg true,
+    output reg [7:0] step
   );
   
   
@@ -49,10 +50,6 @@ module bolATest_18 (
   
   localparam LL = 16'h8001;
   
-  localparam II = 16'h7ffe;
-  
-  localparam ZZ = 16'h0000;
-  
   always @* begin
     M_state_d = M_state_q;
     M_timer_d = M_timer_q;
@@ -64,6 +61,7 @@ module bolATest_18 (
     M_bol_io_dip = 8'h1a;
     true = 1'h0;
     M_edge_detector_in = button;
+    step = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
@@ -75,6 +73,7 @@ module bolATest_18 (
       LL_state: begin
         M_bol_a = 16'h8001;
         M_bol_b = 16'h8001;
+        step = 1'h1;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'h8001;
         end else begin
@@ -99,6 +98,7 @@ module bolATest_18 (
       AL_state: begin
         M_bol_a = 16'hffff;
         M_bol_b = 16'h8001;
+        step = 2'h2;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'hffff;
         end else begin
@@ -123,6 +123,7 @@ module bolATest_18 (
       LB_state: begin
         M_bol_a = 16'h8001;
         M_bol_b = 16'hffff;
+        step = 3'h4;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'hffff;
         end else begin
@@ -147,6 +148,7 @@ module bolATest_18 (
       AB_state: begin
         M_bol_a = 16'hffff;
         M_bol_b = 16'hffff;
+        step = 4'h8;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'hffff;
         end else begin

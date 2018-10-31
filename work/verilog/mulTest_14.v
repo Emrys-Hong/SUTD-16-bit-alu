@@ -10,7 +10,8 @@ module mulTest_14 (
     input button,
     input [3:0] count,
     output reg [15:0] out,
-    output reg true
+    output reg true,
+    output reg [7:0] step
   );
   
   
@@ -22,18 +23,15 @@ module mulTest_14 (
     .in(M_edge_detector_in),
     .out(M_edge_detector_out)
   );
-  localparam BEGIN_state = 4'd0;
-  localparam PP1_state = 4'd1;
-  localparam PP2_state = 4'd2;
-  localparam NN1_state = 4'd3;
-  localparam NN2_state = 4'd4;
-  localparam PN1_state = 4'd5;
-  localparam PN2_state = 4'd6;
-  localparam PN3_state = 4'd7;
-  localparam GOOD_state = 4'd8;
-  localparam ERROR_state = 4'd9;
+  localparam BEGIN_state = 3'd0;
+  localparam PP1_state = 3'd1;
+  localparam PP2_state = 3'd2;
+  localparam PP3_state = 3'd3;
+  localparam PP4_state = 3'd4;
+  localparam GOOD_state = 3'd5;
+  localparam ERROR_state = 3'd6;
   
-  reg [3:0] M_state_d, M_state_q = BEGIN_state;
+  reg [2:0] M_state_d, M_state_q = BEGIN_state;
   reg [27:0] M_timer_d, M_timer_q = 1'h0;
   wire [16-1:0] M_mul_out;
   reg [8-1:0] M_mul_io_dip;
@@ -48,47 +46,29 @@ module mulTest_14 (
     .out(M_mul_out)
   );
   
-  localparam PP1A = 16'h70f0;
+  localparam PP1A = 16'h0002;
   
-  localparam PP1B = 16'h0003;
+  localparam PP1B = 16'h0004;
   
-  localparam PP2A = 16'h00f0;
+  localparam PP1 = 16'h0008;
+  
+  localparam PP2A = 16'h4001;
   
   localparam PP2B = 16'h0003;
   
-  localparam NN1A = 16'h8000;
+  localparam PP2 = 16'hc003;
   
-  localparam NN1B = 16'hfff8;
+  localparam PP3A = 16'h0001;
   
-  localparam NN2A = 16'hffff;
+  localparam NN3B = 16'hffff;
   
-  localparam NN2B = 16'hfff8;
+  localparam PP3 = 16'hffff;
   
-  localparam PN1A = 16'h00f0;
+  localparam NN4A = 16'hffff;
   
-  localparam PN1B = 16'hfff8;
+  localparam NN4B = 16'hfff8;
   
-  localparam PN2A = 16'h70f0;
-  
-  localparam PN2B = 16'hfff8;
-  
-  localparam PN3A = 16'h00f0;
-  
-  localparam PN3B = 16'h8000;
-  
-  localparam PP1 = 16'h53d0;
-  
-  localparam PP2 = 16'h02d0;
-  
-  localparam NN1 = 16'h0000;
-  
-  localparam NN2 = 16'h0000;
-  
-  localparam PN1 = 16'hf880;
-  
-  localparam PN2 = 16'h7880;
-  
-  localparam PN3 = 16'h0000;
+  localparam PP4 = 16'h0008;
   
   always @* begin
     M_state_d = M_state_q;
@@ -101,6 +81,7 @@ module mulTest_14 (
     M_mul_io_dip = 8'h02;
     true = 1'h0;
     M_edge_detector_in = button;
+    step = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
@@ -110,19 +91,20 @@ module mulTest_14 (
         end
       end
       PP1_state: begin
-        M_mul_a = 16'h70f0;
-        M_mul_b = 16'h0003;
+        M_mul_a = 16'h0002;
+        M_mul_b = 16'h0004;
+        step = 1'h1;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h70f0;
+          out = 16'h0002;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h0003;
+            out = 16'h0004;
           end else begin
             if (M_timer_q[26+1-:2] == 2'h2) begin
               out = M_mul_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_mul_out == 16'h53d0) begin
+                if (M_mul_out == 16'h0008) begin
                   M_timer_d = 1'h0;
                   M_state_d = PP2_state;
                 end else begin
@@ -134,10 +116,11 @@ module mulTest_14 (
         end
       end
       PP2_state: begin
-        M_mul_a = 16'h00f0;
+        M_mul_a = 16'h4001;
         M_mul_b = 16'h0003;
+        step = 2'h2;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h00f0;
+          out = 16'h4001;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
             out = 16'h0003;
@@ -146,9 +129,9 @@ module mulTest_14 (
               out = M_mul_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_mul_out == 16'h02d0) begin
+                if (M_mul_out == 16'hc003) begin
                   M_timer_d = 1'h0;
-                  M_state_d = NN1_state;
+                  M_state_d = PP3_state;
                 end else begin
                   M_state_d = ERROR_state;
                 end
@@ -157,22 +140,23 @@ module mulTest_14 (
           end
         end
       end
-      NN1_state: begin
-        M_mul_a = 16'h8000;
-        M_mul_b = 16'hfff8;
+      PP3_state: begin
+        M_mul_a = 16'h0001;
+        M_mul_b = 16'hffff;
+        step = 3'h4;
         if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h8000;
+          out = 16'h0001;
         end else begin
           if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'hfff8;
+            out = 16'hffff;
           end else begin
             if (M_timer_q[26+1-:2] == 2'h2) begin
               out = M_mul_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_mul_out == 16'h0000) begin
+                if (M_mul_out == 16'hffff) begin
                   M_timer_d = 1'h0;
-                  M_state_d = NN2_state;
+                  M_state_d = PP4_state;
                 end else begin
                   M_state_d = ERROR_state;
                 end
@@ -181,9 +165,10 @@ module mulTest_14 (
           end
         end
       end
-      NN2_state: begin
+      PP4_state: begin
         M_mul_a = 16'hffff;
         M_mul_b = 16'hfff8;
+        step = 4'h8;
         if (M_timer_q[26+1-:2] == 1'h0) begin
           out = 16'hffff;
         end else begin
@@ -194,79 +179,7 @@ module mulTest_14 (
               out = M_mul_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_mul_out == 16'h0000) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = PN1_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      PN1_state: begin
-        M_mul_a = 16'h00f0;
-        M_mul_b = 16'hfff8;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h00f0;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'hfff8;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_mul_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_mul_out == 16'hf880) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = PN2_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      PN2_state: begin
-        M_mul_a = 16'h70f0;
-        M_mul_b = 16'hfff8;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h70f0;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'hfff8;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_mul_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_mul_out == 16'h7880) begin
-                  M_timer_d = 1'h0;
-                  M_state_d = PN3_state;
-                end else begin
-                  M_state_d = ERROR_state;
-                end
-              end
-            end
-          end
-        end
-      end
-      PN3_state: begin
-        M_mul_a = 16'h00f0;
-        M_mul_b = 16'h8000;
-        if (M_timer_q[26+1-:2] == 1'h0) begin
-          out = 16'h00f0;
-        end else begin
-          if (M_timer_q[26+1-:2] == 1'h1) begin
-            out = 16'h8000;
-          end else begin
-            if (M_timer_q[26+1-:2] == 2'h2) begin
-              out = M_mul_out;
-            end else begin
-              if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_mul_out == 16'h0000) begin
+                if (M_mul_out == 16'h0008) begin
                   M_timer_d = 1'h0;
                   M_state_d = GOOD_state;
                 end else begin

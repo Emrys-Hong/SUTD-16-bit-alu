@@ -23,22 +23,22 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="MapLib" num="562" delta="new" >No environment variables are currently set.
 </msg>
 
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[2]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(2)</arg> has been removed.
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[0]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(0)</arg> has been removed.
 </msg>
 
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[3]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(3)</arg> has been removed.
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[1]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(1)</arg> has been removed.
 </msg>
 
 <msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">avr_rx</arg> connected to top level port <arg fmt="%s" index="2">avr_rx</arg> has been removed.
 </msg>
 
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[0]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(0)</arg> has been removed.
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[2]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(2)</arg> has been removed.
 </msg>
 
 <msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_miso</arg> connected to top level port <arg fmt="%s" index="2">spi_miso</arg> has been removed.
 </msg>
 
-<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[1]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(1)</arg> has been removed.
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">spi_channel[3]</arg> connected to top level port <arg fmt="%s" index="2">spi_channel(3)</arg> has been removed.
 </msg>
 
 <msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.

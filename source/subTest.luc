@@ -9,54 +9,44 @@ module subTest (
     output v,
     output n,
     output z,
-    output true
+    output true,
+    output step[8]
   ) {
   
   .clk(clk) {
-  edge_detector edge_detector(#RISE(1), #FALL(0));
+    edge_detector edge_detector(#RISE(1), #FALL(0));
     .rst(rst) {
-      fsm state = {BEGIN, PP1, PP2, PP3, PP4, ZERO, NN1, NN2, NN3, NN4, PN1, PN2, GOOD, ERROR};
+      fsm state = {BEGIN, PP1, PP2, PP3, PP4, PP5, GOOD, ERROR};
       dff timer[28];
       add sub;
     }
   }
   
   // checking cases
-  const PP1A = 16b0011001100111100;
-  const PP1B = 16b0000110001001100;
-  const PP2A = 16b0001100011000110;
-  const PP2B = 16b0001100011000110;
-  const PP3A = 16b0000111100001111;
-  const PP3B = 16b0000111100001111;
-  const PP4A = 16b0111111111111111;
-  const PP4B = 16b0111111111111111;
-  const ZEROA = 16b0000000000000000;
-  const ZEROB = 16b0000000000000000;
-  const NN1A = 16b1111111100000000;
-  const NN1B = 16b1111111111110000;
-  const NN2A = 16b1111110011001100;
-  const NN2B = 16b1111110000110011;
-  const NN3A = 16b1111000011110000;
-  const NN3B = 16b1111000011110000;
-  const NN4A = 16b1000000000000000;
-  const NN4B = 16b1000000000000000;
-  const PN1A = 16b0000111100001111;
-  const PN1B = 16b1000111111111111;
-  const PN2A = 16b0111000011110000;
-  const PN2B = 16b1000111100001111;
+  const PP1A = 16b0111111111111111;
+  const PP1B = 16b0000000011111111;
+  const PP1 = 16b0111111100000000;
   
-  // correct results
-  const PP1 = 16b0010111011110000;
-  const PP2 = 16b1111001001011010;
-  const PP3 = 16b0000000000000000;
-  const PP4 = 16b0000000000000000;
-  const ZERO = 16b0000000000000000;
-  const NN1 = 16b1111111100010000;
-  const NN2 = 16b0000000010011001;
-  const NN3 = 16b0000000000000000;
-  const NN4 = 16b0000000000000000;
-  const PN1 = 16b0111111100010000;
-  const PN2 = 16b1110000111100001;
+  const PP2A = 16b0111111111111111;
+  const PP2B = 16b0111111111111111;
+  const PP2 = 16b0000000000000000;
+  
+  const PP3A = 16b0000000000000001;
+  const PP3B = 16b0000000000000010;
+  const PP3 = 16b1111111111111111;
+  
+  const PP4A = 16b0000000000000001;
+  const NN4B = 16b1111111111111111;
+  const PP4 = 16b0000000000000010;
+  
+  const NN5A = 16b1111111111111111;
+  const NN5B = 16b1111111111111101;
+  const PP5 =  16b0000000000000010; // why this is not 0000000000000001?
+  
+  
+  
+  
+  
   
   always {
     // define default outputs
@@ -73,6 +63,7 @@ module subTest (
     true = 0;
     
     edge_detector.in = button;
+    step = 0;
     // cases
     case(state.q) {
       state.BEGIN:
@@ -84,6 +75,7 @@ module subTest (
       state.PP1:
         sub.a = PP1A;
         sub.b = PP1B;
+        step = 1;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP1A;
@@ -104,6 +96,7 @@ module subTest (
       state.PP2:
         sub.a = PP2A;
         sub.b = PP2B;
+        step = 2;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP2A;
@@ -124,6 +117,7 @@ module subTest (
       state.PP3:
         sub.a = PP3A;
         sub.b = PP3B;
+        step = 4;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP3A;
@@ -143,163 +137,46 @@ module subTest (
       
       state.PP4:
         sub.a = PP4A;
-        sub.b = PP4B;
+        sub.b = NN4B;
+        step = 8;
         if (timer.q[27:26]==0) {
           // show input1
           out = PP4A;
-        } else if (timer.q[27:26]==1) {
-          out = PP4B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = sub.out;
-        } else if (timer.q[27:26]==3) {
-          if ((sub.out==PP4) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
-            timer.d = 0;
-            state.d = state.ZERO;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.ZERO:
-        sub.a = ZEROA;
-        sub.b = ZEROB;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = ZEROA;
-        } else if (timer.q[27:26]==1) {
-          out = ZEROB;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = sub.out;
-        } else if (timer.q[27:26]==3) {
-          if ((sub.out==ZERO) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
-            timer.d = 0;
-            state.d = state.NN1;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.NN1:
-        sub.a = NN1A;
-        sub.b = NN1B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = NN1A;
-        } else if (timer.q[27:26]==1) {
-          out = NN1B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = sub.out;
-        } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN1) ){//&(sub.v==0)&(sub.z==0)&(sub.n==1)
-            timer.d = 0;
-            state.d = state.NN2;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.NN2:
-        sub.a = NN2A;
-        sub.b = NN2B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = NN2A;
-        } else if (timer.q[27:26]==1) {
-          out = NN2B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = sub.out;
-        } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN2) ){//&(sub.v==0)&(sub.z==0)&(sub.n==0)
-            timer.d = 0;
-            state.d = state.NN3;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.NN3:
-        sub.a = NN3A;
-        sub.b = NN3B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = NN3A;
-        } else if (timer.q[27:26]==1) {
-          out = NN3B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = sub.out;
-        } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN3) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
-            timer.d = 0;
-            state.d = state.NN4;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.NN4:
-        sub.a = NN4A;
-        sub.b = NN4B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = NN4A;
         } else if (timer.q[27:26]==1) {
           out = NN4B;
         } else if ( timer.q[27:26]==2) {
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==NN4) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
+          if ((sub.out==PP4) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
             timer.d = 0;
-            state.d = state.PN1;
+            state.d = state.PP5;
           } else {
             state.d = state.ERROR;
           }
         }
       
-      state.PN1:
-        sub.a = PN1A;
-        sub.b = PN1B;
+      state.PP5:
+        sub.a = NN5A;
+        sub.b = NN5B;
         if (timer.q[27:26]==0) {
           // show input1
-          out = PN1A;
+          out = NN5A;
         } else if (timer.q[27:26]==1) {
-          out = PN1B;
+          out = NN5B;
         } else if ( timer.q[27:26]==2) {
           // show result
           out = sub.out;
         } else if (timer.q[27:26]==3) {
-          if ((sub.out==PN1) ){//&(sub.v==0)&(sub.z==0)&(sub.n==0)
-            timer.d = 0;
-            state.d = state.PN2;
-          } else {
-            state.d = state.ERROR;
-          }
-        }
-      
-      state.PN2:
-        sub.a = PN2A;
-        sub.b = PN2B;
-        if (timer.q[27:26]==0) {
-          // show input1
-          out = PN2A;
-        } else if (timer.q[27:26]==1) {
-          out = PN2B;
-        } else if ( timer.q[27:26]==2) {
-          // show result
-          out = sub.out;
-        } else if (timer.q[27:26]==3) {
-          if ((sub.out==PN2) ){//&(sub.v==1)&(sub.z==0)&(sub.n==0)
+          if ((sub.out==PP5) ){//&(sub.v==0)&(sub.z==1)&(sub.n==0)
             timer.d = 0;
             state.d = state.GOOD;
           } else {
             state.d = state.ERROR;
           }
         }
+      
+      
       
       state.GOOD:
         if (timer.q[27] == 1) {
