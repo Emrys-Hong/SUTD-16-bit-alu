@@ -15,149 +15,126 @@ module tst (
         fsm state = {BEGIN, ADD, SUB, MUL, AND, OR, XOR, A, SHL, SHR,
          SRA, CMPEQ, CMPLE, CMPLT, GOOD, ERROR};
       dff timer[27];
-      alu alu;
-      addTest addTest(.button(button));
-      subTest subTest(.button(button));
-      mulTest mulTest(.button(button));
-      orTest  orTest(.button(button));
-      andTest andTest(.button(button));
-      xorTest xorTest(.button(button));
-      bolATest bolATest(.button(button));
-      shlTest shlTest(.button(button));
-      shrTest shrTest(.button(button));
-      sraTest sraTest(.button(button));
-      cmpeqTest cmpeqTest(.button(button));
-      cmpleTest cmpleTest(.button(button));
-      cmpltTest cmpltTest(.button(button));
+      dff counter[4];
+      
+      addTest addTest(.button(button), .count(counter.q));
+      subTest subTest(.button(button), .count(counter.q));
+      mulTest mulTest(.button(button), .count(counter.q));
+      orTest  orTest(.button(button), .count(counter.q));
+      andTest andTest(.button(button), .count(counter.q));
+      xorTest xorTest(.button(button), .count(counter.q));
+      bolATest bolATest(.button(button), .count(counter.q));
+      shlTest shlTest(.button(button), .count(counter.q));
+      shrTest shrTest(.button(button), .count(counter.q));
+      sraTest sraTest(.button(button), .count(counter.q));
+      cmpeqTest cmpeqTest(.button(button), .count(counter.q));
+      cmpleTest cmpleTest(.button(button), .count(counter.q));
+      cmpltTest cmpltTest(.button(button), .count(counter.q));
     }
   }
-  
-    const OADD   = 8b00000000;
-    const OSUB   = 8b00000100;
-    const OMUL   = 8b00001000; 
-    const OAND   = 8b01100000; 
-    const OOR    = 8b01111000;
-    const OXOR   = 8b01011000; 
-    const OA     = 8b01101000;
-    const OSHL   = 8b10000000; 
-    const OSHR   = 8b10000100; 
-    const OSRA   = 8b10001100;
-    const OCMPEQ = 8b11001100; 
-    const OCMPLT = 8b11010100; 
-    const OCMPLE = 8b11011100;
-  
-    const RSUB   = 16b0011000000000000;
-    const RMUL   = 16b0100100100000000;
-    const RAND   = 16b0000010100000000; 
-    const ROR    = 16b0111010100000000;
-    const RXOR   = 16b0111000000000000; 
-    const RA     = 16b0010010100000000;
-    const RSHL   = 16b1010000000000000; 
-    const RSHR   = 16b0000000100000000; 
-    const RSRA   = 16b0000000100000000;
-    const RCMPEQ = 16b0000000000000000; 
-    const RCMPLT = 16b0000000000000000; 
-    const RCMPLE = 16b0000000000000000;
-  
-    const A = 16b0101010100000000;
-    const B = 16b0010010100000000;
   
   always {
     
     // default assign
     seg=0;
-    alu.a=A;
-    alu.b=B;
-    alu.io_dip=0;
     out=0;
     
     timer.d = timer.q+1;
     edge.in = button;
+    
     case(state.q) {
       state.BEGIN:
         seg = c{13,14,15,13}; // TEST
         if (edge.out) {
+          counter.d = counter.q+1;
           state.d = state.ADD;
         }
       
       // ADD
       state.ADD:
         out = addTest.out;
-        alu.io_dip=OADD;
         seg = c{1,11,11,11}; 
         // duration 1s
         if(addTest.true==1){
-          state.d = state.OR;
+          counter.d = counter.q+4;
+          state.d = state.AND;
         }
         
         
       // SUB
       state.SUB:
       out = subTest.out;
-        alu.io_dip=OSUB;
+        
         seg = c{2,11,11,11}; 
         // duration 1s
         if (subTest.true==1) {
+          counter.d = counter.q+1;
           state.d = state.MUL;
         }
         
       // MUL
       state.MUL:
       out = mulTest.out;
-        alu.io_dip=OMUL;
+        
         seg = c{3,11,11,11}; 
         // duration 1s
         if (mulTest.true==1) {
+          counter.d = counter.q+1;
           state.d = state.OR;
         }
         
       // OR
       state.OR:
       out = orTest.out;
-        alu.io_dip=OOR;
+        
         seg = c{4,11,11,11}; 
         // duration 1s
         if (orTest.true==1) {
+          counter.d = counter.q+1;
           state.d = state.ADD;
         }
       
       // AND
       state.AND:
         out = andTest.out;
-        alu.io_dip=OAND;
+        
         seg = c{5,11,11,11}; 
         // duration 1s
         if (andTest.true) {
+          counter.d = counter.q+1;
           state.d = state.XOR;
         }
         
       // XOR
       state.XOR:
       out = xorTest.out;
-        alu.io_dip=OXOR;
+        
         seg = c{6,11,11,11};
         // duration 1s
         if (xorTest.true) {
+          counter.d = counter.q+1;
           state.d = state.A;
         }
         
       // A
       state.A:
       out = bolATest.out;
-        alu.io_dip=OA;
+       
         seg = c{7,11,11,11}; 
         // duration 1s
         if (bolATest.true) {
+          counter.d = counter.q+1;
           state.d = state.SHL;
         }
         
       // SHL
       state.SHL:
       out = shlTest.out;
-        alu.io_dip=OSHL;
+       
         seg = c{8,11,11,11};
         // duration 1s
         if (shlTest.true==1) {
+          counter.d = counter.q+1;
           state.d = state.SHR;
         
         }
@@ -165,50 +142,55 @@ module tst (
       // SHR
       state.SHR:
       out = shrTest.out;
-        alu.io_dip=OSHR;
+       
         seg = c{9,11,11,11}; 
         // duration 1s
         if (shrTest.true==1) {
+          counter.d = counter.q+1;
           state.d = state.SRA;
         }
         
       // SRA
       state.SRA:
       out = sraTest.out;
-        alu.io_dip=OSRA;
+        
         seg = c{1,0,11,11}; 
         // duration 1s
         if (sraTest.true) {
+          counter.d = counter.q+1;
           state.d = state.CMPEQ;
         }
         
       // CMPEQ
       state.CMPEQ:
       out = cmpeqTest.out;
-        alu.io_dip=OCMPEQ;
+        
         seg = c{1,1,11,11}; 
         // duration 1s
         if (cmpeqTest.true==1) {
+          counter.d = counter.q+1;
           state.d = state.CMPLE;
         }
         
       // CMPLE
       state.CMPLE:
       out = cmpleTest.out;
-        alu.io_dip=OCMPLE;
+       
         seg = c{1,2,11,11}; 
         // duration 1s
         if (cmpleTest.true==1) {
+          counter.d = counter.q+1;
           state.d = state.CMPLT;
         }
         
       // CMPLT
       state.CMPLT:
       out = cmpltTest.out;
-        alu.io_dip=OCMPLT;
+        
         seg = c{1,3,11,11}; 
         // duration 1s
         if (cmpleTest.true) {
+          counter.d = counter.q+1;
           state.d = state.GOOD;
         }
         

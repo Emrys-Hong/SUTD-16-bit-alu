@@ -8,6 +8,7 @@ module cmpleTest_23 (
     input clk,
     input rst,
     input button,
+    input [3:0] count,
     output reg [15:0] out,
     output reg true
   );
@@ -102,7 +103,7 @@ module cmpleTest_23 (
     
     case (M_state_q)
       BEGIN_state: begin
-        if (M_timer_q[26+1-:2] == 2'h2 & ~button) begin
+        if (count == 4'hc & ~button) begin
           M_timer_d = 1'h0;
           M_state_d = PP1_state;
         end

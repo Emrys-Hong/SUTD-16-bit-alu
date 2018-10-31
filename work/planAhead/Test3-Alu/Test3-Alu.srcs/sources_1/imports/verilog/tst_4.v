@@ -40,24 +40,7 @@ module tst_4 (
   
   reg [3:0] M_state_d, M_state_q = BEGIN_state;
   reg [26:0] M_timer_d, M_timer_q = 1'h0;
-  wire [16-1:0] M_alu_out;
-  wire [1-1:0] M_alu_z;
-  wire [1-1:0] M_alu_v;
-  wire [1-1:0] M_alu_n;
-  reg [8-1:0] M_alu_io_dip;
-  reg [16-1:0] M_alu_a;
-  reg [16-1:0] M_alu_b;
-  alu_3 alu (
-    .clk(clk),
-    .rst(rst),
-    .io_dip(M_alu_io_dip),
-    .a(M_alu_a),
-    .b(M_alu_b),
-    .out(M_alu_out),
-    .z(M_alu_z),
-    .v(M_alu_v),
-    .n(M_alu_n)
-  );
+  reg [3:0] M_counter_d, M_counter_q = 1'h0;
   wire [16-1:0] M_addTest_out;
   wire [1-1:0] M_addTest_v;
   wire [1-1:0] M_addTest_n;
@@ -67,6 +50,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_addTest_out),
     .v(M_addTest_v),
     .n(M_addTest_n),
@@ -82,6 +66,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_subTest_out),
     .v(M_subTest_v),
     .n(M_subTest_n),
@@ -94,6 +79,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_mulTest_out),
     .true(M_mulTest_true)
   );
@@ -103,6 +89,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_orTest_out),
     .true(M_orTest_true)
   );
@@ -112,6 +99,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_andTest_out),
     .true(M_andTest_true)
   );
@@ -121,6 +109,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_xorTest_out),
     .true(M_xorTest_true)
   );
@@ -130,6 +119,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_bolATest_out),
     .true(M_bolATest_true)
   );
@@ -139,6 +129,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_shlTest_out),
     .true(M_shlTest_true)
   );
@@ -148,6 +139,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_shrTest_out),
     .true(M_shrTest_true)
   );
@@ -157,6 +149,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_sraTest_out),
     .true(M_sraTest_true)
   );
@@ -166,6 +159,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_cmpeqTest_out),
     .true(M_cmpeqTest_true)
   );
@@ -175,6 +169,7 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_cmpleTest_out),
     .true(M_cmpleTest_true)
   );
@@ -184,72 +179,17 @@ module tst_4 (
     .clk(clk),
     .rst(rst),
     .button(button),
+    .count(M_counter_q),
     .out(M_cmpltTest_out),
     .true(M_cmpltTest_true)
   );
   
-  localparam OADD = 8'h00;
-  
-  localparam OSUB = 8'h04;
-  
-  localparam OMUL = 8'h08;
-  
-  localparam OAND = 8'h60;
-  
-  localparam OOR = 8'h78;
-  
-  localparam OXOR = 8'h58;
-  
-  localparam OA = 8'h68;
-  
-  localparam OSHL = 8'h80;
-  
-  localparam OSHR = 8'h84;
-  
-  localparam OSRA = 8'h8c;
-  
-  localparam OCMPEQ = 8'hcc;
-  
-  localparam OCMPLT = 8'hd4;
-  
-  localparam OCMPLE = 8'hdc;
-  
-  localparam RSUB = 16'h3000;
-  
-  localparam RMUL = 16'h4900;
-  
-  localparam RAND = 16'h0500;
-  
-  localparam ROR = 16'h7500;
-  
-  localparam RXOR = 16'h7000;
-  
-  localparam RA = 16'h2500;
-  
-  localparam RSHL = 16'ha000;
-  
-  localparam RSHR = 16'h0100;
-  
-  localparam RSRA = 16'h0100;
-  
-  localparam RCMPEQ = 16'h0000;
-  
-  localparam RCMPLT = 16'h0000;
-  
-  localparam RCMPLE = 16'h0000;
-  
-  localparam A = 16'h5500;
-  
-  localparam B = 16'h2500;
-  
   always @* begin
     M_state_d = M_state_q;
     M_timer_d = M_timer_q;
+    M_counter_d = M_counter_q;
     
     seg = 1'h0;
-    M_alu_a = 16'h5500;
-    M_alu_b = 16'h2500;
-    M_alu_io_dip = 1'h0;
     out = 1'h0;
     M_timer_d = M_timer_q + 1'h1;
     M_edge_in = button;
@@ -258,110 +198,111 @@ module tst_4 (
       BEGIN_state: begin
         seg = 16'hdefd;
         if (M_edge_out) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = ADD_state;
         end
       end
       ADD_state: begin
         out = M_addTest_out;
-        M_alu_io_dip = 8'h00;
         seg = 13'h1bbb;
         if (M_addTest_true == 1'h1) begin
-          M_state_d = OR_state;
+          M_counter_d = M_counter_q + 3'h4;
+          M_state_d = AND_state;
         end
       end
       SUB_state: begin
         out = M_subTest_out;
-        M_alu_io_dip = 8'h04;
         seg = 14'h2bbb;
         if (M_subTest_true == 1'h1) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = MUL_state;
         end
       end
       MUL_state: begin
         out = M_mulTest_out;
-        M_alu_io_dip = 8'h08;
         seg = 14'h3bbb;
         if (M_mulTest_true == 1'h1) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = OR_state;
         end
       end
       OR_state: begin
         out = M_orTest_out;
-        M_alu_io_dip = 8'h78;
         seg = 15'h4bbb;
         if (M_orTest_true == 1'h1) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = ADD_state;
         end
       end
       AND_state: begin
         out = M_andTest_out;
-        M_alu_io_dip = 8'h60;
         seg = 15'h5bbb;
         if (M_andTest_true) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = XOR_state;
         end
       end
       XOR_state: begin
         out = M_xorTest_out;
-        M_alu_io_dip = 8'h58;
         seg = 15'h6bbb;
         if (M_xorTest_true) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = A_state;
         end
       end
       A_state: begin
         out = M_bolATest_out;
-        M_alu_io_dip = 8'h68;
         seg = 15'h7bbb;
         if (M_bolATest_true) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = SHL_state;
         end
       end
       SHL_state: begin
         out = M_shlTest_out;
-        M_alu_io_dip = 8'h80;
         seg = 16'h8bbb;
         if (M_shlTest_true == 1'h1) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = SHR_state;
         end
       end
       SHR_state: begin
         out = M_shrTest_out;
-        M_alu_io_dip = 8'h84;
         seg = 16'h9bbb;
         if (M_shrTest_true == 1'h1) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = SRA_state;
         end
       end
       SRA_state: begin
         out = M_sraTest_out;
-        M_alu_io_dip = 8'h8c;
         seg = 10'h2bb;
         if (M_sraTest_true) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = CMPEQ_state;
         end
       end
       CMPEQ_state: begin
         out = M_cmpeqTest_out;
-        M_alu_io_dip = 8'hcc;
         seg = 10'h3bb;
         if (M_cmpeqTest_true == 1'h1) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = CMPLE_state;
         end
       end
       CMPLE_state: begin
         out = M_cmpleTest_out;
-        M_alu_io_dip = 8'hdc;
         seg = 11'h6bb;
         if (M_cmpleTest_true == 1'h1) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = CMPLT_state;
         end
       end
       CMPLT_state: begin
         out = M_cmpltTest_out;
-        M_alu_io_dip = 8'hd4;
         seg = 11'h7bb;
         if (M_cmpleTest_true) begin
+          M_counter_d = M_counter_q + 1'h1;
           M_state_d = GOOD_state;
         end
       end
@@ -377,9 +318,11 @@ module tst_4 (
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_timer_q <= 1'h0;
+      M_counter_q <= 1'h0;
       M_state_q <= 1'h0;
     end else begin
       M_timer_q <= M_timer_d;
+      M_counter_q <= M_counter_d;
       M_state_q <= M_state_d;
     end
   end

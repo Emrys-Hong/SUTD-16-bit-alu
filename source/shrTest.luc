@@ -4,6 +4,7 @@ module shrTest (
     
     // input
     input button,
+    input count[4],
     // out is to show input1 input2 input3
     output out[16],
     output true
@@ -47,7 +48,7 @@ module shrTest (
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & ~button) {
+        if (count==9 & ~button) {
           timer.d = 0;
           state.d = state.C1;
         }

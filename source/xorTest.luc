@@ -4,6 +4,7 @@ module xorTest (
     
     // input
     input button,
+    input count[4],
     // out is to show input1 input2 input3
     output out[16],
     //output v,
@@ -44,7 +45,7 @@ module xorTest (
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & edge_detector.out) {
+        if (count==6 & edge_detector.out) {
           timer.d = 0;
           state.d = state.LL;
         }

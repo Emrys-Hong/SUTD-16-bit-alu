@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Oct 31 05:22:16 2018
+// Written by: Map P.20131013 on Wed Oct 31 07:22:37 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -108,29 +108,14 @@ TIMEGRP clk = BEL "M_input2_q_5_1" BEL "M_input1_q_14_1" BEL "clk_BUFGP/BUFG"
         "confirm/M_last_q" BEL "M_result_q_2" BEL "M_result_q_3" BEL
         "M_result_q_4" BEL "M_result_q_5" BEL "M_result_q_6" BEL
         "M_result_q_7" BEL "M_result_q_8" BEL "M_result_q_9" BEL
-        "M_input2_q_10_1" BEL "tst/M_state_q_FSM_FFd2" BEL
-        "tst/M_state_q_FSM_FFd1" BEL "tst/orTest/M_state_q_FSM_FFd1" BEL
-        "tst/orTest/M_state_q_FSM_FFd2" BEL "tst/orTest/M_state_q_FSM_FFd4"
-        BEL "tst/orTest/M_state_q_FSM_FFd5" BEL
-        "tst/orTest/M_state_q_FSM_FFd3" BEL "tst/orTest/M_state_q_FSM_FFd7"
-        BEL "tst/orTest/M_state_q_FSM_FFd6" BEL "tst/orTest/M_timer_q_0" BEL
-        "tst/orTest/M_timer_q_1" BEL "tst/orTest/M_timer_q_2" BEL
-        "tst/orTest/M_timer_q_3" BEL "tst/orTest/M_timer_q_4" BEL
-        "tst/orTest/M_timer_q_5" BEL "tst/orTest/M_timer_q_6" BEL
-        "tst/orTest/M_timer_q_7" BEL "tst/orTest/M_timer_q_8" BEL
-        "tst/orTest/M_timer_q_9" BEL "tst/orTest/M_timer_q_10" BEL
-        "tst/orTest/M_timer_q_11" BEL "tst/orTest/M_timer_q_12" BEL
-        "tst/orTest/M_timer_q_13" BEL "tst/orTest/M_timer_q_14" BEL
-        "tst/orTest/M_timer_q_15" BEL "tst/orTest/M_timer_q_16" BEL
-        "tst/orTest/M_timer_q_17" BEL "tst/orTest/M_timer_q_18" BEL
-        "tst/orTest/M_timer_q_19" BEL "tst/orTest/M_timer_q_20" BEL
-        "tst/orTest/M_timer_q_21" BEL "tst/orTest/M_timer_q_22" BEL
-        "tst/orTest/M_timer_q_23" BEL "tst/orTest/M_timer_q_24" BEL
-        "tst/orTest/M_timer_q_25" BEL "tst/orTest/M_timer_q_26" BEL
-        "tst/orTest/M_timer_q_27" BEL "tst/andTest/M_state_q_FSM_FFd1" BEL
-        "tst/andTest/M_state_q_FSM_FFd2" BEL "tst/andTest/M_state_q_FSM_FFd4"
+        "M_input2_q_10_1" BEL "tst/M_state_q_FSM_FFd9" BEL
+        "tst/M_state_q_FSM_FFd10" BEL "tst/M_state_q_FSM_FFd11" BEL
+        "tst/M_state_q_FSM_FFd12" BEL "tst/M_counter_q_3" BEL
+        "tst/M_counter_q_2" BEL "tst/M_counter_q_1" BEL "tst/M_counter_q_0"
+        BEL "tst/andTest/M_state_q_FSM_FFd1" BEL
+        "tst/andTest/M_state_q_FSM_FFd2" BEL "tst/andTest/M_state_q_FSM_FFd3"
         BEL "tst/andTest/M_state_q_FSM_FFd5" BEL
-        "tst/andTest/M_state_q_FSM_FFd3" BEL "tst/andTest/M_state_q_FSM_FFd6"
+        "tst/andTest/M_state_q_FSM_FFd6" BEL "tst/andTest/M_state_q_FSM_FFd4"
         BEL "tst/andTest/M_state_q_FSM_FFd7" BEL "tst/andTest/M_timer_q_0" BEL
         "tst/andTest/M_timer_q_1" BEL "tst/andTest/M_timer_q_2" BEL
         "tst/andTest/M_timer_q_3" BEL "tst/andTest/M_timer_q_4" BEL
@@ -145,12 +130,12 @@ TIMEGRP clk = BEL "M_input2_q_5_1" BEL "M_input1_q_14_1" BEL "clk_BUFGP/BUFG"
         "tst/andTest/M_timer_q_21" BEL "tst/andTest/M_timer_q_22" BEL
         "tst/andTest/M_timer_q_23" BEL "tst/andTest/M_timer_q_24" BEL
         "tst/andTest/M_timer_q_25" BEL "tst/andTest/M_timer_q_26" BEL
-        "tst/andTest/M_timer_q_27" BEL "tst/addTest/M_state_q_FSM_FFd2" BEL
-        "tst/addTest/M_state_q_FSM_FFd3" BEL "tst/addTest/M_state_q_FSM_FFd1"
+        "tst/andTest/M_timer_q_27" BEL "tst/addTest/M_state_q_FSM_FFd1" BEL
+        "tst/addTest/M_state_q_FSM_FFd2" BEL "tst/addTest/M_state_q_FSM_FFd3"
         BEL "tst/addTest/M_state_q_FSM_FFd4" BEL
-        "tst/addTest/M_state_q_FSM_FFd5" BEL "tst/addTest/M_state_q_FSM_FFd6"
-        BEL "tst/addTest/M_state_q_FSM_FFd7" BEL
-        "tst/addTest/M_state_q_FSM_FFd9" BEL "tst/addTest/M_state_q_FSM_FFd8"
+        "tst/addTest/M_state_q_FSM_FFd6" BEL "tst/addTest/M_state_q_FSM_FFd7"
+        BEL "tst/addTest/M_state_q_FSM_FFd5" BEL
+        "tst/addTest/M_state_q_FSM_FFd8" BEL "tst/addTest/M_state_q_FSM_FFd9"
         BEL "tst/addTest/M_timer_q_0" BEL "tst/addTest/M_timer_q_1" BEL
         "tst/addTest/M_timer_q_2" BEL "tst/addTest/M_timer_q_3" BEL
         "tst/addTest/M_timer_q_4" BEL "tst/addTest/M_timer_q_5" BEL
@@ -165,20 +150,36 @@ TIMEGRP clk = BEL "M_input2_q_5_1" BEL "M_input1_q_14_1" BEL "clk_BUFGP/BUFG"
         "tst/addTest/M_timer_q_22" BEL "tst/addTest/M_timer_q_23" BEL
         "tst/addTest/M_timer_q_24" BEL "tst/addTest/M_timer_q_25" BEL
         "tst/addTest/M_timer_q_26" BEL "tst/addTest/M_timer_q_27" BEL
-        "M_input2_q_11_1" BEL "M_input2_q_0_1" BEL "M_input1_q_0" BEL
-        "M_input2_q_0_2" BEL "M_input1_q_1" BEL "M_input2_q_0_3" BEL
-        "M_input1_q_2" BEL "M_input1_q_3" BEL "M_input1_q_4" BEL
-        "M_input1_q_5" BEL "M_input1_q_6" BEL "M_input1_q_7" BEL
-        "M_input1_q_8" BEL "M_input1_q_9" BEL "M_input2_q_12_1" BEL
-        "M_input2_q_1_1" BEL "M_input2_q_1_2" BEL "M_input1_q_10" BEL
-        "M_input1_q_11" BEL "M_input1_q_12" BEL "M_input1_q_13" BEL
-        "M_input1_q_14" BEL "M_input1_q_15" BEL "M_input2_q_13_1" BEL
-        "M_input2_q_10" BEL "M_input2_q_11" BEL "M_input2_q_12" BEL
-        "M_input2_q_13" BEL "M_input2_q_14" BEL "M_input2_q_15" BEL
-        "M_input2_q_2_1" BEL "M_input2_q_2_2" BEL "M_input2_q_2_3" BEL
-        "M_input2_q_14_1" BEL "M_input2_q_3_1" BEL "M_input2_q_3_2" BEL
-        "M_input2_q_3_3" BEL "M_input2_q_15_1" BEL "M_input2_q_4_1" BEL
-        "M_input1_q_13_1" BEL "M_input1_q_13_2" BEL "M_input1_q_13_3";
+        "tst/xorTest/M_state_q_FSM_FFd5" BEL "tst/xorTest/M_state_q_FSM_FFd6"
+        BEL "tst/xorTest/M_state_q_FSM_FFd7" BEL "tst/xorTest/M_timer_q_0" BEL
+        "tst/xorTest/M_timer_q_1" BEL "tst/xorTest/M_timer_q_2" BEL
+        "tst/xorTest/M_timer_q_3" BEL "tst/xorTest/M_timer_q_4" BEL
+        "tst/xorTest/M_timer_q_5" BEL "tst/xorTest/M_timer_q_6" BEL
+        "tst/xorTest/M_timer_q_7" BEL "tst/xorTest/M_timer_q_8" BEL
+        "tst/xorTest/M_timer_q_9" BEL "tst/xorTest/M_timer_q_10" BEL
+        "tst/xorTest/M_timer_q_11" BEL "tst/xorTest/M_timer_q_12" BEL
+        "tst/xorTest/M_timer_q_13" BEL "tst/xorTest/M_timer_q_14" BEL
+        "tst/xorTest/M_timer_q_15" BEL "tst/xorTest/M_timer_q_16" BEL
+        "tst/xorTest/M_timer_q_17" BEL "tst/xorTest/M_timer_q_18" BEL
+        "tst/xorTest/M_timer_q_19" BEL "tst/xorTest/M_timer_q_20" BEL
+        "tst/xorTest/M_timer_q_21" BEL "tst/xorTest/M_timer_q_22" BEL
+        "tst/xorTest/M_timer_q_23" BEL "tst/xorTest/M_timer_q_24" BEL
+        "tst/xorTest/M_timer_q_25" BEL "tst/xorTest/M_timer_q_26" BEL
+        "tst/xorTest/M_timer_q_27" BEL "M_input2_q_11_1" BEL "M_input2_q_0_1"
+        BEL "M_input1_q_0" BEL "M_input2_q_0_2" BEL "M_input1_q_1" BEL
+        "M_input2_q_0_3" BEL "M_input1_q_2" BEL "M_input1_q_3" BEL
+        "M_input1_q_4" BEL "M_input1_q_5" BEL "M_input1_q_6" BEL
+        "M_input1_q_7" BEL "M_input1_q_8" BEL "M_input1_q_9" BEL
+        "M_input2_q_12_1" BEL "M_input2_q_1_1" BEL "M_input2_q_1_2" BEL
+        "M_input1_q_10" BEL "M_input1_q_11" BEL "M_input1_q_12" BEL
+        "M_input1_q_13" BEL "M_input1_q_14" BEL "M_input1_q_15" BEL
+        "M_input2_q_13_1" BEL "M_input2_q_10" BEL "M_input2_q_11" BEL
+        "M_input2_q_12" BEL "M_input2_q_13" BEL "M_input2_q_14" BEL
+        "M_input2_q_15" BEL "M_input2_q_2_1" BEL "M_input2_q_2_2" BEL
+        "M_input2_q_2_3" BEL "M_input2_q_14_1" BEL "M_input2_q_3_1" BEL
+        "M_input2_q_3_2" BEL "M_input2_q_3_3" BEL "M_input2_q_15_1" BEL
+        "M_input2_q_4_1" BEL "M_input1_q_13_1" BEL "M_input1_q_13_2" BEL
+        "M_input1_q_13_3";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

@@ -3,6 +3,7 @@ module cmpleTest (
     input rst,  // reset
     // input
     input button,
+    input count[4],
     // out is to show input1 input2 input3
     output out[16],
     output true
@@ -59,7 +60,7 @@ module cmpleTest (
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & ~button) {
+        if (count==12 & ~button) {
           timer.d = 0;
           state.d = state.PP1;
         }

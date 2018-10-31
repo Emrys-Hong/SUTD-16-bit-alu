@@ -8,6 +8,7 @@ module subTest_13 (
     input clk,
     input rst,
     input button,
+    input [3:0] count,
     output reg [15:0] out,
     output reg v,
     output reg n,
@@ -104,7 +105,7 @@ module subTest_13 (
   
   localparam PN2B = 16'h8f0f;
   
-  localparam PP1 = 16'h26f0;
+  localparam PP1 = 16'h2ef0;
   
   localparam PP2 = 16'hf25a;
   
@@ -143,7 +144,7 @@ module subTest_13 (
     
     case (M_state_q)
       BEGIN_state: begin
-        if (M_timer_q[26+1-:2] == 2'h2 & M_edge_detector_out) begin
+        if (count == 2'h2 & M_edge_detector_out) begin
           M_timer_d = 1'h0;
           M_state_d = PP1_state;
         end
@@ -161,7 +162,7 @@ module subTest_13 (
               out = M_sub_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if ((M_sub_out == 16'h26f0)) begin
+                if ((M_sub_out == 16'h2ef0)) begin
                   M_timer_d = 1'h0;
                   M_state_d = PP2_state;
                 end else begin

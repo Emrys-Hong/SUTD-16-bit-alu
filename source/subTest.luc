@@ -3,6 +3,7 @@ module subTest (
     input rst,  // reset
     // input
     input button,
+    input count[4],
     // out is to show input1 input2 input3
     output out[16],
     output v,
@@ -45,7 +46,7 @@ module subTest (
   const PN2B = 16b1000111100001111;
   
   // correct results
-  const PP1 = 16b0010011011110000;
+  const PP1 = 16b0010111011110000;
   const PP2 = 16b1111001001011010;
   const PP3 = 16b0000000000000000;
   const PP4 = 16b0000000000000000;
@@ -75,7 +76,7 @@ module subTest (
     // cases
     case(state.q) {
       state.BEGIN:
-        if (timer.q[27:26]==2 & edge_detector.out) {
+        if (count==2 & edge_detector.out) {
           timer.d = 0;
           state.d = state.PP1;
         }

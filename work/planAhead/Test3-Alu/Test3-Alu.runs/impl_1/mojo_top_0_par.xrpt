@@ -1,55 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<document OS="nt" product="ISE" version="14.7">
+<document OS="lin64" product="ISE" version="14.7">
 
   <!--The data in this file is primarily intended for consumption by Xilinx tools.
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Wed Oct 31 05:22:21 2018">
+  <application stringID="par" timeStamp="Wed Oct 31 07:22:40 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
-          <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win32.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\khong\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Brackets\command;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Git\cmd;C:\Users\khong\AppData\Local\GitHubDesktop\bin;C:\Program Files\Mojo IDE\java\bin"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT1_ECP_ADDRESS"/>
+          <item stringID="value" value="400"/>
         </row>
         <row stringID="row" value="1">
-          <item stringID="variable" value="PATHEXT"/>
-          <item stringID="value" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT2_ECP_ADDRESS"/>
+          <item stringID="value" value="410"/>
         </row>
         <row stringID="row" value="2">
-          <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT3_ECP_ADDRESS"/>
+          <item stringID="value" value="420"/>
         </row>
         <row stringID="row" value="3">
-          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/common"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT4_ECP_ADDRESS"/>
+          <item stringID="value" value="430"/>
         </row>
         <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/ISE"/>
+          <item stringID="variable" value="XILINX_PLANAHEAD"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/PlanAhead"/>
         </row>
         <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/EDK"/>
+          <item stringID="variable" value="LD_LIBRARY_PATH"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE//lib/lin64:/opt/Xilinx/14.7/ISE_DS/EDK/lib/lin64:/opt/Xilinx/14.7/ISE_DS/ISE/lib/lin64:/opt/Xilinx/14.7/ISE_DS/common/lib/lin64:/home/emrys/Desktop/mojo-ide-B1.3.6/lib:/usr/local/cuda-9.1/lib64"/>
         </row>
         <row stringID="row" value="6">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/PlanAhead"/>
+          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/common"/>
+        </row>
+        <row stringID="row" value="7">
+          <item stringID="variable" value="XILINX_EDK"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/EDK"/>
+        </row>
+        <row stringID="row" value="8">
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE/"/>
+        </row>
+        <row stringID="row" value="9">
+          <item stringID="variable" value="XIL_IMPACT_USE_LIBUSB"/>
+          <item stringID="value" value="0"/>
+        </row>
+        <row stringID="row" value="10">
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE//bin/lin64:/opt/Xilinx/14.7/ISE_DS/EDK/bin/lin64:/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64:/opt/Xilinx/14.7/ISE_DS/common/bin/lin64:/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin:/home/emrys/Desktop/mojo-ide-B1.3.6/java/bin:/home/emrys/bin:/home/emrys/.local/bin:/opt/Xilinx/14.7/ISE_DS/ISE/sysgen/util:/opt/Xilinx/14.7/ISE_DS/ISE/../../../DocNav:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/lin/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/powerpc-eabi/lin/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_be/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_le/bin:/usr/local/cuda-9.1/bin:/home/emrys/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/local/go/bin"/>
+        </row>
+        <row stringID="row" value="11">
+          <item stringID="variable" value="XILINX_DSP"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE"/>
+        </row>
+        <row stringID="row" value="12">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT1_BASE_ADDRESS"/>
+          <item stringID="value" value="0"/>
+        </row>
+        <row stringID="row" value="13">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT2_BASE_ADDRESS"/>
+          <item stringID="value" value="10"/>
+        </row>
+        <row stringID="row" value="14">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT3_BASE_ADDRESS"/>
+          <item stringID="value" value="20"/>
+        </row>
+        <row stringID="row" value="15">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT4_BASE_ADDRESS"/>
+          <item stringID="value" value="30"/>
+        </row>
+        <row stringID="row" value="16">
+          <item stringID="variable" value="XIL_IMPACT_USE_WINDRIVER"/>
+          <item stringID="value" value="1"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
+        <item stringID="User_EnvOsname" value="Ubuntu"/>
+        <item stringID="User_EnvOsrelease" value="Ubuntu 16.04.5 LTS"/>
       </item>
-      <item stringID="User_EnvHost" value="JW"/>
+      <item stringID="User_EnvHost" value="hongpengfei"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz"/>
-          <item stringID="speed" value="2712 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz"/>
+          <item stringID="speed" value="4231.963 MHz"/>
         </row>
       </table>
     </section>
@@ -62,12 +102,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="13 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="16 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="9 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="10 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
-        <item dataType="float" stringID="PAR_TIMING_SCORE" value="511480.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="14 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="17 secs "/>
+        <item dataType="float" stringID="PAR_TIMING_SCORE" value="534851.000000"/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="9 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="10 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -86,8 +126,8 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y11"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="61.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.690000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="68.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.695000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.086000"/>
           </row>
         </table>
@@ -1597,66 +1637,106 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Wed Oct 31 05:22:21 2018">
+  <application stringID="Par" timeStamp="Wed Oct 31 07:22:40 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
-          <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win32.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\khong\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Brackets\command;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Git\cmd;C:\Users\khong\AppData\Local\GitHubDesktop\bin;C:\Program Files\Mojo IDE\java\bin"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT1_ECP_ADDRESS"/>
+          <item stringID="value" value="400"/>
         </row>
         <row stringID="row" value="1">
-          <item stringID="variable" value="PATHEXT"/>
-          <item stringID="value" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT2_ECP_ADDRESS"/>
+          <item stringID="value" value="410"/>
         </row>
         <row stringID="row" value="2">
-          <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT3_ECP_ADDRESS"/>
+          <item stringID="value" value="420"/>
         </row>
         <row stringID="row" value="3">
-          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/common"/>
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT4_ECP_ADDRESS"/>
+          <item stringID="value" value="430"/>
         </row>
         <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/ISE"/>
+          <item stringID="variable" value="XILINX_PLANAHEAD"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/PlanAhead"/>
         </row>
         <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/EDK"/>
+          <item stringID="variable" value="LD_LIBRARY_PATH"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE//lib/lin64:/opt/Xilinx/14.7/ISE_DS/EDK/lib/lin64:/opt/Xilinx/14.7/ISE_DS/ISE/lib/lin64:/opt/Xilinx/14.7/ISE_DS/common/lib/lin64:/home/emrys/Desktop/mojo-ide-B1.3.6/lib:/usr/local/cuda-9.1/lib64"/>
         </row>
         <row stringID="row" value="6">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/PlanAhead"/>
+          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/common"/>
+        </row>
+        <row stringID="row" value="7">
+          <item stringID="variable" value="XILINX_EDK"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/EDK"/>
+        </row>
+        <row stringID="row" value="8">
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE/"/>
+        </row>
+        <row stringID="row" value="9">
+          <item stringID="variable" value="XIL_IMPACT_USE_LIBUSB"/>
+          <item stringID="value" value="0"/>
+        </row>
+        <row stringID="row" value="10">
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE//bin/lin64:/opt/Xilinx/14.7/ISE_DS/EDK/bin/lin64:/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64:/opt/Xilinx/14.7/ISE_DS/common/bin/lin64:/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin:/home/emrys/Desktop/mojo-ide-B1.3.6/java/bin:/home/emrys/bin:/home/emrys/.local/bin:/opt/Xilinx/14.7/ISE_DS/ISE/sysgen/util:/opt/Xilinx/14.7/ISE_DS/ISE/../../../DocNav:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/lin/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/powerpc-eabi/lin/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_be/bin:/opt/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_le/bin:/usr/local/cuda-9.1/bin:/home/emrys/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/local/go/bin"/>
+        </row>
+        <row stringID="row" value="11">
+          <item stringID="variable" value="XILINX_DSP"/>
+          <item stringID="value" value="/opt/Xilinx/14.7/ISE_DS/ISE"/>
+        </row>
+        <row stringID="row" value="12">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT1_BASE_ADDRESS"/>
+          <item stringID="value" value="0"/>
+        </row>
+        <row stringID="row" value="13">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT2_BASE_ADDRESS"/>
+          <item stringID="value" value="10"/>
+        </row>
+        <row stringID="row" value="14">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT3_BASE_ADDRESS"/>
+          <item stringID="value" value="20"/>
+        </row>
+        <row stringID="row" value="15">
+          <item stringID="variable" value="XIL_IMPACT_ENV_LPT4_BASE_ADDRESS"/>
+          <item stringID="value" value="30"/>
+        </row>
+        <row stringID="row" value="16">
+          <item stringID="variable" value="XIL_IMPACT_USE_WINDRIVER"/>
+          <item stringID="value" value="1"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
+        <item stringID="User_EnvOsname" value="Ubuntu"/>
+        <item stringID="User_EnvOsrelease" value="Ubuntu 16.04.5 LTS"/>
       </item>
-      <item stringID="User_EnvHost" value="JW"/>
+      <item stringID="User_EnvHost" value="hongpengfei"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz"/>
-          <item stringID="speed" value="2712 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz"/>
+          <item stringID="speed" value="4499.447 MHz"/>
         </row>
       </table>
     </section>
     <task label="Device Utilization Summary" stringID="PAR_DEVICE_UTLIZATION">
       <section stringID="PAR_SLICE_REPORTING">
-        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="214">
-          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="213"/>
+        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="215">
+          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="215"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="1"/>
+          <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="0"/>
         </item>
-        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="857">
+        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="885">
           <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="96"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="573"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="183"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="632"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="153"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -1670,21 +1750,21 @@
           <item dataType="int" stringID="PAR_NUM_SRL_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SRL_O5ANDO6" value="0"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO6" value="4"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="1"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_EXO5" value="0"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_O5ANDO6" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="1"/>
+          <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_FLOP" value="0"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="4"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="276">
-          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="117"/>
+        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="263">
+          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="115"/>
           <item AVAILABLE="360" dataType="int" stringID="PAR_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="159"/>
+          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="148"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="865">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="697"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="8"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="160"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="888">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="689"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="3"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="196"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">

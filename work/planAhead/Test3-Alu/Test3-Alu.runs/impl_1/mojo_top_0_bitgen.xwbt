@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.runs/impl_1/mojo_top_0_routed.ncd
+OUTFILE=/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.runs/impl_1/mojo_top_0.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.runs/impl_1
+LICENSE=WebPack
+USER_INFO=211600063_0_0_779
