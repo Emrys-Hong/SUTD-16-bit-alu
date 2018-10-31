@@ -9,6 +9,7 @@ module addTest_12 (
     input rst,
     input button,
     input [3:0] count,
+    input error,
     output reg [15:0] out,
     output reg v,
     output reg n,
@@ -91,6 +92,9 @@ module addTest_12 (
     M_add_io_dip = 8'h00;
     true = 1'h0;
     step = 1'h0;
+    if (error) begin
+      M_add_io_dip = 8'h7f;
+    end
     M_edge_detector_in = button;
     
     case (M_state_q)

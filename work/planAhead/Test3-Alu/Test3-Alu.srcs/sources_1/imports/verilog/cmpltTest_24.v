@@ -89,7 +89,7 @@ module cmpltTest_24 (
   
   localparam NN3 = 1'h0;
   
-  localparam NN4 = 1'h1;
+  localparam NN4 = 1'h0;
   
   always @* begin
     M_state_d = M_state_q;
@@ -299,7 +299,7 @@ module cmpltTest_24 (
               out = M_cmplt_out;
             end else begin
               if (M_timer_q[26+1-:2] == 2'h3) begin
-                if (M_cmplt_out == 1'h1) begin
+                if (M_cmplt_out == 1'h0) begin
                   M_timer_d = 1'h0;
                   M_state_d = GOOD_state;
                 end else begin

@@ -108,7 +108,7 @@ module mojo_top (
       io_led[0] = tst.out[7-:8];
       io_led[1] = tst.out[15-:8];
       io_led[2] = tst.step; // which substep it is currently at.
-      tst.error = io_dip[2][7];
+      tst.error = io_dip[2][0];
       seg.values = {tst.seg[15-:4],tst.seg[11-:4],tst.seg[7-:4],tst.seg[3-:4]};
     }
   }

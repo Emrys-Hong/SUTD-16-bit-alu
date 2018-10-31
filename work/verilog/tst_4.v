@@ -8,9 +8,13 @@ module tst_4 (
     input clk,
     input rst,
     input button,
+    input error,
     output reg [15:0] seg,
     output reg [15:0] out,
-    output reg [7:0] step
+    output reg [7:0] step,
+    output reg v,
+    output reg n,
+    output reg z
   );
   
   
@@ -53,6 +57,7 @@ module tst_4 (
     .rst(rst),
     .button(button),
     .count(M_counter_q),
+    .error(error),
     .out(M_addTest_out),
     .v(M_addTest_v),
     .n(M_addTest_n),
@@ -221,6 +226,9 @@ module tst_4 (
     step = 1'h0;
     M_timer_d = M_timer_q + 1'h1;
     M_edge_in = button;
+    v = 1'h0;
+    n = 1'h0;
+    z = 1'h0;
     
     case (M_state_q)
       BEGIN_state: begin
@@ -234,6 +242,9 @@ module tst_4 (
         out = M_addTest_out;
         step = M_addTest_step;
         seg = 13'h1bbb;
+        v = M_addTest_v;
+        n = M_addTest_n;
+        z = M_addTest_z;
         if (M_addTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
           M_state_d = SUB_state;
@@ -243,6 +254,9 @@ module tst_4 (
         out = M_subTest_out;
         step = M_subTest_step;
         seg = 14'h2bbb;
+        v = M_addTest_v;
+        n = M_addTest_n;
+        z = M_addTest_z;
         if (M_subTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
           M_state_d = MUL_state;
@@ -314,7 +328,7 @@ module tst_4 (
       SRA_state: begin
         out = M_sraTest_out;
         step = M_sraTest_step;
-        seg = 10'h2bb;
+        seg = 16'h10bb;
         if (M_sraTest_true) begin
           M_counter_d = M_counter_q + 1'h1;
           M_state_d = CMPEQ_state;
@@ -323,7 +337,7 @@ module tst_4 (
       CMPEQ_state: begin
         out = M_cmpeqTest_out;
         step = M_cmpeqTest_step;
-        seg = 10'h3bb;
+        seg = 16'h11bb;
         if (M_cmpeqTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
           M_state_d = CMPLE_state;
@@ -332,7 +346,7 @@ module tst_4 (
       CMPLE_state: begin
         out = M_cmpleTest_out;
         step = M_cmpleTest_step;
-        seg = 11'h6bb;
+        seg = 16'h12bb;
         if (M_cmpleTest_true == 1'h1) begin
           M_counter_d = M_counter_q + 1'h1;
           M_state_d = CMPLT_state;
@@ -341,8 +355,8 @@ module tst_4 (
       CMPLT_state: begin
         out = M_cmpltTest_out;
         step = M_cmpltTest_step;
-        seg = 11'h7bb;
-        if (M_cmpleTest_true) begin
+        seg = 16'h13bb;
+        if (M_cmpltTest_true) begin
           M_counter_d = M_counter_q + 1'h1;
           M_state_d = GOOD_state;
         end

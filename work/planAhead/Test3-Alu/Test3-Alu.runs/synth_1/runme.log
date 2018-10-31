@@ -94,14 +94,11 @@ Elaborating module <tst_4>.
 Elaborating module <edge_detector_11>.
 
 Elaborating module <addTest_12>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 57: Assignment to M_addTest_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 58: Assignment to M_addTest_n ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 59: Assignment to M_addTest_z ignored, since the identifier is never used
 
 Elaborating module <subTest_13>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 75: Assignment to M_subTest_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 76: Assignment to M_subTest_n ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 77: Assignment to M_subTest_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 80: Assignment to M_subTest_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 81: Assignment to M_subTest_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 82: Assignment to M_subTest_z ignored, since the identifier is never used
 
 Elaborating module <mulTest_14>.
 
@@ -124,8 +121,6 @@ Elaborating module <cmpeqTest_22>.
 Elaborating module <cmpleTest_23>.
 
 Elaborating module <cmpltTest_24>.
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" Line 210: Assignment to M_cmpltTest_true ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 76: Assignment to M_tst_step ignored, since the identifier is never used
 
 Elaborating module <multi_seven_seg_5>.
 
@@ -152,24 +147,23 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
 INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/mojo_top_0.v" line 70: Output port <step> of the instance <tst> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <M_input2_q>.
     Found 16-bit register for signal <M_result_q>.
     Found 16-bit register for signal <M_input1_q>.
-    Found 16-bit adder for signal <M_input1_q[15]_io_dip[15]_add_3_OUT> created at line 119.
-    Found 16-bit adder for signal <M_input2_q[15]_io_dip[15]_add_6_OUT> created at line 127.
-    Found 16-bit adder for signal <M_result_q[15]_M_alu_out[15]_add_9_OUT> created at line 135.
+    Found 16-bit adder for signal <M_input1_q[15]_io_dip[15]_add_3_OUT> created at line 128.
+    Found 16-bit adder for signal <M_input2_q[15]_io_dip[15]_add_6_OUT> created at line 136.
+    Found 16-bit adder for signal <M_result_q[15]_M_alu_out[15]_add_9_OUT> created at line 144.
     Found 24-bit 4-to-1 multiplexer for signal <io_led> created at line 20.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 89
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 89
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 89
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 89
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 89
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 89
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 97
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 97
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 97
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 97
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 97
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 97
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  48 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
@@ -312,20 +306,16 @@ Unit <div_16u_16u> synthesized.
 
 Synthesizing Unit <tst_4>.
     Related source file is "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v".
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 51: Output port <v> of the instance <addTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 51: Output port <n> of the instance <addTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 51: Output port <z> of the instance <addTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 69: Output port <v> of the instance <subTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 69: Output port <n> of the instance <subTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 69: Output port <z> of the instance <subTest> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 204: Output port <true> of the instance <cmpltTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 74: Output port <v> of the instance <subTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 74: Output port <n> of the instance <subTest> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.srcs/sources_1/imports/verilog/tst_4.v" line 74: Output port <z> of the instance <subTest> is unconnected or connected to loadless signal.
     Found 4-bit register for signal <M_counter_q>.
     Found 4-bit register for signal <M_state_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 15                                             |
     | Transitions        | 29                                             |
-    | Inputs             | 13                                             |
+    | Inputs             | 14                                             |
     | Outputs            | 20                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
@@ -335,13 +325,13 @@ INFO:Xst:3210 - "/home/emrys/mojo/16-bit-alu/work/planAhead/Test3-Alu/Test3-Alu.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <M_counter_d> created at line 346.
-    Found 16-bit 15-to-1 multiplexer for signal <out> created at line 225.
-    Found 8-bit 15-to-1 multiplexer for signal <step> created at line 225.
+    Found 4-bit adder for signal <M_counter_d> created at line 360.
+    Found 16-bit 15-to-1 multiplexer for signal <out> created at line 233.
+    Found 8-bit 15-to-1 multiplexer for signal <step> created at line 233.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   4 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   5 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <tst_4> synthesized.
 
@@ -371,7 +361,7 @@ Synthesizing Unit <addTest_12>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_timer_q[27]_GND_14_o_add_0_OUT> created at line 90.
+    Found 28-bit adder for signal <M_timer_q[27]_GND_14_o_add_0_OUT> created at line 91.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -794,8 +784,8 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 771
- 1-bit 2-to-1 multiplexer                              : 501
+# Multiplexers                                         : 776
+ 1-bit 2-to-1 multiplexer                              : 505
  16-bit 12-to-1 multiplexer                            : 1
  16-bit 13-to-1 multiplexer                            : 2
  16-bit 15-to-1 multiplexer                            : 1
@@ -809,6 +799,7 @@ Macro Statistics
  28-bit 6-to-1 multiplexer                             : 1
  28-bit 7-to-1 multiplexer                             : 4
  8-bit 15-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
 # Logic shifters                                       : 13
  16-bit shifter arithmetic right                       : 4
  16-bit shifter logical left                           : 4
@@ -896,8 +887,8 @@ Macro Statistics
  30-bit comparator lessequal                           : 2
  31-bit comparator lessequal                           : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 768
- 1-bit 2-to-1 multiplexer                              : 499
+# Multiplexers                                         : 773
+ 1-bit 2-to-1 multiplexer                              : 503
  16-bit 12-to-1 multiplexer                            : 1
  16-bit 13-to-1 multiplexer                            : 2
  16-bit 15-to-1 multiplexer                            : 1
@@ -910,6 +901,7 @@ Macro Statistics
  28-bit 6-to-1 multiplexer                             : 1
  28-bit 7-to-1 multiplexer                             : 4
  8-bit 15-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
 # Logic shifters                                       : 13
  16-bit shifter arithmetic right                       : 4
  16-bit shifter logical left                           : 4
@@ -925,22 +917,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <L_edge/M_last_q> in Unit <tst_4> is equivalent to the following 7 FFs/Latches, which will be removed : <addTest/edge_detector/M_last_q> <subTest/edge_detector/M_last_q> <mulTest/edge_detector/M_last_q> <orTest/edge_detector/M_last_q> <andTest/edge_detector/M_last_q> <xorTest/edge_detector/M_last_q> <bolATest/edge_detector/M_last_q> 
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <tst/FSM_1> on signal <M_state_q[1:9]> with one-hot encoding.
---------------------
- State | Encoding
---------------------
- 0000  | 000000001
- 0001  | 000000010
- 1000  | 000000100
- 0010  | 000001000
- 0011  | 000010000
- 0100  | 000100000
- 0110  | 001000000
- 0111  | 010000000
- 0101  | 100000000
---------------------
+INFO:Xst:2261 - The FF/Latch <L_edge/M_last_q> in Unit <tst_4> is equivalent to the following 6 FFs/Latches, which will be removed : <subTest/edge_detector/M_last_q> <mulTest/edge_detector/M_last_q> <orTest/edge_detector/M_last_q> <andTest/edge_detector/M_last_q> <xorTest/edge_detector/M_last_q> <bolATest/edge_detector/M_last_q> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <tst/FSM_2> on signal <M_state_q[1:8]> with one-hot encoding.
 -------------------
@@ -1129,6 +1106,21 @@ Optimizing FSM <tst/FSM_0> on signal <M_state_q[1:4]> with user encoding.
  1101  | 1101
  1110  | 1110
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <tst/addTest/FSM_1> on signal <M_state_q[1:9]> with one-hot encoding.
+--------------------
+ State | Encoding
+--------------------
+ 0000  | 000000001
+ 0001  | 000000010
+ 1000  | 000000100
+ 0010  | 000001000
+ 0011  | 000010000
+ 0100  | 000100000
+ 0110  | 001000000
+ 0111  | 010000000
+ 0101  | 100000000
+--------------------
 
 Optimizing unit <mojo_top_0> ...
 
@@ -1141,85 +1133,15 @@ Optimizing unit <mul_10> ...
 Optimizing unit <div_16u_16u> ...
 
 Optimizing unit <tst_4> ...
+
+Optimizing unit <addTest_12> ...
 WARNING:Xst:1293 - FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <tst/cmpltTest/M_state_q_FSM_FFd3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <confirm/M_last_q> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <tst/L_edge/M_last_q> 
+INFO:Xst:2261 - The FF/Latch <confirm/M_last_q> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <tst/L_edge/M_last_q> <tst/addTest/edge_detector/M_last_q> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 44.
-FlipFlop M_input1_q_13 has been replicated 4 time(s)
-FlipFlop M_input1_q_14 has been replicated 4 time(s)
-FlipFlop M_input1_q_15 has been replicated 4 time(s)
-FlipFlop M_input2_q_0 has been replicated 3 time(s)
-FlipFlop M_input2_q_1 has been replicated 3 time(s)
-FlipFlop M_input2_q_10 has been replicated 1 time(s)
-FlipFlop M_input2_q_11 has been replicated 1 time(s)
-FlipFlop M_input2_q_12 has been replicated 1 time(s)
-FlipFlop M_input2_q_13 has been replicated 1 time(s)
-FlipFlop M_input2_q_14 has been replicated 1 time(s)
-FlipFlop M_input2_q_15 has been replicated 1 time(s)
-FlipFlop M_input2_q_2 has been replicated 3 time(s)
-FlipFlop M_input2_q_3 has been replicated 3 time(s)
-FlipFlop M_input2_q_4 has been replicated 1 time(s)
-FlipFlop M_input2_q_5 has been replicated 1 time(s)
-FlipFlop M_input2_q_6 has been replicated 1 time(s)
-FlipFlop M_input2_q_7 has been replicated 1 time(s)
-FlipFlop M_input2_q_8 has been replicated 1 time(s)
-FlipFlop M_input2_q_9 has been replicated 1 time(s)
-
-Final Macro Processing ...
-
-Processing Unit <mojo_top_0> :
-INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <reset_cond/M_stage_q_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
-Unit <mojo_top_0> processed.
-
-=========================================================================
-Final Register Report
-
-Macro Statistics
-# Registers                                            : 578
- Flip-Flops                                            : 578
-
-=========================================================================
-
-=========================================================================
-*                           Partition Report                            *
-=========================================================================
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-=========================================================================
-*                            Design Summary                             *
-=========================================================================
-
-Clock Information:
-------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 578   |
------------------------------------+------------------------+-------+
-
-Asynchronous Control Signals Information:
-----------------------------------------
-No asynchronous control signals found in this design
-
-Timing Summary:
----------------
-Speed Grade: -2
-
-   Minimum period: 50.711ns (Maximum Frequency: 19.720MHz)
-   Minimum input arrival time before clock: 9.580ns
-   Maximum output required time after clock: 14.923ns
-   Maximum combinational path delay: 10.040ns
-
-=========================================================================
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 45.

@@ -44,7 +44,7 @@ module cmpltTest (
   const NN1 = 1b1;
   const NN2 = 1b0;
   const NN3 = 1b0;
-  const NN4 = 1b1;
+  const NN4 = 1b0;
   
   
   always {
