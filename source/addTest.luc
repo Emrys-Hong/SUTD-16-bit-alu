@@ -38,6 +38,36 @@ module addTest (
   const NN = 16b0011110000010000;
   const V  = 16b0000000000000010;
   
+  // positive and positive no overflowing
+  const C1A = 16b0000000000000011;
+  const C1B = 16b0100000000000001;
+  const C1  = 16b0100000000000100;
+  
+  // positive and negative never overflowing
+  const C2A = 16b0000000000000011;
+  const C2B = 16b1011110000001111;
+  const C2 = 16b1011110000010010;
+  
+  // negative and negative, overflowing
+  const C3A = 16b1011110000001111;
+  const C3B = 16b1000000000000001;
+  const C3  = 16b0011110000010000;
+  
+  // negative and negative, overflowing
+  const C4A = 16b1000000000000001;
+  const C4B = 16b1000000000000001;
+  const C4  = 16b0000000000000010;
+  
+  // 0 + 0
+  const C5A = 16b0000000000000000;
+  const C5B = 16b0000000000000000;
+  const C5  = 16b0000000000000000;
+  
+  // negative positive N = 1
+  const C6A = 16b0000000000000011;
+  const C6B = 16b1011110000001111;
+  const C6 =  16b1011110000010010;
+  
   always {
     // define default outputs
     out = 0;
@@ -86,7 +116,6 @@ module addTest (
             state.d = state.ERROR;
           }
         }
-      
       
       state.PN:
         add.a = P1;

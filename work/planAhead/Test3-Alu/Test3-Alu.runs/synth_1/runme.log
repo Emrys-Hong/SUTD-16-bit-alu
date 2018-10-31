@@ -1145,3 +1145,75 @@ INFO:Xst:2261 - The FF/Latch <confirm/M_last_q> in Unit <mojo_top_0> is equivale
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 45.
+FlipFlop M_input1_q_13 has been replicated 4 time(s)
+FlipFlop M_input1_q_14 has been replicated 5 time(s)
+FlipFlop M_input1_q_15 has been replicated 4 time(s)
+FlipFlop M_input2_q_0 has been replicated 3 time(s)
+FlipFlop M_input2_q_1 has been replicated 3 time(s)
+FlipFlop M_input2_q_10 has been replicated 1 time(s)
+FlipFlop M_input2_q_11 has been replicated 1 time(s)
+FlipFlop M_input2_q_12 has been replicated 1 time(s)
+FlipFlop M_input2_q_13 has been replicated 1 time(s)
+FlipFlop M_input2_q_14 has been replicated 1 time(s)
+FlipFlop M_input2_q_15 has been replicated 1 time(s)
+FlipFlop M_input2_q_2 has been replicated 3 time(s)
+FlipFlop M_input2_q_3 has been replicated 3 time(s)
+FlipFlop M_input2_q_4 has been replicated 1 time(s)
+FlipFlop M_input2_q_5 has been replicated 1 time(s)
+FlipFlop M_input2_q_6 has been replicated 1 time(s)
+FlipFlop M_input2_q_7 has been replicated 1 time(s)
+FlipFlop M_input2_q_8 has been replicated 1 time(s)
+FlipFlop M_input2_q_9 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <mojo_top_0> :
+INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <reset_cond/M_stage_q_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <mojo_top_0> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 579
+ Flip-Flops                                            : 579
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 579   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 50.711ns (Maximum Frequency: 19.720MHz)
+   Minimum input arrival time before clock: 13.410ns
+   Maximum output required time after clock: 14.896ns
+   Maximum combinational path delay: 13.811ns
+
+=========================================================================
